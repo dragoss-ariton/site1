@@ -1,0 +1,33 @@
+/* Navbar styles */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #9c9c9c; /* Cor cinza para as escolas não selecionadas */
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Muda para branco ao passar o mouse */
+.navbar-nav .nav-link:hover {
+    color: white;
+}
+
+/* Muda para branco quando a escola está selecionada */
+.navbar-nav .nav-link.selected {
+    color: white;
+}
+
+/* Animação de rotação da seta */
+.rotate {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(180deg); /* Rotaciona 180º quando a Escola B está selecionada */
+}
+
+/* Reverte a rotação quando a Escola A está selecionada */
+.rotate-back {
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(0deg);
+}

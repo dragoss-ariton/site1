@@ -1,33 +1,17 @@
 // src/components/EscolaDeConducao.js
 import React from 'react';
-import { Navbar, Nav, Container, Row, Col, Carousel} from 'react-bootstrap';
+import { Container, Row, Col, Carousel} from 'react-bootstrap';
 
-const EscolaDeConducao = () => {
+const EscolaDeConducaoB = () => {
     return (
         <>
-            {/* Navigation Menu */}
-            <Navbar bg="dark" variant="dark" expand="lg">
-                <Container>
-                    <Navbar.Brand href="#">Escola de Condução Rotunda</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarNav" />
-                    <Navbar.Collapse id="navbarNav">
-                        <Nav className="ms-auto">
-                            <Nav.Link href="#sobre">Sobre Nós</Nav.Link>
-                            <Nav.Link href="#cursos">Cursos</Nav.Link>
-                            <Nav.Link href="#precos">Preços</Nav.Link>
-                            <Nav.Link href="#contactos">Contactos</Nav.Link>
-                            <Nav.Link href="#categoriaB">Categoria B</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
 
             {/* Main Content */}
             <Container className="my-5">
                 {/* Sobre Nós Section */}
                 <section id="sobre" className="py-5">
-                    <h2 className="text-center">Sobre Nós</h2>
-                    <p className="text-center">Bem-vindo à Escola de Condução Rotunda! Somos especializados em formar novos condutores com segurança e excelência.</p>
+                    <h2 className="text-center">Sobre Nós (Parque das Nações)</h2>
+                    <p className="text-center">Bem-vindo à Escola de Condução Parque das Nações! Somos especializados em formar novos condutores com segurança e excelência.</p>
                 </section>
 
                 {/* Cursos Section */}
@@ -102,4 +86,4 @@ const EscolaDeConducao = () => {
     );
 };
 
-export default EscolaDeConducao;
+export default EscolaDeConducaoB;
