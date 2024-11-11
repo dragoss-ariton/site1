@@ -46,7 +46,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link
                                 className={`nav-link ${selectedSchool === 'A' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                to="/escola-conducao-a"
+                                to="/escola-conducao-olivais"
                                 onClick={() => handleSchoolSelect('A')}
                             >
                                 Olivais
@@ -61,7 +61,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link
                                 className={`nav-link ${selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                to="/escola-conducao-b"
+                                to="/escola-conducao-parque-das-nacoes"
                                 onClick={() => handleSchoolSelect('B')}
                             >
                                 Parque das Nações
