@@ -29,7 +29,7 @@ const EscolaDeConducaoB = () => {
             </div>
 
             {/* Footer */}
-            <footer className="bg-dark text-white text-center py-3">
+            <footer className="bg-black text-white text-center py-3">
                 <p>&copy; 2024 Escola de Condução Parque Das Nações. Todos os direitos reservados.</p>
             </footer>
         </>
