@@ -1,0 +1,21 @@
+/* src/SobreNos.css */
+.sobre-nos-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.sobre-nos-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sobre-nos-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}

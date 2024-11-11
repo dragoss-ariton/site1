@@ -1,3 +1,4 @@
+// src/components/Navbar.js
 import React, { useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
@@ -14,16 +15,16 @@ const Navbar = () => {
 
     const schoolLinks = {
         A: [
-            { href: "#sobre", label: "Sobre Nós" },
-            { href: "#cursos", label: "Cursos" },
-            { href: "#precos", label: "Preços" },
-            { href: "#contactos", label: "Contactos" },
+            { to: "/sobre-nos-olivais", label: "Sobre Nós" },  // Alterado para Link com `to`
+            { to: "/#cursos", label: "Cursos" },  // Link para âncoras internas
+            { to: "/#precos", label: "Preços" },
+            { to: "/#contactos", label: "Contactos" },
         ],
         B: [
-            { href: "#sobre", label: "Sobre Nós" },
-            { href: "#cursos", label: "Cursos" },
-            { href: "#precos", label: "Preços" },
-            { href: "#contactos", label: "Contactos" },
+            { to: "/sobre-nos-parque-das-nacoes", label: "Sobre Nós" }, // Alterado para Link com `to`
+            { to: "/#cursos", label: "Cursos" },  // Link para âncoras internas
+            { to: "/#precos", label: "Preços" },
+            { to: "/#contactos", label: "Contactos" },
         ]
     };
 
@@ -71,13 +72,24 @@ const Navbar = () => {
                     <Nav className="ms-auto">
                         {(selectedSchool && schoolLinks[selectedSchool]) &&
                             schoolLinks[selectedSchool].map((link, index) => (
-                                <Nav.Link
-                                    key={index}
-                                    href={link.href}
-                                    className={`nav-link ${selectedSchool === 'A' || selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                >
-                                    {link.label}
-                                </Nav.Link>
+                                <li key={index} className="nav-item">
+                                    {/* Verifica se o link tem 'to' (Link do React Router) */}
+                                    {link.to.startsWith("/") ? (
+                                        <Link
+                                            to={link.to}  // Usando Link para navegação entre páginas
+                                            className={`nav-link ${selectedSchool === 'A' || selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={link.to}  // Para links internos (âncoras)
+                                            className={`nav-link ${selectedSchool === 'A' || selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                        >
+                                            {link.label}
+                                        </a>
+                                    )}
+                                </li>
                             ))
                         }
                     </Nav>
