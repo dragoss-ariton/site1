@@ -1,21 +1,182 @@
-/* src/SobreNos.css */
+/* Main Container */
 .sobre-nos-container {
-    text-align: center;
-    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    padding: 2rem;
+    padding-top: 6%;
 }
 
+/* Information Container */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Header Styling */
 .sobre-nos-container h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
+/* Paragraph Styling */
 .sobre-nos-container p {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
 }
 
+/* Contact and Map Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+/* Contact Details Styling */
+.contact-details {
+    flex: 1;
+    background-color: gray;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Map Container Styling */
 .map-container {
+    flex: 1;
+    width: 100%;
+    max-width: 850px; /* Limits the map width on larger screens */
+    height: 650px;
+    overflow: hidden;
+    animation: fadeInMap 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-container iframe {
+    width: 100%; /* Make the iframe responsive to the container */
+    height: 100%; /* Make the iframe fill the height of the container */
+    height: 650px;
+    border: none; /* Remove default iframe border */
+    border-radius: 15px;
+}
+
+/* Map Fade-In Animation */
+@keyframes fadeInMap {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Social Media Links positioned below the map */
+.map-container .social-media {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.social-media .facebook {
+    background-color: #4267B2;
+}
+
+.social-media .instagram {
+    background-color: #E1306C;
+}
+
+.social-media a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1000px) {
+    .sobre-nos-container {
+        padding-top: 15%;
+        height: auto;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 300px;
+    }
+
+    .info-container {
+        max-width: 100%;
+    }
+}
+
+/* Extra small screens (Mobile view) */
+@media (max-width: 660px) {
+    .sobre-nos-container {
+        padding-top: 20%;
+    }
+
+    .sobre-nos-container h1 {
+        font-size: 2rem;
+    }
+
+    .sobre-nos-container p {
+        font-size: 1rem;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 550px) {
+    .sobre-nos-container {
+        padding-top: 30%;
+    }
+
+    .sobre-nos-container h1 {
+        font-size: 2rem;
+    }
+
+    .sobre-nos-container p {
+        font-size: 1rem;
+    }
+
+    .map-container {
+        height: 250px;
+    }
 }

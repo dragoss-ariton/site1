@@ -1,0 +1,101 @@
+/* Hero Section for EscolaDeConducaoB */
+#heroB {
+    background:
+        linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), /* Gradient from semi-transparent black to transparent */ 
+        url('carro_olivais.jpg') no-repeat center center/cover;
+    background-size: cover;
+    color: white;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    position: relative; /* Needed for the overlay */
+    animation: fadeInBackgroundImageB 2s ease-out forwards; /* Fade-in effect for the background image */
+}
+
+/* Gradient overlay on the background */
+#heroB::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    opacity: 0;
+    animation: fadeInOverlayB 2s ease-out forwards; /* Fade-in effect for the overlay */
+    z-index: 1;
+}
+
+
+
+/* Fade-in effect for the overlay */
+@keyframes fadeInOverlayB {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Content Styling */
+.hero-section-content {
+    max-width: 800px; /* Limit the width of the content */
+    padding: 20px;
+    z-index: 2; /* Ensure content appears above the overlay */
+}
+
+/* Title Styling */
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px; /* Space below the heading */
+    animation: slideInB 1s ease-out; /* Slide-in animation for the title */
+}
+
+/* Paragraph Styling */
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px; /* Space below the paragraph */
+    animation: slideInB 1.2s ease-out; /* Slide-in animation for the paragraph */
+}
+
+/* Button Styling */
+.hero-section .btn-primary {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: slideInB 1.4s ease-out; /* Slide-in animation for the button */
+}
+
+/* Slide-in animation for the text and button */
+@keyframes slideInB {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+
+.custom-button {
+    background-color: #00acac !important;
+    border-color: #00acac !important;
+}

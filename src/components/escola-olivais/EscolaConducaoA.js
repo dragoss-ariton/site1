@@ -1,7 +1,6 @@
 // src/components/EscolaDeConducao.js
 import React from 'react';
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import '../EscolaDeConducao.css'; // Adicione esta linha para estilos adicionais
 
 const EscolaDeConducaoA = () => {
     return (

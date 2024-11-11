@@ -1,48 +1,44 @@
-// src/components/Navbar.js
 import React, { useState } from 'react';
-import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
-import { Container, Nav } from 'react-bootstrap';
+import './Navbar.css';
+import logo from './logo.jpg'; // Importa corretamente a imagem
 
 const Navbar = () => {
-    const [selectedSchool, setSelectedSchool] = useState('A');
+    const [selectedSchool, setSelectedSchool] = useState('A'); // Rastreia a escola selecionada
+    const [expanded, setExpanded] = useState(false); // Estado para controlar a expansão da Navbar
+    const location = useLocation(); // Hook para obter a URL atual
 
+    // Função para clicar no link e rolar até o topo, e colapsar a navbar
     const handleSchoolSelect = (school) => {
         setSelectedSchool(school);
-        window.scrollTo(0, 0); // Scroll para o início da página
+        setExpanded(false); // Colapsa a Navbar
+        window.scrollTo(0, 0); // Rola para o topo da página
     };
 
+    // Define os links para ambas as escolas (A e B)
     const schoolLinks = {
         A: [
-            { to: "/sobre-nos-olivais", label: "Sobre Nós" },  // Alterado para Link com `to`
-            { to: "/#cursos", label: "Cursos" },  // Link para âncoras internas
-            { to: "/#precos", label: "Preços" },
-            { to: "/#contactos", label: "Contactos" },
+            { to: "/sobre-nos-olivais", label: "Sobre Nós" },
+            { to: "/ensino-olivais", label: "Ensino" },
+            { to: "/equipa-olivais", label: "Equipa" },
+            { to: "/faq-olivais", label: "FAQ" },
         ],
         B: [
-            { to: "/sobre-nos-parque-das-nacoes", label: "Sobre Nós" }, // Alterado para Link com `to`
-            { to: "/#cursos", label: "Cursos" },  // Link para âncoras internas
-            { to: "/#precos", label: "Preços" },
-            { to: "/#contactos", label: "Contactos" },
+            { to: "/sobre-nos-parque-das-nacoes", label: "Sobre Nós" },
+            { to: "/ensino-parque-das-nacoes", label: "Ensino" },
+            { to: "/equipa-parque-das-nacoes", label: "Equipa" },
+            { to: "/faq-parque-das-nacoes", label: "FAQ" },
         ]
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <BootstrapNavbar expand="lg" fixed="top" className="navbar-custom" expanded={expanded}>
             <Container>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
+                <img src={logo} alt="Logo" className="navbar-logo" />
+                <BootstrapNavbar.Toggle aria-controls="navbarNav" onClick={() => setExpanded(!expanded)} />
+                <BootstrapNavbar.Collapse id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link
@@ -69,33 +65,24 @@ const Navbar = () => {
                             </Link>
                         </li>
                     </ul>
+
                     <Nav className="ms-auto">
-                        {(selectedSchool && schoolLinks[selectedSchool]) &&
-                            schoolLinks[selectedSchool].map((link, index) => (
-                                <li key={index} className="nav-item">
-                                    {/* Verifica se o link tem 'to' (Link do React Router) */}
-                                    {link.to.startsWith("/") ? (
-                                        <Link
-                                            to={link.to}  // Usando Link para navegação entre páginas
-                                            className={`nav-link ${selectedSchool === 'A' || selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    ) : (
-                                        <a
-                                            href={link.to}  // Para links internos (âncoras)
-                                            className={`nav-link ${selectedSchool === 'A' || selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                        >
-                                            {link.label}
-                                        </a>
-                                    )}
-                                </li>
-                            ))
-                        }
+                        {/* Renderiza dinamicamente os links com base na escola selecionada */}
+                        {schoolLinks[selectedSchool].map((link, index) => (
+                            <li key={index} className="nav-item">
+                                <Link
+                                    to={link.to}
+                                    className={`nav-link ${location.pathname === link.to ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                    onClick={() => setExpanded(false)} // Colapsa a Navbar ao clicar no link
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </Nav>
-                </div>
+                </BootstrapNavbar.Collapse>
             </Container>
-        </nav>
+        </BootstrapNavbar>
     );
 };
 
