@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
+import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import './Navbar.css';
 import logo from './logo.jpg'; // Importa corretamente a imagem
@@ -32,6 +32,8 @@ const Navbar = () => {
             { to: "/faq-parque-das-nacoes", label: "FAQ" },
         ]
     };
+
+    const preRegistrationLink = selectedSchool === 'A' ? "/pre-inscricao-olivais" : "/pre-inscricao-parque-das-nacoes";
 
     return (
         <BootstrapNavbar expand="lg" fixed="top" className="navbar-custom" expanded={expanded}>
@@ -79,7 +81,16 @@ const Navbar = () => {
                                 </Link>
                             </li>
                         ))}
-                    </Nav>
+                        <Button
+                            variant="outline-light"
+                            className="ms-3 custom-btn-form"
+                            onClick={() => setExpanded(false)} // Colapsa a Navbar ao clicar no botão
+                            as={Link}
+                            to={preRegistrationLink} // Redireciona com base na escola selecionada
+                        >
+                                Pré-inscrição
+                        </Button>
+                        </Nav>
                 </BootstrapNavbar.Collapse>
             </Container>
         </BootstrapNavbar>

@@ -79,3 +79,14 @@
         border-radius: 100%;
     }
 }
+
+.custom-btn-form{
+    border-color: #00acac !important;
+    color: black !important;
+    background-color: #00acac !important;
+}
+
+.custom-btn-form:hover {
+    background-color: black !important;
+    color: #00acac !important;
+}

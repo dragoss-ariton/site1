@@ -14,6 +14,8 @@ import EnsinoA from './components/escola-olivais/Ensino-A';
 import EnsinoB from './components/escola-PDN/Ensino-B';
 import FAQA from './components/escola-olivais/FAQ-A';
 import FAQB from './components/escola-PDN/FAQ-B';
+import PreInscricaoA from './components/escola-olivais/PreInscricaoA';
+import PreInscricaoB from './components/escola-PDN/PreInscricaoB';
 
 import './App.css';
 
@@ -35,6 +37,8 @@ const App = () => {
                     <Route path="/ensino-parque-das-nacoes" element={<EnsinoB />} />
                     <Route path="/FAQ-olivais" element={<FAQA />} />
                     <Route path="/FAQ-parque-das-nacoes" element={<FAQB />} />
+                    <Route path="/pre-inscricao-olivais" element={<PreInscricaoA />} />
+                    <Route path="/pre-inscricao-parque-das-nacoes" element={<PreInscricaoB/>} />
                 </Routes>
         </Router>
     );
