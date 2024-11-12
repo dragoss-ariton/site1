@@ -5,6 +5,7 @@ import '../SobreNos.css';
 const SobreNosB = () => {
     return (
         <div className="sobre-nos-container">
+            
             <div className="info-container">
                 <h1>Sobre Nós</h1>
                 <p>
@@ -36,13 +37,9 @@ const SobreNosB = () => {
                         title="Escola de Condução Parque das Nações"
                     ></iframe>
 
-                    <div className="social-media">
-                        <a href="/" className="facebook">Facebook</a>
-                        <a href="/" className="instagram">Instagram</a>
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 
