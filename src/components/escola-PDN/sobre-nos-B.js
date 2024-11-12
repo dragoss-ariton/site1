@@ -9,19 +9,17 @@ const SobreNosB = () => {
             <div className="info-container">
                 <h1>Sobre Nós</h1>
                 <p>
-                    Bem-vindo à Escola de Condução Parque das Nações! Estamos dedicados a formar condutores seguros e confiantes, proporcionando
-                    uma experiência de ensino de alta qualidade. Localizados no coração do Parque das Nações, temos orgulho de fazer parte
-                    da sua jornada para obter a carta de condução.
+                     A Escola de Condução Parque das Nações pertence a uma nova geração de escolas de condução,e por isso aposta nas mais modernas tecnologias de ensino de condução.É formada por uma equipa jovem e dinâmica de formadores, com elevada experiência e responsabilidade no ensino de condução, tendo em atenção as várias necessidade dos candidatos a condutores de automóveis ligeiros, motociclo das categorias A1,A2,e A e a condutores que precisam de melhorar a sua condução.
                 </p>
             </div>
 
             <div className="contact-container">
                 {/* Contact Information Section */}
                 <div className="contact-details">
-                    <p><strong>Morada:</strong><br /> Rua Nuno Tristão, n. 1B, 2830-095 Barreiro</p>
-                    <p><strong>Telefone:</strong><br /> +351 963 759 698  <span>«chamada para rede móvel nacional»</span><br /> +351 212 043 025  <span>«chamada rede fixa nacional»</span></p>
-                    <p><strong>E-mail:</strong><br /> econductao.seixalinho@gmail.com</p>
-                    <p><strong>Horário Secretaria:</strong><br /> Segunda-feira | 10:00 – 13:00 / 15:00 – 20:00<br /> Terça-feira | 10:00 – 13:00 / 15:00 – 20:00<br /> Quarta-feira | 10:00 – 13:00 / 15:00 – 20:00<br /> Quinta-feira | 10:00 – 13:00 / 15:00 – 20:00<br /> Sexta-feira | 10:00 – 13:00 / 15:00 – 20:00<br /> Sábado | 10:00 – 13:00<br /> Domingo | Fechado</p>
+                    <p><strong>Morada:</strong><br /> Passeio das Fragatas N°3A loja 4, 1990-615 Lisboa</p>
+                    <p><strong>Telefone:</strong><br /> +351 915 195 646 <span>«chamada para rede móvel nacional»</span><br /> +351 218 949 011  <span>«chamada rede fixa nacional»</span></p>
+                    <p><strong>E-mail:</strong><br /> ec.parquedasnacoes@gmail.com</p>
+                    <p><strong>Horário Secretaria:</strong><br />Segunda a Sexta | 10:00 – 13:00 / 15:00 – 20:00<br /> Domingo | Fechado</p>
                 </div>
                 
                 {/* Map Section with Social Media Links */}

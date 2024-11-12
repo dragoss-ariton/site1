@@ -2,31 +2,41 @@
 import React from 'react';
 import './Servicos.css';
 
+const servicosData = [
+    {
+        icon: '🚗',
+        title: 'Categorias lecionadas',
+        description: 'Carta de Ligeiros, Motociclos Cat A, A2 e A1'
+    },
+    {
+        icon: '📅',
+        title: 'Renovações de carta',
+        description: 'Precisa renovar a sua carta? Entre em contacto conosco para saber quais os prazos e o que necessita para a renovação.'
+    },
+    {
+        icon: '🚦',
+        title: 'Treino a encartados',
+        description: 'Volte a conduzir com confiança com as nossas aulas de treino.'
+    },
+    {
+        icon: '📄',
+        title: 'Segundas vias e alterações',
+        description: 'Tratamos da Renovação da Carta, 2ª via da Carta e Alteração de Dados (Morada, Nome);'
+    }
+];
+
 const Servicos = () => {
     return (
         <div className="servicos-container">
             <h1 className="servicos-title">Serviços</h1>
             <div className="cards-container">
-                <div className="card">
-                    <span className="icon">🚗</span>
-                    <h2>Categorias lecionadas</h2>
-                    <p>A, A1, A2, B, C, D, E</p>
-                </div>
-                <div className="card">
-                    <span className="icon">📅</span>
-                    <h2>Renovações de carta</h2>
-                    <p>Precisa renovar a sua carta? Entre em contacto conosco para saber quais os prazos e o que necessita para a renovação.</p>
-                </div>
-                <div className="card">
-                    <span className="icon">🚦</span>
-                    <h2>Aulas de treino</h2>
-                    <p>Volte a conduzir com confiança com as nossas aulas de treino.</p>
-                </div>
-                <div className="card">
-                    <span className="icon">📄</span>
-                    <h2>Segundas vias e alterações</h2>
-                    <p>Se perdeu, danificou ou roubou a sua carta de condução, temos a solução.</p>
-                </div>
+                {servicosData.map((servico, index) => (
+                    <div className="card" key={index}>
+                        <span className="icon">{servico.icon}</span>
+                        <h2>{servico.title}</h2>
+                        <p>{servico.description}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );

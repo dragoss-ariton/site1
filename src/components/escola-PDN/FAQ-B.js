@@ -1,44 +1,56 @@
-// src/FAQ.js
-import React, { useState } from 'react';
-import './FAQ.css';
+import React, { useState } from "react";
+import "./FAQ.css"; // Import the CSS file for styling
+import { FaChevronDown } from "react-icons/fa";
 
 const FAQ = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null); // State to track active accordion panel
 
-    // Array of FAQ items
-    const faqData = [
-        { question: "What is the driving school about?", answer: "Our driving school provides top-quality training for new drivers." },
-        { question: "What types of licenses can I get?", answer: "We offer training for categories A, B, C, D, and E licenses." },
-        { question: "How do I sign up for classes?", answer: "You can sign up online or visit our location to register." },
-        { question: "What are the school hours?", answer: "Our school is open Monday to Saturday, from 10 AM to 6 PM." },
-        { question: "Do you offer refresher courses?", answer: "Yes, we offer refresher courses for those who want to regain confidence on the road." }
-    ];
+  const faqData = [
+    {
+      question: "1",
+      answer: "dragos is gay",
+    },
+    {
+      question: "2",
+      answer: "dragos is gay",
+    },
+    {
+      question: "3",
+      answer: "dragos is gay",
+    },
+    {
+      question: "4",
+      answer: "dragos is gay",
+    },
+    {
+      question: "5",
+      answer: "yes he is gay stop asking if dragos is gay",
+    },
+  ];
 
-    // Function to handle next question
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % faqData.length);
-    };
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index); // Toggle the active state
+  };
 
-    // Function to handle previous question
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + faqData.length) % faqData.length);
-    };
+  return (
+    <div className="wrapper">
+      <h1>Frequently Asked Questions</h1>
 
-    return (
-        <div className="faq-container">
-            <h1 className="faq-title">Frequently Asked Questions</h1>
-            <div className="carousel">
-                <button onClick={handlePrev} className="carousel-button prev-button">Previous</button>
-                
-                <div className="faq-item">
-                    <h2>{faqData[currentIndex].question}</h2>
-                    <p>{faqData[currentIndex].answer}</p>
-                </div>
-
-                <button onClick={handleNext} className="carousel-button next-button">Next</button>
-            </div>
+      {faqData.map((faq, index) => (
+        <div key={index} className={`faq ${activeIndex === index ? "active" : ""}`}>
+          <button className="accordion" onClick={() => handleToggle(index)}>
+            {faq.question}
+            <FaChevronDown
+              className={`accordion-icon ${activeIndex === index ? "active" : ""}`}
+            />
+          </button>
+          <div className={`pannel ${activeIndex === index ? "active" : ""}`}>
+            <p>{faq.answer}</p>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default FAQ;
