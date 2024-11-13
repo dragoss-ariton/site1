@@ -118,3 +118,89 @@
     color: #007070;
     transition: color 0.3s ease;
 }
+
+/* Contact Form Section */
+.contact-form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for card effect */
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+    animation: fadeInBackgroundImageB 1.5s ease-out; /* Fade-in effect similar to hero section */
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: slideInB 1s ease-out;
+}
+
+.contact-form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #00acac; /* Matches the button custom color */
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+    border-color: #00acac;
+    box-shadow: 0 0 5px rgba(0, 172, 172, 0.5);
+}
+
+.contact-form-group .btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    background-color: #00acac;
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-form-group .btn-primary:hover {
+    background-color: #008080;
+}
+
+.status-message {
+    text-align: center;
+    color: #008080;
+    font-weight: 600;
+    margin-top: 1rem;
+    animation: fadeInOverlayB 1s ease-out;
+}
+
+.servicos-subtitle {
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #30f1f1;
+}

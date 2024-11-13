@@ -1,8 +1,7 @@
-// src/components/EscolaDeConducaoB.js
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap'; // Import necessary components from react-bootstrap
 import axios from 'axios'; // Make sure axios is installed
-import '../css/EscolaDeConducaoB.css'; // Import your styles for this component
+import '../css/Servicos.css'; // Import your styles for this component
 
 const Contactos_PND = () => {
     const [formData, setFormData] = useState({
@@ -12,37 +11,53 @@ const Contactos_PND = () => {
         message: '',
     });
     const [statusMessage, setStatusMessage] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false); // State to control button disable status
 
     // Handle input changes
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // Handle form submission
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const validatePhone = (phone) => {
+        const phoneRegex = /^\d{9}$/;
+        return phoneRegex.test(phone);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const formDataWithSchool = {
-                ...formData,
-                schoolName: 'Parque das Nações', // School name for Escola B
-            };
+        if (!validateEmail(formData.email)) {
+            setStatusMessage('Por favor, insira um email válido.');
+            return;
+        }
+        if (!validatePhone(formData.phone)) {
+            setStatusMessage('Por favor, insira um número de telefone válido com 9 dígitos.');
+            return;
+        }
 
-            // Send form data to backend API (make sure your API is running)
-            const response = await axios.post('http://localhost:5000/api/send-email', formDataWithSchool);
-            setStatusMessage(response.data.message); // Update the status message after form submission
-            setFormData({ name: '', email: '', phone: '', message: '' }); // Reset form after submission
+        setIsSubmitting(true);
+        setStatusMessage(''); // Clear status message on new submission
+
+        try {
+            const response = await axios.post('http://localhost:5000/api/send-email', formData);
+            setStatusMessage(response.data.message);
+            setFormData({ name: '', email: '', phone: '', message: '' });
         } catch (error) {
             setStatusMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
             console.error('Erro ao enviar:', error);
+        } finally {
+            setIsSubmitting(false); // Re-enable the button after the request is complete
         }
     };
 
     return (
         <div className="contact-form-container">
-            {/* Form Header */}
             <h3 className="text-center mt-5">Envie-nos uma Mensagem</h3>
             
-            {/* Contact Form */}
             <Form onSubmit={handleSubmit} className="p-3">
                 <Form.Group controlId="formName">
                     <Form.Label>Nome</Form.Label>
@@ -64,8 +79,12 @@ const Contactos_PND = () => {
                         placeholder="Seu email"
                         value={formData.email}
                         onChange={handleChange}
+                        isInvalid={formData.email && !validateEmail(formData.email)}
                         required
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Insira um email válido.
+                    </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group controlId="formPhone">
@@ -76,8 +95,12 @@ const Contactos_PND = () => {
                         placeholder="Seu telefone"
                         value={formData.phone}
                         onChange={handleChange}
+                        isInvalid={formData.phone && !validatePhone(formData.phone)}
                         required
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Insira um número de telefone válido com 9 dígitos.
+                    </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group controlId="formMessage">
@@ -93,9 +116,10 @@ const Contactos_PND = () => {
                     />
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="mt-3">Enviar</Button>
+                <Button variant="primary" type="submit" className="mt-3" disabled={isSubmitting}>
+                    {isSubmitting ? 'Enviando...' : 'Enviar'}
+                </Button>
 
-                {/* Display status message */}
                 {statusMessage && <p className="mt-3 text-center">{statusMessage}</p>}
             </Form>
         </div>

@@ -20,20 +20,19 @@ const Navbar = () => {
     // Define os links para ambas as escolas (A e B)
     const schoolLinks = {
         A: [
-            { to: "/sobre-nos-olivais", label: "Sobre Nós" },
             { to: "/ensino-olivais", label: "Ensino" },
             { to: "/equipa-olivais", label: "Equipa" },
             { to: "/faq-olivais", label: "FAQ" },
         ],
         B: [
-            { to: "/sobre-nos-parque-das-nacoes", label: "Sobre Nós" },
-            { to: "/ensino-parque-das-nacoes", label: "Ensino" },
-            { to: "/equipa-parque-das-nacoes", label: "Equipa" },
-            { to: "/faq-parque-das-nacoes", label: "FAQ" },
+            { to: "/Ensino-PDN", label: "Ensino" },
+            { to: "/Equipa-PDN", label: "Equipa" },
+            { to: "/FAQ-PDN", label: "FAQ" },
+            { to: "/Sobre-Nos-PDN", label: "Sobre nós" },
         ]
     };
 
-    const preRegistrationLink = selectedSchool === 'A' ? "/pre-inscricao-olivais" : "/pre-inscricao-parque-das-nacoes";
+    const preRegistrationLink = selectedSchool === 'A' ? "/pre-inscricao-olivais" : "/Contactos-PDN";
 
     return (
         <BootstrapNavbar expand="lg" fixed="top" className="navbar-custom" expanded={expanded}>
@@ -60,7 +59,7 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link
                                 className={`nav-link ${selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
-                                to="/escola-conducao-parque-das-nacoes"
+                                to="/Inicio-PDN"
                                 onClick={() => handleSchoolSelect('B')}
                             >
                                 Parque das Nações
@@ -88,7 +87,7 @@ const Navbar = () => {
                             as={Link}
                             to={preRegistrationLink} // Redireciona com base na escola selecionada
                         >
-                                Pré-inscrição
+                                Entre em contacto
                         </Button>
                         </Nav>
                 </BootstrapNavbar.Collapse>
