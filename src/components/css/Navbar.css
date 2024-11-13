@@ -1,30 +1,42 @@
 /* Navbar styles */
 .navbar {
     background-color: #000000;
-    padding: 10px 20px; /* Adjusted padding for better spacing */
-    position: sticky;  /* Make the navbar sticky */
-    top: 0;  /* Stick to the top of the page */
-    z-index: 1000;  /* Ensure the navbar stays on top of other content */
-    width: 100%;  /* Ensure it spans the entire width */
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
     display: flex;
-    justify-content: space-between; /* Space out the logo and nav links */
+    justify-content: space-between;
     align-items: center;
+    opacity: 0; /* Inicia invisível */
+    animation: fadeIn 0.6s ease-in-out forwards; /* Animação suave de fade-in */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Move ligeiramente para cima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Volta à posição original */
+    }
 }
 
 /* Navbar links */
 .navbar-nav .nav-link {
-    color: #00acac; /* Cor cinza para as escolas não selecionadas */
+    color: #00acac;
     font-size: 1.1rem;
-    margin: 0 10px; /* Add margin for spacing between links */
+    margin: 0 10px;
     transition: color 0.3s ease;
 }
 
-/* Muda para branco ao passar o mouse */
 .navbar-nav .nav-link:hover {
     color: white;
 }
 
-/* Muda para branco quando a escola está selecionada */
 .navbar-nav .nav-link.selected {
     color: white;
 }
@@ -32,34 +44,91 @@
 /* Animação de rotação da seta */
 .rotate {
     transition: transform 0.3s ease-in-out;
-    transform: rotate(180deg); /* Rotaciona 180º quando a Escola B está selecionada */
+    transform: rotate(180deg);
 }
 
-/* Reverte a rotação quando a Escola A está selecionada */
 .rotate-back {
     transition: transform 0.3s ease-in-out;
     transform: rotate(0deg);
 }
 
-/* Adjust rotation for smaller screens */
 @media (max-width: 991px) {
     .rotate {
-        transition: transform 0.3s ease-in-out;
-        transform: rotate(270deg); /* Adjust rotation for mobile */
+        transform: rotate(270deg);
     }
-}
-
-@media (max-width: 991px) {
     .rotate-back {
-        transition: transform 0.3s ease-in-out;
-        transform: rotate(90deg); /* Adjust rotation for mobile */
+        transform: rotate(90deg);
     }
 }
 
 /* Navbar logo */
 .navbar-logo {
-    width: 5%;  /* Para telas grandes, 5% do tamanho da largura da tela */
-    height: auto;  /* Mantém a proporção da imagem */
+    width: 6%; /* Tamanho padrão do logo */
+    height: auto;
     margin-right: 1%;
     border-radius: 100%;
+    opacity: 1; /* Logo visível desde o início */
+    transform: translateX(0); /* Logo começa na posição original */
+    transition: none; /* Desativa qualquer animação */
+    animation: slideLogo 1s ease forwards; /* Animação para a logo */
+}
+
+@keyframes slideLogo {
+    from {
+        transform: translateX(50vw); /* Começa ao centro */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0); /* Termina na posição normal à esquerda */
+        opacity: 1;
+    }
+}
+@media (max-width: 992px) {
+    .rotate {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(270deg); /* Rotaciona 180º quando a Escola B está selecionada */
+    }
+}
+@media (max-width: 992px) {
+    .rotate-back {
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(90deg); /* Rotaciona 180º quando a Escola B está selecionada */
+    }
+}
+
+/* Desativar animação da logo na página inicial */
+.navbar-logo.no-animation {
+    animation: none; /* Desativa a animação de slide */
+    transform: translateX(0); /* Garante que a logo fique na posição inicial */
+}
+
+/* Links da navbar */
+.navbar-nav .nav-link {
+    color: #00acac;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateX(-20px); /* Começa deslocado para a esquerda */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideLinks 0.8s ease forwards;
+    animation-delay: 0.3s; /* Atraso para que apareçam após o logo */
+}
+
+@keyframes slideLinks {
+    from {
+        transform: translateX(-30px); /* Links vêm da esquerda */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.navbar-nav .nav-link:hover {
+    color: white;
+}
+
+.navbar-nav .nav-link.selected {
+    color: white;
 }

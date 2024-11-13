@@ -17,7 +17,7 @@ const EscolaDeConducaoA = () => {
                         <h1>Escola 1</h1>
                         <p>Learn with us at Escola 1, offering quality driving lessons for all levels.</p>
                         {/* Link to Escola 1 page */}
-                        <Link to="/sobre-nos-olivais">
+                        <Link to="/Inicio-PDN">
                             <button>Visit Escola 1</button>
                         </Link>
                     </div>
@@ -29,7 +29,7 @@ const EscolaDeConducaoA = () => {
                         <h1>Escola 2</h1>
                         <p>Join Escola 2 to gain confidence and skill on the road with experienced instructors.</p>
                         {/* Link to Escola 2 page */}
-                        <Link to="/sobre-nos-parque-das-nacoes">
+                        <Link to="/Inicio-PDN">
                             <button>Visit Escola 2</button>
                         </Link>
                     </div>
