@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import './EscolaDeConducaoB.css'; // Certifique-se de que o ficheiro CSS está importado
+import '../css/EscolaDeConducaoB.css'; // Certifique-se de que o ficheiro CSS está importado
 
-const EscolaDeConducaoB = () => {
+const Inicio_PND = () => {
     return (
         <>
             <div className="main-content">
@@ -36,4 +36,4 @@ const EscolaDeConducaoB = () => {
     );
 };
 
-export default EscolaDeConducaoB;
+export default Inicio_PND;

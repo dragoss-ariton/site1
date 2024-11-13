@@ -1,6 +1,6 @@
-// src/Servicos.js
+// src/Encino_PND.jsx
 import React from 'react';
-import './Servicos.css';
+import '../css/Servicos.css';
 
 const servicosData = [
     {
@@ -25,7 +25,7 @@ const servicosData = [
     }
 ];
 
-const Servicos = () => {
+const Ensino_PND = () => {
     return (
         <div className="servicos-container">
             <h1 className="servicos-title">Serviços</h1>
@@ -42,4 +42,4 @@ const Servicos = () => {
     );
 };
 
-export default Servicos;
+export default Ensino_PND;
