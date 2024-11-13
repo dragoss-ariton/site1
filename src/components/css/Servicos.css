@@ -1,4 +1,12 @@
 /* src/Servicos.css */
+.contact-section{
+    margin-top: 4rem;
+}
+@media (max-width: 992px){
+    .contact-section{
+        margin-top: 3.5rem;
+    }
+}
 .servicos-container {
     min-height: 100vh;
     padding: 6%;
