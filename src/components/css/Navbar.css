@@ -64,43 +64,4 @@
     border-radius: 100%;
 }
 
-/* Mobile View - Navbar Logo Adjustments */
-@media (max-width: 1000px) {
-    .navbar-logo {
-        width: 10%;
-        border-radius: 100%;
-    }
-}
 
-@media (max-width: 768px) {
-    .navbar-logo {
-        width: 20%;
-        border-radius: 100%;
-    }
-}
-
-@media (max-width: 550px) {
-    .navbar-logo {
-        width: 25%;
-        border-radius: 100%;
-    }
-}
-
-@media (max-width: 300px) {
-    .navbar-logo {
-        width: 30%;
-        border-radius: 100%;
-    }
-}
-
-/* Content padding to avoid overlap with sticky navbar */
-body {
-    padding-top: 60px;  /* Adjust padding to ensure content does not get covered by the navbar */
-}
-
-/* Adjust for larger screens if needed */
-@media (min-width: 1025px) {
-    body {
-        padding-top: 80px;  /* Ensure content has enough space if the navbar height is larger */
-    }
-}

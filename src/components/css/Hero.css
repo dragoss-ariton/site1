@@ -16,7 +16,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
@@ -33,7 +33,7 @@
 
 /* Darker overlay effect on hover */
 .school-half:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+    background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
 }
 
 /* Content styling for each half */
@@ -71,11 +71,11 @@
     color: #ffffff;
 }
 
-/* Styling for left and right sections */
+/* Styling for left and right sections with linear gradients */
 .left {
-    background-color: rgba(0, 0, 0, 0.3); /* Slight darkening for Escola 1 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); /* Gradient for Escola 1 */
 }
 
 .right {
-    background-color: rgba(0, 0, 0, 0.3); /* Slight darkening for Escola 2 */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); /* Gradient for Escola 2 */
 }
