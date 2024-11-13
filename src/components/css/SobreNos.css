@@ -1,11 +1,11 @@
 /* Main Container */
 .sobre-nos-container {
-    min-height: 100vh;
+    height: 99vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: #f9f9f9;
     padding-top: 6%;
 }
 
@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
-    padding: 2rem;
     max-width: 100%;
     width: 100%;
 }
@@ -54,7 +53,7 @@
     flex: 1;
     background-color: white;
     padding: 2rem;
-    height: 650px;
+    height: 460px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
 }
@@ -76,7 +75,7 @@
 .map-container iframe {
     width: 100%; /* Make the iframe responsive to the container */
     height: 100%; /* Make the iframe fill the height of the container */
-    height: 650px;
+    height: 460px;
     border: none; /* Remove default iframe border */
     border-radius: 50px;
 }

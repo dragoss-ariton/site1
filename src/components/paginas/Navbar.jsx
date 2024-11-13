@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
-import './Navbar.css';
-import logo from './logo.jpg'; // Importa corretamente a imagem
+import '../css/Navbar.css';
+import logo from '../assets/logo.jpg'; // Importa corretamente a imagem
 
 const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A'); // Rastreia a escola selecionada

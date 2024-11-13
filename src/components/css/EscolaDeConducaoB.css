@@ -2,7 +2,7 @@
 #heroB {
     background:
         linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), /* Gradient from semi-transparent black to transparent */ 
-        url('carro_olivais.jpg') no-repeat center center/cover;
+        url('../assets/carro_olivais.jpg') no-repeat center center/cover;
     background-size: cover;
     color: white;
     height: 100vh; /* Full viewport height */

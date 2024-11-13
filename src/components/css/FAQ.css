@@ -1,0 +1,114 @@
+/* FAQ.css */
+.wrapper {
+    min-height: 100vh;
+    padding: 6%;
+    text-align: center;
+    background-color: #f9f9f9; /* Matching background color */
+}
+
+.wrapper p {
+    font-size: 1.2rem;
+    color: #00acac;
+    margin-bottom: 1.5rem;
+}
+
+.wrapper h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00acac; /* Using the same accent color */
+    margin-bottom: 2rem;
+}
+
+/* Accordion Styles */
+.faq {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+.accordion {
+    background-color: #fff;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    text-align: left;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    color: #00acac;
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon.active {
+    transform: rotate(180deg); /* Rotate the icon when active */
+}
+
+.pannel {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    display: none;
+    color: #555;
+    line-height: 1.6;
+}
+
+.pannel.active {
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .wrapper h1 {
+        font-size: 2.5rem; /* Slightly smaller font on larger tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper h1 {
+        font-size: 2rem; /* Smaller font for tablets */
+    }
+
+    .accordion {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+
+    .pannel {
+        font-size: 0.9rem; /* Slightly smaller text on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper h1 {
+        font-size: 1.8rem; /* Smaller font for mobile */
+    }
+    
+    .accordion {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    .pannel {
+        padding: 1rem;
+    }
+}
