@@ -1,101 +1,204 @@
-/* Hero Section for EscolaDeConducaoB */
-#heroB {
-    background:
-        linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), /* Gradient from semi-transparent black to transparent */ 
-        url('../assets/carro_olivais.jpg') no-repeat center center/cover;
-    background-size: cover;
-    color: white;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    text-align: center;
-    position: relative; /* Needed for the overlay */
-    animation: fadeInBackgroundImageB 2s ease-out forwards; /* Fade-in effect for the background image */
+.main-page {
+  color: #fff;
+  background-color: #000;
+}
+  
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
+    url('../assets/Crazy-cart-1.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+  
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+  
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+  z-index: 0;
+}
+  
+.highlight {
+  color: #00acac;
+}
+  
+.social-media-buttons a box-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+  
+.hire-me-button {
+  background-color: transparent;
+  border: 2px solid #00acac; /* Change border color */
+  color: #00acac; /* Text color */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+  
+.hire-me-button:hover {
+  background-color: #00acac !important; /* Background color on hover */
+  color: black !important; /* Text color on hover */
 }
 
-/* Gradient overlay on the background */
-#heroB::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
-    opacity: 0;
-    animation: fadeInOverlayB 2s ease-out forwards; /* Fade-in effect for the overlay */
-    z-index: 1;
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  max-width: 100%;
+  padding: 2rem;
+  background-color: black;
 }
 
-
-
-/* Fade-in effect for the overlay */
-@keyframes fadeInOverlayB {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.5;
-    }
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #00acac;
 }
 
-/* Content Styling */
-.hero-section-content {
-    max-width: 800px; /* Limit the width of the content */
-    padding: 20px;
-    z-index: 2; /* Ensure content appears above the overlay */
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
-/* Title Styling */
-.hero-section h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px; /* Space below the heading */
-    animation: slideInB 1s ease-out; /* Slide-in animation for the title */
+.text-container {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  height: 600px;
 }
 
-/* Paragraph Styling */
-.hero-section p {
-    font-size: 1.3rem;
-    margin-bottom: 30px; /* Space below the paragraph */
-    animation: slideInB 1.2s ease-out; /* Slide-in animation for the paragraph */
+.text-container p {
+  line-height: 1.6;
+  color: #333333;
 }
 
-/* Button Styling */
-.hero-section .btn-primary {
-    font-size: 1.1rem;
-    padding: 12px 30px;
-    border-radius: 25px;
-    text-transform: uppercase;
-    font-weight: bold;
-    animation: slideInB 1.4s ease-out; /* Slide-in animation for the button */
+.imgAbout-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-/* Slide-in animation for the text and button */
-@keyframes slideInB {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Services Section Styles */
+.services-section {
+  padding: 2rem;
+  background-color: #f2e9ff;
+  text-align: center;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-section p {
-        font-size: 1rem;
-    }
+.services-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
-.custom-button {
-    background-color: #00acac !important;
-    border-color: #00acac !important;
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
+
+/* Gallery Image Styles */
+.img-box {
+  width: 100px;
+  height: 200px;
+  margin: 12px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.img-box h3 {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.img-box:hover {
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+}
+
+.img-box:hover h3 {
+  opacity: 1;
+  bottom: 0;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
