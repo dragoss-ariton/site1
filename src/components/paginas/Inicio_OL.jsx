@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import 'boxicons/css/boxicons.min.css';
 import '../css/EscolaDeConducaoB.css';
+import { Link } from 'react-router-dom';
 
 const Inicio_OL = () => {
   const [modalImage, setModalImage] = useState("");
@@ -25,13 +26,15 @@ const Inicio_OL = () => {
             Welcome to our driving school! Learn with confidence and professionalism.
           </p>
           <div className="hero-buttons">
-            <Button
-              variant="outline-danger"
-              className="hire-me-button"
-              style={{ borderColor: '#00acac', color: '#00acac' }}
-            >
-              Vem falar connosco
-            </Button>
+          <Button
+            variant="outline-danger"
+            className="hire-me-button"
+            style={{ borderColor: '#00acac', color: '#00acac' }}
+            as={Link}
+            to={"/Contactos-OL"}
+          >
+            Vem falar connosco
+          </Button>
           </div>
         </div>
       </section>

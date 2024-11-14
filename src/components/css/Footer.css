@@ -1,0 +1,39 @@
+/* src/css/Footer.css */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: #555;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-button:hover {
+    background-color: #00acac; /* Muda a cor ao passar o cursor */
+}
+
+.instagram {
+    background-color: #E1306C;
+}
+
+.facebook {
+    background-color: #3B5998;
+}

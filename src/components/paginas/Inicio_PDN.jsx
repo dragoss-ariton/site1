@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import 'boxicons/css/boxicons.min.css';
 import '../css/EscolaDeConducaoB.css';
+import { Link } from 'react-router-dom';
 
 const Inicio_PND = () => {
   const [modalImage, setModalImage] = useState("");
@@ -29,6 +30,8 @@ const Inicio_PND = () => {
               variant="outline-danger"
               className="hire-me-button"
               style={{ borderColor: '#00acac', color: '#00acac' }}
+              as={Link}
+              to={"/Contactos-PDN"}
             >
               Vem falar connosco
             </Button>

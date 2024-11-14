@@ -145,7 +145,7 @@ const Contactos_PDN = () => {
                     <p><strong>Morada:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
                     <div className="google-map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.464384983726!2d-9.139336284685038!3d38.7168044796017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193478b1234567%3A0x123456789abcdef!2sExemplo+Localização!5e0!3m2!1spt-PT!2spt!4v1600000000000!5m2!1spt-PT!2spt"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.4867005428546!2d-9.098427488794826!3d38.77547557163249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19318c711cdb87%3A0xe7088e0294289300!2zRXNjb2xhIGRlIENvbmR1w6fDo28gUGFycXVlIGRhcyBOYcOnw7Vlcw!5e0!3m2!1spt-PT!2spt!4v1731600981053!5m2!1spt-PT!2spt"
                             width="100%"
                             height="400"
                             style={{ border: 0 }}

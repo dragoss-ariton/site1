@@ -12,6 +12,8 @@ import EnsinoPdn from "./components/paginas/Ensino_PDN";
 import FaqPdn from "./components/paginas/Faq_PDN";
 import ContactosPdn from "./components/paginas/Contactos_PDN";
 import ContactosOL from "./components/paginas/Contactos_OL";
+import EnsinoOL from "./components/paginas/Ensino_OL";
+import Footer from "./components/paginas/Footer";
 
 import "./App.css";
 
@@ -28,11 +30,13 @@ const App = () => {
           <Route path="/Inicio-OL" element={<InicioOl />} />
           <Route path="/Servicos-PDN" element={<ServicosPdn />} />
           <Route path="/Ensino-PDN" element={<EnsinoPdn />} />
+          <Route path="/Ensino-OL" element={<EnsinoOL />} />
           <Route path="/FAQ-PDN" element={<FaqPdn />} />
           <Route path="/Contactos-PDN" element={<ContactosPdn />} />
           <Route path="/Contactos-OL" element={<ContactosOL />} />
         </Routes>
       </div>
+      <Footer/>
     </Router>
   );
 };

@@ -146,8 +146,8 @@ const Contactos_OL = () => {
                     <h2>Onde nos encontrar</h2>
                     <p><strong>Morada:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
                     <div className="google-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.464384983726!2d-9.139336284685038!3d38.7168044796017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193478b1234567%3A0x123456789abcdef!2sExemplo+Localização!5e0!3m2!1spt-PT!2spt!4v1600000000000!5m2!1spt-PT!2spt"
+                    <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1555.419673838899!2d-9.111102943504827!3d38.7673885929086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19322f81a7b9cb%3A0x55005c8f8f815a3e!2sEscola%20de%20Condu%C3%A7%C3%A3o%20dos%20Olivais!5e0!3m2!1spt-PT!2spt!4v1731600899533!5m2!1spt-PT!2spt"
                             width="100%"
                             height="400"
                             style={{ border: 0 }}

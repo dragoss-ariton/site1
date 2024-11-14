@@ -31,13 +31,11 @@ const Navbar = () => {
             { to: "/Ensino-OL", label: "Ensino" },
             { to: "/Equipa-OL", label: "Equipa" },
             { to: "/FAQ-OL", label: "FAQ" },
-            { to: "/Sobre-Nos-OL", label: "Sobre nós" },
         ],
         B: [
             { to: "/Ensino-PDN", label: "Ensino" },
             { to: "/Equipa-PDN", label: "Equipa" },
             { to: "/FAQ-PDN", label: "FAQ" },
-            { to: "/Sobre-Nos-PDN", label: "Sobre nós" },
         ]
     };
 
