@@ -67,38 +67,23 @@
     height: auto;
     margin-right: 1%;
     border-radius: 100%;
-    opacity: 1; /* Logo visível desde o início */
-    transform: translateX(0); /* Logo começa na posição original */
-    transition: none; /* Desativa qualquer animação */
-    animation: slideLogo 1s ease forwards; /* Animação para a logo */
+    opacity: 1; /* Sempre visível */
+    transform: translateX(0); /* Começa na posição inicial */
+    animation: slideLogo 1s ease forwards; /* Apenas desliza da posição central */
 }
 
 @keyframes slideLogo {
     from {
-        transform: translateX(50vw); /* Começa ao centro */
-        opacity: 0;
+        transform: translateX(30vw); /* Começa ao centro */
     }
     to {
         transform: translateX(0); /* Termina na posição normal à esquerda */
-        opacity: 1;
-    }
-}
-@media (max-width: 992px) {
-    .rotate {
-        transition: transform 0.3s ease-in-out;
-        transform: rotate(270deg); /* Rotaciona 180º quando a Escola B está selecionada */
-    }
-}
-@media (max-width: 992px) {
-    .rotate-back {
-        transition: transform 0.3s ease-in-out;
-        transform: rotate(90deg); /* Rotaciona 180º quando a Escola B está selecionada */
     }
 }
 
-/* Desativar animação da logo na página inicial */
+/* Desativar a animação da logo na página inicial */
 .navbar-logo.no-animation {
-    animation: none; /* Desativa a animação de slide */
+    animation: none; /* Desativa qualquer animação */
     transform: translateX(0); /* Garante que a logo fique na posição inicial */
 }
 
@@ -131,4 +116,9 @@
 
 .navbar-nav .nav-link.selected {
     color: white;
+}
+@media (max-width: 992px) {
+    .navbar-toggle {
+        display: none;
+    }
 }

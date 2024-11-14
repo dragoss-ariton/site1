@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/components/Navbar.js
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
@@ -9,6 +10,15 @@ const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A');
     const [expanded, setExpanded] = useState(false);
     const location = useLocation();
+
+    useEffect(() => {
+        // Atualizar a escola com base no pathname atual
+        if (location.pathname.includes('-OL')) {
+            setSelectedSchool('A');
+        } else if (location.pathname.includes('-PDN')) {
+            setSelectedSchool('B');
+        }
+    }, [location.pathname]);
 
     const handleSchoolSelect = (school) => {
         setSelectedSchool(school);
@@ -37,7 +47,6 @@ const Navbar = () => {
     return (
         <BootstrapNavbar expand="lg" fixed="top" className={`navbar-custom ${isHomePage ? 'home-page' : ''}`} expanded={expanded}>
             <Container>
-                {/* Condiciona a posição e largura do logotipo com base na página atual */}
                 {isHomePage ? (
                     <div className="d-flex justify-content-center w-100">
                         <img src={logo} alt="Logo" className="navbar-logo home-logo no-animation" />
@@ -46,7 +55,9 @@ const Navbar = () => {
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 )}
                 
-                <BootstrapNavbar.Toggle aria-controls="navbarNav" onClick={() => setExpanded(!expanded)} />
+                {/* Botão de menu com classe específica */}
+                <BootstrapNavbar.Toggle aria-controls="navbarNav" onClick={() => setExpanded(!expanded)} className="navbar-toggle" />
+                
                 <BootstrapNavbar.Collapse id="navbarNav">
                     {!isHomePage && (
                         <ul className="navbar-nav">

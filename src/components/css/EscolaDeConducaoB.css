@@ -12,7 +12,7 @@
   background-image: 
     linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent),
-    url('../assets/Crazy-cart-1.jpg'); /* Replace with your actual image path */
+    url('../assets/carro_olivais.jpg'); /* Replace with your actual image path */
   background-size: cover;
   background-position: center;
   color: #fff;

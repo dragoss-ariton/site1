@@ -17,7 +17,7 @@ const EscolaDeConducaoA = () => {
                         <h1>Escola 1</h1>
                         <p>Learn with us at Escola 1, offering quality driving lessons for all levels.</p>
                         {/* Link to Escola 1 page */}
-                        <Link to="/Inicio-PDN">
+                        <Link to="/Inicio-OL">
                             <button>Visit Escola 1</button>
                         </Link>
                     </div>

@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Router>
       {/* Navbar will be displayed on all pages */}
-      <Navbar />
+      <Navbar/>
 
       <div className="main-content">
         <Routes>
