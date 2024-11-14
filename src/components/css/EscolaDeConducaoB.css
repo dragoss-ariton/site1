@@ -22,6 +22,20 @@
 .hero-text {
   position: relative;
   z-index: 1;
+  opacity: 0; /* Começa invisível */
+  animation: slideDown 1s ease-out forwards; /* Inicia a animação */
+}
+
+/* Definindo a animação */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px); /* Inicia mais acima */
+    opacity: 0; /* Invisível */
+  }
+  100% {
+    transform: translateY(0); /* Chega à posição original */
+    opacity: 1; /* Totalmente visível */
+  }
 }
   
 .hero-section::before {

@@ -14,11 +14,11 @@ const EscolaDeConducaoA = () => {
                 {/* School 1 */}
                 <div className="school-half left">
                     <div className="school-content">
-                        <h1>Escola 1</h1>
-                        <p>Learn with us at Escola 1, offering quality driving lessons for all levels.</p>
+                        <h1>Escola de condução Olivais</h1>
+                        <p>Aprende connosco Escola de condução Olivais, que oferece qualidade nas aulas de condução.</p>
                         {/* Link to Escola 1 page */}
                         <Link to="/Inicio-OL">
-                            <button>Visit Escola 1</button>
+                            <button>Ver Escola</button>
                         </Link>
                     </div>
                 </div>
@@ -26,11 +26,11 @@ const EscolaDeConducaoA = () => {
                 {/* School 2 */}
                 <div className="school-half right">
                     <div className="school-content">
-                        <h1>Escola 2</h1>
-                        <p>Join Escola 2 to gain confidence and skill on the road with experienced instructors.</p>
+                        <h1>Escola de condução Parque das Nações</h1>
+                        <p>Junte-se à Escola de condução Parque das Nações para ganhar confiança e habilidade na estrada com instrutores experientes.</p>
                         {/* Link to Escola 2 page */}
                         <Link to="/Inicio-PDN">
-                            <button>Visit Escola 2</button>
+                            <button>Ver Escola</button>
                         </Link>
                     </div>
                 </div>
