@@ -20,7 +20,7 @@ const Inicio_PND = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-text">
-          <h1>Escola de condução <span className="highlight">Olivais</span></h1>
+          <h1>Escola de condução <span className="highlight">Parque das Nações</span></h1>
           <p>
             Welcome to our driving school! Learn with confidence and professionalism.
           </p>
