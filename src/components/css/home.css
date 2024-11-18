@@ -1,0 +1,163 @@
+/*home starts*/
+.main-page {
+  color: #fff;
+  background-color: #000;
+}
+  
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)),
+    url('../assets/carro_olivais.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+}
+  
+.hero-text {
+  position: relative;
+  z-index: 1;
+  opacity: 0; /* Começa invisível */
+  animation: slideDown 1s ease-out forwards; /* Inicia a animação */
+}
+
+/* Definindo a animação */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px); /* Inicia mais acima */
+    opacity: 0; /* Invisível */
+  }
+  100% {
+    transform: translateY(0); /* Chega à posição original */
+    opacity: 1; /* Totalmente visível */
+  }
+}
+  
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+  z-index: 0;
+}
+  
+.highlight {
+  color: #00acac;
+}
+  
+.social-media-buttons a box-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+  
+.hire-me-button {
+  background-color: transparent;
+  border: 2px solid #00acac; /* Change border color */
+  color: #00acac; /* Text color */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+  
+.hire-me-button:hover {
+  background-color: #00acac !important; /* Background color on hover */
+  color: black !important; /* Text color on hover */
+}
+/*home ends*/
+
+/* About Us Section Starts */
+.about {
+  padding: 4rem 12rem; /* Top/Bottom and Left/Right padding */
+  background-color: #000; /* Background color of the section */
+}
+
+.heading {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: #00acac;
+  text-transform: uppercase;
+}
+
+.about .row {
+  display: flex;
+  align-items: center; /* Vertically center-aligns the items */
+  justify-content: space-between; /* Ensures spacing between the content and image */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  gap: 1.5rem; /* Adds space between text and image */
+  flex-direction: row; /* Ensures content is on the left and image is on the right */
+}
+
+.about .row .content {
+  flex: 1 1 45%; /* Allocates 45% width to the text content */
+  max-width: 45%; /* Prevents it from exceeding 45% of the container width */
+  text-align: center; /* Aligns text to the left */
+  order: 1; /* Ensures content stays on the left */
+  padding: 2rem; /* Add padding inside the box */
+  border-radius: 25px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow */
+  height: 600px;
+  width: 100%;
+}
+
+.about .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff; /* Heading color inside the box */
+}
+
+.about .row .content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #fff; /* Text color inside the box */
+}
+
+.about .row .image {
+  flex: 1 1 45%; /* Allocates 45% width to the image */
+  max-width: 45%; /* Prevents it from exceeding 45% of the container width */
+  text-align: right; /* Aligns the image to the right */
+  order: 2; /* Ensures the image stays on the right */
+  padding: 0; /* Remove any padding from the image container */
+}
+
+.about .row .image img {
+  width: 100%; /* Makes the image take full width of its container */
+  height: 600px; /* Maintains aspect ratio */
+  border-radius: 25px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow */
+  
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column; /* Stacks text and image vertically */
+  }
+
+  .about .row .content,
+  .about .row .image {
+    max-width: 100%; /* Full width for smaller screens */
+    flex: 1 1 100%; /* Takes full width of the container */
+  }
+
+  .about .row .image {
+    text-align: center; /* Centers the image on smaller screens */
+  }
+}
+/* About Us Section Ends */
