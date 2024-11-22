@@ -1,9 +1,12 @@
-/*home starts*/
-.main-page {
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
   color: #fff;
   background-color: #000;
 }
-  
+
+/* Home Section */
 .hero-section {
   position: relative;
   display: flex;
@@ -11,33 +14,32 @@
   justify-content: center;
   height: 100vh;
   background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
     url('../assets/carro_olivais.jpg'); /* Replace with your actual image path */
   background-size: cover;
   background-position: center;
   color: #fff;
   text-align: center;
 }
-  
+
 .hero-text {
   position: relative;
   z-index: 1;
-  opacity: 0; /* Começa invisível */
-  animation: slideDown 1s ease-out forwards; /* Inicia a animação */
+  opacity: 0;
+  animation: slideDown 1s ease-out forwards;
 }
 
-/* Definindo a animação */
 @keyframes slideDown {
   0% {
-    transform: translateY(-100px); /* Inicia mais acima */
-    opacity: 0; /* Invisível */
+    transform: translateY(-100px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0); /* Chega à posição original */
-    opacity: 1; /* Totalmente visível */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-  
+
 .hero-section::before {
   content: '';
   position: absolute;
@@ -45,40 +47,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
-  
-.highlight {
-  color: #00acac;
-}
-  
-.social-media-buttons a box-icon {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-  
-.hire-me-button {
-  background-color: transparent;
-  border: 2px solid #00acac; /* Change border color */
-  color: #00acac; /* Text color */
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-  
-.hire-me-button:hover {
-  background-color: #00acac !important; /* Background color on hover */
-  color: black !important; /* Text color on hover */
-}
-/*home ends*/
 
-/* About Us Section Starts */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 80vh;
+  }
+  .hero-text {
+    padding: 0 20px;
+    font-size: 1.2em;
+  }
+}
+
+/* About Us Section */
 .about {
-  padding: 4rem 12rem; /* Top/Bottom and Left/Right padding */
-  background-color: #000; /* Background color of the section */
+  padding: 4rem 12rem;
+  background-color: #000;
 }
 
 .heading {
@@ -91,73 +77,162 @@
 
 .heading span {
   color: #00acac;
-  text-transform: uppercase;
 }
 
 .about .row {
   display: flex;
-  align-items: center; /* Vertically center-aligns the items */
-  justify-content: space-between; /* Ensures spacing between the content and image */
-  flex-wrap: wrap; /* Allows wrapping for smaller screens */
-  gap: 1.5rem; /* Adds space between text and image */
-  flex-direction: row; /* Ensures content is on the left and image is on the right */
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .about .row .content {
-  flex: 1 1 45%; /* Allocates 45% width to the text content */
-  max-width: 45%; /* Prevents it from exceeding 45% of the container width */
-  text-align: center; /* Aligns text to the left */
-  order: 1; /* Ensures content stays on the left */
-  padding: 2rem; /* Add padding inside the box */
-  border-radius: 25px; /* Optional: Adds rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow */
-  height: 600px;
-  width: 100%;
+  flex: 1 1 45%;
+  max-width: 45%;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .about .row .content h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #fff; /* Heading color inside the box */
 }
 
 .about .row .content p {
   font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 1rem;
-  color: #fff; /* Text color inside the box */
 }
 
 .about .row .image {
-  flex: 1 1 45%; /* Allocates 45% width to the image */
-  max-width: 45%; /* Prevents it from exceeding 45% of the container width */
-  text-align: right; /* Aligns the image to the right */
-  order: 2; /* Ensures the image stays on the right */
-  padding: 0; /* Remove any padding from the image container */
+  flex: 1 1 45%;
+  max-width: 45%;
 }
 
 .about .row .image img {
-  width: 100%; /* Makes the image take full width of its container */
-  height: 600px; /* Maintains aspect ratio */
-  border-radius: 25px; /* Optional: Adds rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Adds a shadow */
-  
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .about .row {
-    flex-direction: column; /* Stacks text and image vertically */
+@media (max-width: 1024px) {
+  .about {
+    padding: 3rem 8rem;
   }
-
   .about .row .content,
   .about .row .image {
-    max-width: 100%; /* Full width for smaller screens */
-    flex: 1 1 100%; /* Takes full width of the container */
-  }
-
-  .about .row .image {
-    text-align: center; /* Centers the image on smaller screens */
+    max-width: 100%;
   }
 }
-/* About Us Section Ends */
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem;
+  }
+  .about .row {
+    flex-direction: column;
+  }
+}
+
+/* Services Section */
+.title_services {
+  color: #777;
+  font-size: 2em;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.services_card {
+  height: auto;
+  width: 300px;
+  padding: 20px 35px;
+  border-radius: 10px;
+  background: #00acac;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.services_card .icon {
+  font-size: 64px;
+  color: #000;
+  margin-bottom: 18px;
+}
+
+.services_card h1 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.services_card .button_services {
+  background: #000;
+  color: #00acac;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.services_card:hover {
+  color: #777;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: rotate 0.7s ease-in-out both;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services_card {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+  }
+  .services_card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .services_card {
+    padding: 15px;
+  }
+  .services_card h1 {
+    font-size: 18px;
+  }
+  .services_card .icon {
+    font-size: 48px;
+  }
+  .services_card .button_services {
+    width: 100px;
+    font-size: 14px;
+  }
+}
