@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -14,15 +13,15 @@ import ContactosPdn from "./components/paginas/Contactos_PDN";
 import ContactosOL from "./components/paginas/Contactos_OL";
 import EnsinoOL from "./components/paginas/Ensino_OL";
 import Footer from "./components/paginas/Footer";
+import ScrollToTop from "./components/paginas/ScrollToTop"; 
 
 import "./App.css";
 
 const App = () => {
   return (
     <Router>
-      {/* Navbar will be displayed on all pages */}
-      <Navbar/>
-
+      <ScrollToTop />
+      <Navbar />
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Hero />} />
@@ -36,7 +35,7 @@ const App = () => {
           <Route path="/Contactos-OL" element={<ContactosOL />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };

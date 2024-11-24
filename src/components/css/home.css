@@ -29,12 +29,15 @@ video {
   text-align: center;
   padding: 20px;
   z-index: 1; /* Ensures this section appears above the video */
-  background: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+  background: rgba(0, 0, 0, 0.8); /* Optional overlay for better text visibility */
 }
 
 .hero-text h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
 }
 
 .hero-text p {
@@ -42,14 +45,30 @@ video {
   margin-top: 10px;
 }
 
-.hero-buttons {
-  margin-top: 20px;
+/* Hire Me Button */
+.hire-me-button {
+  background-color: transparent !important; /* Set the background color */
+  color: #008c8c !important; /* Set the text color */
+  border-color: #00acac !important; /* Set the border color */
+  padding: 15px 30px !important; /* Increase padding to make the button bigger */
+  font-size: 1.2rem !important; /* Increase font size */
+  border-radius: 5px !important; /* Optional: adjust border radius */
+  width: auto !important; /* Make width adjust to content */
+  transition: all 0.3s ease-in-out !important; /* Smooth transition on hover */
 }
 
+.hire-me-button:hover {
+  background-color: #008c8c !important; /* Darker shade of #00acac for hover effect */
+  border-color: #008c8c !important; /* Darker border color on hover */
+  color: #fff !important; /* Maintain white text color on hover */
+}
+
+/* Highlighted Text */
 .highlight {
   color: #00acac;
 }
 
+/* Hero Text Animation */
 .hero-text {
   position: relative;
   z-index: 1;
@@ -73,25 +92,17 @@ video {
   .hero-section {
     height: 80vh; /* Adjust height for smaller screens */
   }
+
   .hero-text h1 {
     font-size: 2rem; /* Adjust heading size for smaller screens */
   }
+
   .hero-text p {
     font-size: 1.1rem; /* Adjust paragraph size for smaller screens */
   }
-  .hero-buttons {
-    margin-top: 15px; /* Adjust button margin for smaller screens */
+
+  .hire-me-button {
+    padding: 12px 24px; /* Adjust button padding for smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
   }
-}
-
-/* Adjust Button Style */
-.hire-me-button {
-  border-color: #00acac;
-  color: #00acac;
-  transition: all 0.3s ease-in-out;
-}
-
-.hire-me-button:hover {
-  background-color: #00acac;
-  color: #fff;
 }

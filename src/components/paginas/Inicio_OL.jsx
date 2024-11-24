@@ -23,16 +23,15 @@ const Inicio_OL = () => {
           <p>
             Welcome to our driving school! Learn with confidence and professionalism.
           </p>
-          <div className="hero-buttons">
-            <Button
-              variant="outline-danger"
-              className="hire-me-button"
-              as={Link}
-              to="/Contactos-PDN"
-            >
-              Vem falar connosco
-            </Button>
-          </div>
+          <Button
+            variant="outline-danger"
+            className="hire-me-button"
+            as={Link}
+            to="/Contactos-PDN"
+            style={{ borderColor: '#00acac', color: '#00acac' }}
+          >
+            Vem falar connosco
+          </Button>
         </div>
       </section>
 
@@ -67,7 +66,15 @@ const Inicio_OL = () => {
             <h1>High-Speed Training</h1>
             <div className="services_content">
               <p>Master advanced driving skills for high-speed scenarios with expert guidance.</p>
-              <a className="button_services" href="#">Read More</a>
+              <Button
+                variant="outline-info"
+                className="button_services"
+                as={Link}
+                to="/Ensino-OL"
+                style={{ borderColor: '#00acac', color: '#00acac' }}
+              >
+                Read More
+              </Button>
             </div>
           </div>
           <div className="services_card">
@@ -75,7 +82,15 @@ const Inicio_OL = () => {
             <h1>Beginner Courses</h1>
             <div className="services_content">
               <p>Perfect for new drivers, these courses provide foundational knowledge and skills.</p>
-              <a className="button_services" href="#">Read More</a>
+              <Button
+                variant="outline-info"
+                className="button_services"
+                as={Link}
+                to="/Equipa-OL"
+                style={{ borderColor: '#00acac', color: '#00acac' }}
+              >
+                Read More
+              </Button>
             </div>
           </div>
           <div className="services_card">
@@ -83,7 +98,15 @@ const Inicio_OL = () => {
             <h1>Defensive Driving</h1>
             <div className="services_content">
               <p>Learn defensive techniques to stay safe in any driving condition.</p>
-              <a className="button_services" href="#">Read More</a>
+              <Button
+                variant="outline-info"
+                className="button_services"
+                as={Link}
+                to="/Contactos-PDN"
+                style={{ borderColor: '#00acac', color: '#00acac' }}
+              >
+                Read More
+              </Button>
             </div>
           </div>
         </div>
