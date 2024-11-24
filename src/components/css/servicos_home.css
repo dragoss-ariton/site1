@@ -1,0 +1,148 @@
+/* Services Section */
+.services_section {
+    padding: 4rem 12rem;
+    background-color: #000;
+}
+
+.title_services h1{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.title_services span {
+    color: #00acac;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.services_card {
+    height: auto;
+    width: 300px;
+    padding: 20px 35px;
+    border-radius: 10px;
+    background: #00acac;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.services_card .icon {
+    font-size: 64px;
+    color: #000;
+    margin-bottom: 18px;
+}
+
+.services_card h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.services_card .button_services {
+    background: #000;
+    color: #00acac;
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.services_card:hover {
+    color: #777;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: rotate 0.7s ease-in-out both;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* Responsive adjustments */
+
+/* For Tablets and below */
+@media (max-width: 768px) {
+    .services_section {
+        padding: 3rem 5rem;
+    }
+
+    .title_services {
+        font-size: 3rem;
+    }
+
+    .services_card {
+        width: 250px;
+        padding: 15px 25px;
+    }
+
+    .services_card h1 {
+        font-size: 18px;
+    }
+
+    .services {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .services_card .button_services {
+        width: 100px;
+        padding: 8px 12px;
+    }
+}
+
+/* For Mobile devices */
+@media (max-width: 480px) {
+    .services_section {
+        padding: 2rem 2rem;
+    }
+
+    .title_services {
+        font-size: 2.5rem;
+    }
+
+    .services_card {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .services_card h1 {
+        font-size: 16px;
+    }
+
+    .services_card .button_services {
+        width: 90px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
