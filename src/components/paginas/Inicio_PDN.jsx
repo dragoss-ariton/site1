@@ -66,7 +66,7 @@ const Inicio_PND = () => {
             <h1>High-Speed Training</h1>
             <div className="services_content">
               <p>Master advanced driving skills for high-speed scenarios with expert guidance.</p>
-              <a className="button_services" href="#">Read More</a>
+              <a className="button_services" href="/">Read More</a>
             </div>
           </div>
           <div className="services_card">
@@ -74,7 +74,7 @@ const Inicio_PND = () => {
             <h1>Beginner Courses</h1>
             <div className="services_content">
               <p>Perfect for new drivers, these courses provide foundational knowledge and skills.</p>
-              <a className="button_services" href="#">Read More</a>
+              <a className="button_services" href="/">Read More</a>
             </div>
           </div>
           <div className="services_card">
@@ -82,7 +82,7 @@ const Inicio_PND = () => {
             <h1>Defensive Driving</h1>
             <div className="services_content">
               <p>Learn defensive techniques to stay safe in any driving condition.</p>
-              <a className="button_services" href="#">Read More</a>
+              <a className="button_services" href="/">Read More</a>
             </div>
           </div>
         </div>
