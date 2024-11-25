@@ -19,9 +19,9 @@ const Inicio_OL = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-text">
-          <h1>Escola de condução <span className="highlight">Parque das Nações</span></h1>
+          <h1>Escola de condução <span className="highlight">Olivais</span></h1>
           <p>
-            Welcome to our driving school! Learn with confidence and professionalism.
+            Seja bem vindo à nossa Escola!
           </p>
           <Button
             variant="outline-danger"
@@ -30,28 +30,8 @@ const Inicio_OL = () => {
             to="/Contactos-PDN"
             style={{ borderColor: '#00acac', color: '#00acac' }}
           >
-            Vem falar connosco
+            Venha falar connosco
           </Button>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section className="about" id="about">
-        <h1 className="heading"><span>About</span> Us</h1>
-        <div className="row">
-          <div className="image">
-            <img src={img} alt="About Us" />
-          </div>
-          <div className="content">
-            <h3>Dedicated to Excellence</h3>
-            <p>Our driving school offers top-quality training with a focus on safety and professionalism.</p>
-            <h3>Experienced Instructors</h3>
-            <p>Learn from certified and experienced instructors who prioritize your learning experience.</p>
-            <h3>Comprehensive Training</h3>
-            <p>We provide comprehensive lessons tailored to your needs, ensuring you're road-ready.</p>
-            <h3>Flexible Scheduling</h3>
-            <p>Our schedules are designed to fit your busy lifestyle, making learning convenient.</p>
-          </div>
         </div>
       </section>
 
@@ -63,9 +43,9 @@ const Inicio_OL = () => {
         <div className="services">
           <div className="services_card">
             <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-            <h1>High-Speed Training</h1>
+            <h1>Ensino</h1>
             <div className="services_content">
-              <p>Master advanced driving skills for high-speed scenarios with expert guidance.</p>
+              <p>Descubra os serviços e categorias de carta que pode tirar na nossa escola!</p>
               <Button
                 variant="outline-info"
                 className="button_services"
@@ -73,15 +53,15 @@ const Inicio_OL = () => {
                 to="/Ensino-OL"
                 style={{ borderColor: '#00acac', color: '#00acac' }}
               >
-                Read More
+                Veja Mais
               </Button>
             </div>
           </div>
           <div className="services_card">
             <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-            <h1>Beginner Courses</h1>
+            <h1>Equipa</h1>
             <div className="services_content">
-              <p>Perfect for new drivers, these courses provide foundational knowledge and skills.</p>
+              <p>Venha conhecer a nossa equipa e as infraestruturas que temos ao seu dispor!</p>
               <Button
                 variant="outline-info"
                 className="button_services"
@@ -89,15 +69,15 @@ const Inicio_OL = () => {
                 to="/Equipa-OL"
                 style={{ borderColor: '#00acac', color: '#00acac' }}
               >
-                Read More
+                Veja Mais
               </Button>
             </div>
           </div>
           <div className="services_card">
             <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-            <h1>Defensive Driving</h1>
+            <h1>Entre Em Contacto</h1>
             <div className="services_content">
-              <p>Learn defensive techniques to stay safe in any driving condition.</p>
+              <p>Para mais informações sinta-se à vontade de entrar em contacto connosco!</p>
               <Button
                 variant="outline-info"
                 className="button_services"
@@ -105,9 +85,29 @@ const Inicio_OL = () => {
                 to="/Contactos-PDN"
                 style={{ borderColor: '#00acac', color: '#00acac' }}
               >
-                Read More
+                Veja Mais
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="about" id="about">
+        <h1 className="heading"><span>Sobre</span> Nós</h1>
+        <div className="row">
+          <div className="image">
+            <img src={img} alt="About Us" />
+          </div>
+          <div className="content">
+            <h3>Dedicados a Excelência</h3>
+            <p>A nossa escola de condução oferece formação de alta qualidade com foco na segurança e no profissionalismo.</p>
+            <h3>Instrutores Experientes</h3>
+            <p>Aprenda com instrutores certificados e experientes que priorizam a sua experiência de aprendizagem.</p>
+            <h3>Formação Abrangente</h3>
+            <p>Oferecemos aulas abrangentes adaptadas às suas necessidades, garantindo que está devidamente preparado para a estrada.</p>
+            <h3>Multiplas Línguas</h3>
+            <p>A nossa escola oferece a possibilidade de fazer a carta em Inglês.</p>
           </div>
         </div>
       </section>
