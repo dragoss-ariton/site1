@@ -5,7 +5,7 @@ import '../css/home.css';
 import '../css/servicos_home.css';
 import '../css/aboutUs.css';
 import { Link } from 'react-router-dom';
-import img from '../assets/dragos.jpg';
+import img from '../assets/AboutUS.jpg';
 import videobg from '../assets/video_bg_pdn.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGaugeHigh } from '@fortawesome/free-solid-svg-icons';
