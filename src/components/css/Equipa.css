@@ -1,0 +1,63 @@
+/* src/css/PaginaDividida.css */
+
+.Spc{
+  padding-top: 4%;
+}
+
+.img1{
+  padding: 20px;
+  width: 62%;
+  border-radius: 10%;
+}
+
+.team1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Create two columns/boxes that floats next to each other */
+@media (min-width: 992px) {
+  .Div1 {
+    float: left;
+    width: 30%;
+    height: auto; /* Pode ser ajustado conforme necessário */
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
+    color: #fff; /* Cor do texto para contraste */
+    padding: 20px;
+    margin-left: 20%;
+  }
+  
+  /* Style the list inside the menu */
+  .Div1 ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .Div2 {
+    float: left;
+    width: 30%;
+    height: auto; /* Pode ser ajustado conforme necessário */
+    background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
+    color: #fff; /* Cor do texto para contraste */
+    padding: 20px;
+    margin-right: 20%;
+  }
+  
+  /* Clear floats after the columns */
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.team1{
+  padding-top: 5%;
+  height: auto;
+  text-align: center;
+}
