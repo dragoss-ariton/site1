@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'boxicons/css/boxicons.min.css';
 import '../css/home.css';
+import '../css/servicos_home.css';
+import '../css/aboutUs.css'
 import { Link } from 'react-router-dom';
 import img from '../assets/images.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -54,35 +56,37 @@ const Inicio_PND = () => {
       {/* About Us Section ends */}
 
       {/* Services Section starts */}
-      <div className="title_services">
-        <h1>Os Nossos Serviços</h1>
-      </div>
-      <div className="services">
-        <div className="services_card">
-          <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-          <h1>High-Speed Training</h1>
-          <div className="services_content">
-            <p>Master advanced driving skills for high-speed scenarios with expert guidance.</p>
-            <a className="button_services" href="#">Read More</a>
+      <section className="services_section" id="services_section">
+        <div className="title_services">
+          <h1>Os <span>Nossos</span> Serviços</h1>
+        </div>
+        <div className="services">
+          <div className="services_card">
+            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <h1>High-Speed Training</h1>
+            <div className="services_content">
+              <p>Master advanced driving skills for high-speed scenarios with expert guidance.</p>
+              <a className="button_services" href="#">Read More</a>
+            </div>
+          </div>
+          <div className="services_card">
+            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <h1>Beginner Courses</h1>
+            <div className="services_content">
+              <p>Perfect for new drivers, these courses provide foundational knowledge and skills.</p>
+              <a className="button_services" href="#">Read More</a>
+            </div>
+          </div>
+          <div className="services_card">
+            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <h1>Defensive Driving</h1>
+            <div className="services_content">
+              <p>Learn defensive techniques to stay safe in any driving condition.</p>
+              <a className="button_services" href="#">Read More</a>
+            </div>
           </div>
         </div>
-        <div className="services_card">
-          <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-          <h1>Beginner Courses</h1>
-          <div className="services_content">
-            <p>Perfect for new drivers, these courses provide foundational knowledge and skills.</p>
-            <a className="button_services" href="#">Read More</a>
-          </div>
-        </div>
-        <div className="services_card">
-          <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
-          <h1>Defensive Driving</h1>
-          <div className="services_content">
-            <p>Learn defensive techniques to stay safe in any driving condition.</p>
-            <a className="button_services" href="#">Read More</a>
-          </div>
-        </div>
-      </div>
+      </section>
       {/* Services Section ends */}
     </div>
   );
