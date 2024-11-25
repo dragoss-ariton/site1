@@ -14,6 +14,7 @@ import ContactosPdn from "./components/paginas/Contactos_PDN";
 import ContactosOL from "./components/paginas/Contactos_OL";
 import EnsinoOL from "./components/paginas/Ensino_OL";
 import Footer from "./components/paginas/Footer";
+import EquipaOL from "./components/paginas/EquipaOL";
 
 import "./App.css";
 
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/FAQ-PDN" element={<FaqPdn />} />
           <Route path="/Contactos-PDN" element={<ContactosPdn />} />
           <Route path="/Contactos-OL" element={<ContactosOL />} />
+          <Route path="/Equipa-OL" element={<EquipaOL />} />
         </Routes>
       </div>
       <Footer/>
