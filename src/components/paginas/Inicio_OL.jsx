@@ -5,8 +5,8 @@ import '../css/home.css';
 import '../css/servicos_home.css';
 import '../css/aboutUs.css';
 import { Link } from 'react-router-dom';
-import img from '../assets/AboutUS.jpg';
-import videobg from '../assets/video_bg_pdn.mp4';
+import img from '../assets/logoOL.jpeg';
+import videobg from '../assets/EquipaOL.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGaugeHigh } from '@fortawesome/free-solid-svg-icons';
 
@@ -82,7 +82,7 @@ const Inicio_OL = () => {
                 variant="outline-info"
                 className="button_services"
                 as={Link}
-                to="/Contactos-PDN"
+                to="/Contactos-OL"
                 style={{ borderColor: '#00acac', color: '#00acac' }}
               >
                 Veja Mais
@@ -97,7 +97,7 @@ const Inicio_OL = () => {
         <h1 className="heading"><span>Sobre</span> Nós</h1>
         <div className="row">
           <div className="image">
-            <img src={img} alt="About Us" />
+            <img src={img} alt="Logo" />
           </div>
           <div className="content">
             <h3>Dedicados a Excelência</h3>
