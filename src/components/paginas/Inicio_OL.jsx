@@ -27,7 +27,7 @@ const Inicio_OL = () => {
             variant="outline-danger"
             className="hire-me-button"
             as={Link}
-            to="/Contactos-PDN"
+            to="/Contactos-OL"
             style={{ borderColor: '#00acac', color: '#00acac' }}
           >
             Venha falar connosco

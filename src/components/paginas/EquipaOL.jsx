@@ -5,6 +5,7 @@ import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
 import "../css/Equipa.css"; // Estilo adicional (opcional)
 import videoTeamOL from '../assets/EquipaOL.mp4';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const EquipaOL = () => {
   const team = {
@@ -37,8 +38,8 @@ const EquipaOL = () => {
 
   const infrastructureImages = [
     imagem1,
+    imagem3,
     imagem2,
-    imagem3, // Usando a imagem importada
   ];
 
   return (
@@ -78,7 +79,7 @@ const EquipaOL = () => {
           <div className="space-y-6">
             {infrastructureImages.slice(0, 3).map((image, index) => (
               <div key={index} className="flex justify-end">
-                <img
+                <LazyLoadImage
                   src={image}
                   alt={`Infraestrutura ${index + 1}`}
                   className="img1" // Classe aplicada para o estilo da imagem
