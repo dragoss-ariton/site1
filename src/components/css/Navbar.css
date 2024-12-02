@@ -1,4 +1,4 @@
-/* Navbar styles */
+/* Estilo padrão da navbar */
 .navbar {
     background-color: #000000;
     padding: 10px 20px;
@@ -9,63 +9,63 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 0.6s ease-in-out forwards; /* Smooth fade-in animation */
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 0.6s ease-in-out forwards; /* Animação de fade-in */
 }
 
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px); /* Slightly moves up */
+        transform: translateY(-20px); /* Move ligeiramente para cima */
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Returns to original position */
+        transform: translateY(0); /* Retorna à posição original */
     }
 }
 
-/* Navbar logo */
+/* Logo da navbar */
 .navbar-logo {
-    width: 6%; /* Standard logo size */
+    width: 6%;
     height: auto;
     margin-right: 1%;
     border-radius: 100%;
-    opacity: 1; /* Always visible */
-    transform: translateX(0); /* Starts from the initial position */
-    animation: slideLogo 1s ease forwards; /* Logo slide animation */
+    opacity: 1; /* Sempre visível */
+    transform: translateX(0);
+    animation: slideLogo 1s ease forwards; /* Animação de deslize para o logo */
 }
 
 @keyframes slideLogo {
     from {
-        transform: translateX(30vw); /* Starts from center */
+        transform: translateX(30vw); /* Começa do centro */
     }
     to {
-        transform: translateX(0); /* Ends in the normal position */
+        transform: translateX(0); /* Fica na posição normal */
     }
 }
 
-/* Disables logo animation on the homepage */
+/* Desativa a animação do logo na página inicial */
 .navbar-logo.no-animation {
-    animation: none; /* Disables any animation */
-    transform: translateX(0); /* Keeps the logo in its initial position */
+    animation: none;
+    transform: translateX(0);
 }
 
-/* Navbar links */
+/* Links da navbar */
 .navbar-nav .nav-link {
     color: #00acac;
     font-size: 1.2rem;
     margin: 0 10px;
-    opacity: 0; /* Initially invisible */
-    transform: translateX(-20px); /* Starts displaced to the left */
+    opacity: 0;
+    transform: translateX(-20px); /* Começa deslocado para a esquerda */
     transition: opacity 0.5s ease, transform 0.5s ease;
     animation: slideLinks 0.8s ease forwards;
-    animation-delay: 0.3s; /* Delay for the links to appear after the logo */
+    animation-delay: 0.3s; /* Delay para aparecer após o logo */
 }
 
 @keyframes slideLinks {
     from {
-        transform: translateX(-30px); /* Links come from the left */
+        transform: translateX(-30px);
         opacity: 0;
     }
     to {
@@ -82,7 +82,7 @@
     color: white;
 }
 
-/* Animation for rotating arrow */
+/* Animação para rodar seta */
 .rotate {
     transition: transform 0.3s ease-in-out;
     transform: rotate(180deg);
@@ -93,8 +93,19 @@
     transform: rotate(0deg);
 }
 
+/* Estilo específico para a página inicial "/" */
+.navbar.home-page {
+    justify-content: center; /* Centraliza o logo */
+    padding: 10px 0; /* Ajusta o padding */
+}
+
+.navbar.home-page .navbar-nav,
+.navbar.home-page .navbar-toggle {
+    display: none; /* Esconde os links e o botão de menu */
+}
+
+/* Estilo responsivo */
 @media (max-width: 991px) {
-    /* Adjust the rotation for smaller screens */
     .rotate {
         transform: rotate(270deg);
     }
@@ -102,14 +113,17 @@
         transform: rotate(90deg);
     }
 
-    /* Navbar menu toggle */
     .navbar-toggle {
-        display: block;
+        display: block; /* Exibe o botão de menu em telas pequenas */
+        background-color: transparent;
+        border: none;
+        color: #00acac;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 
-    /* Hide the navbar links on smaller screens */
     .navbar-nav {
-        display: none; /* Hide links on mobile by default */
+        display: none; /* Esconde os links por padrão no mobile */
         flex-direction: column;
         width: 100%;
         margin-top: 10px;
@@ -117,35 +131,18 @@
     }
 
     .navbar-nav.show {
-        display: flex; /* Show the links when the menu is toggled */
+        display: flex; /* Mostra os links quando o menu é ativado */
     }
 
     .navbar-nav .nav-link {
         font-size: 1.5rem;
         margin: 10px 0;
-        animation: none; /* Disable animation on mobile */
-        opacity: 1; /* Ensure links are visible */
-        transform: translateX(0); /* Ensure links are aligned properly */
+        animation: none; /* Desativa animação no mobile */
+        opacity: 1; /* Garante que os links são visíveis */
+        transform: translateX(0);
     }
 
     .navbar-nav .nav-link:hover {
         color: white;
-    }
-}
-
-/* Navbar toggle button styles */
-.navbar-toggle {
-    display: none; /* Hidden by default */
-    background-color: transparent;
-    border: none;
-    color: #00acac;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-@media (max-width: 992px) {
-    /* Display navbar-toggle button on smaller screens */
-    .navbar-toggle {
-        display: block;
     }
 }
