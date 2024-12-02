@@ -1,7 +1,6 @@
 // src/Encino_PND.jsx
 import React from 'react';
 import '../css/Servicos.css';
-import videobg from '../assets/video_bg_pdn.mp4';
 
 const servicosData = [
     {
@@ -29,7 +28,6 @@ const servicosData = [
 const Ensino_PND = () => {
     return (
         <div className="servicos-container">
-            <video src={videobg} autoPlay loop muted></video>
             <h1 className="servicos-title">Serviços</h1>
             <div className="cards-container">
                 {servicosData.map((servico, index) => (

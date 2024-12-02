@@ -1,7 +1,6 @@
 // src/Encino_PND.jsx
 import React from 'react';
 import '../css/Servicos.css';
-import videobg from '../assets/video_bg_pdn.mp4';
 
 const servicosData = [
     {
@@ -29,12 +28,8 @@ const servicosData = [
 const Ensino_PND = React.memo(() => {
     return (
         <>
-            <div className="services">
-                <video src={videobg} autoPlay loop muted />
-                <h1 className="servicos-title">Serviços</h1>
-            </div>
-            <div className="services_bottom_part">
                 <div className="services_container">
+                    <h1 className="servicos-title">Serviços</h1>
                     <section className="cards-container">
                         {servicosData.map(({ icon, title, description }, index) => (
                             <div className="card" key={index}>
@@ -45,7 +40,6 @@ const Ensino_PND = React.memo(() => {
                         ))}
                     </section>
                 </div>
-            </div>
         </>
     );
 });
