@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import '../css/Servicos.css';
+import '../css/contact.css';
 
 const Contactos_OL = () => {
     const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const Contactos_OL = () => {
         schoolName: 'Olivais',
     });
     const [statusMessage, setStatusMessage] = useState('');
-    const [statusType, setStatusType] = useState(''); // Added statusType for success/error
+    const [statusType, setStatusType] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
@@ -27,27 +27,26 @@ const Contactos_OL = () => {
         e.preventDefault();
         if (!validateEmail(formData.email)) {
             setStatusMessage('Por favor, insira um email válido.');
-            setStatusType('error'); // Set to error if email is invalid
+            setStatusType('error');
             return;
         }
         if (!validatePhone(formData.phone)) {
             setStatusMessage('Por favor, insira um número de telefone válido com 9 dígitos.');
-            setStatusType('error'); // Set to error if phone is invalid
+            setStatusType('error');
             return;
         }
 
         setIsSubmitting(true);
         setStatusMessage('');
-        setStatusType(''); // Reset statusType before making request
+        setStatusType('');
 
         try {
-
             const response = await axios.post('http://localhost:5000/api/send-email', formData);
             setStatusMessage(response.data.message);
-            setStatusType('success'); // Set to success if the email was sent successfully
+            setStatusType('success');
         } catch (error) {
             setStatusMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
-            setStatusType('error'); // Set to error if there was a problem sending the email
+            setStatusType('error');
             console.error('Erro ao enviar:', error);
         } finally {
             setIsSubmitting(false);
@@ -55,110 +54,102 @@ const Contactos_OL = () => {
     };
 
     return (
-        <div id="heroB" className="contact-section">
-            <div className="contact-info-container">
-                {/* Form Section */}
-                <div className="contact-form-container">
-                    <h1 className="contacte-nos-title">Queres saber mais informações?</h1>
-                    <h2 className="contacte-nos-subtitle">
-                        Envia-nos uma mensagem, que entraremos em contacto consigo o mais depressa possível!
-                    </h2>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="formName" className="contact-form-group">
-                            <Form.Label>Nome</Form.Label>
-                            <Form.Control
-                                type="text"
-                                name="name"
-                                placeholder="Seu nome"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </Form.Group>
+        <section id="contact-section">
+            <div className="container">
+                <div className="content-wrapper">
+                    <div className="form-container">
+                        <h1 className="title">Queres saber mais informações?</h1>
+                        <p className="subtitle">Envia-nos uma mensagem, que entraremos em contacto consigo o mais depressa possível!</p>
+                        <Form onSubmit={handleSubmit}>
+                            <Form.Group controlId="formName" className="form-group">
+                                <Form.Label>Nome</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    name="name"
+                                    placeholder="nome"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </Form.Group>
 
-                        <Form.Group controlId="formEmail" className="contact-form-group">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control
-                                type="email"
-                                name="email"
-                                placeholder="Seu email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                isInvalid={formData.email && !validateEmail(formData.email)}
-                                required
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                Insira um email válido.
-                            </Form.Control.Feedback>
-                        </Form.Group>
+                            <Form.Group controlId="formEmail" className="form-group">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control
+                                    type="email"
+                                    name="email"
+                                    placeholder="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    isInvalid={formData.email && !validateEmail(formData.email)}
+                                    required
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                    Insira um email válido.
+                                </Form.Control.Feedback>
+                            </Form.Group>
 
-                        <Form.Group controlId="formPhone" className="contact-form-group">
-                            <Form.Label>Telefone</Form.Label>
-                            <Form.Control
-                                type="tel"
-                                name="phone"
-                                placeholder="Seu telefone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                isInvalid={formData.phone && !validatePhone(formData.phone)}
-                                required
-                            />
-                            <Form.Control.Feedback type="invalid">
-                                Insira um número de telefone válido com 9 dígitos.
-                            </Form.Control.Feedback>
-                        </Form.Group>
+                            <Form.Group controlId="formPhone" className="form-group">
+                                <Form.Label>Telefone</Form.Label>
+                                <Form.Control
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="telefone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    isInvalid={formData.phone && !validatePhone(formData.phone)}
+                                    required
+                                />
+                                <Form.Control.Feedback type="invalid">
+                                    Insira um número de telefone válido com 9 dígitos.
+                                </Form.Control.Feedback>
+                            </Form.Group>
 
-                        <Form.Group controlId="formMessage" className="contact-form-group">
-                            <Form.Label>Mensagem</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                name="message"
-                                rows={3}
-                                placeholder="Sua mensagem"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            />
-                        </Form.Group>
+                            <Form.Group controlId="formMessage" className="form-group">
+                                <Form.Label>Mensagem</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    name="message"
+                                    rows={4}
+                                    placeholder="mensagem"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </Form.Group>
 
-                        <div className="form-actions">
-                            <Button variant="dark" type="submit" className="mt-3" disabled={isSubmitting}>
-                                {isSubmitting ? 'Enviando...' : 'Enviar'}
+                            <Button variant="primary" type="submit" className="submit-btn" disabled={isSubmitting}>
+                                {isSubmitting ? 'A Enviar...' : 'Enviar'}
                             </Button>
-                            {/* Status message to the right of the button */}
-                            {statusMessage && (
-                                <p className={`status-message ${statusType}`}>
-                                    {statusMessage}
-                                </p>
-                            )}
-                        </div>
-                    </Form>
-                </div>
 
-                {/* Contact Info Section */}
-                <div className="contact-info">
-                    <h2 style={{ marginTop: '30px' }}>Contactos</h2>
-                    <div className="contact-details">
+                            {statusMessage && (
+                                <div className={`status-message ${statusType}`}>
+                                    {statusMessage}
+                                </div>
+                            )}
+                        </Form>
+                    </div>
+
+                    <div className="info-container">
+                        <h2>Contactos</h2>
                         <p><strong>Telemóvel 1:</strong> +351 912 345 678</p>
                         <p><strong>Telemóvel 2:</strong> +351 987 654 321</p>
                         <p><strong>Email:</strong> contacto@exemplo.com</p>
-                    </div>
-                    <h2>Onde nos encontrar</h2>
-                    <p><strong>Morada:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
-                    <div className="google-map">
-                    <iframe 
+
+                        <h2>Onde nos encontrar</h2>
+                        <p><strong>Morada:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
+                        <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1555.419673838899!2d-9.111102943504827!3d38.7673885929086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19322f81a7b9cb%3A0x55005c8f8f815a3e!2sEscola%20de%20Condu%C3%A7%C3%A3o%20dos%20Olivais!5e0!3m2!1spt-PT!2spt!4v1731600899533!5m2!1spt-PT!2spt"
                             width="100%"
                             height="400"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
+                            frameBorder="0"
+                            allowFullScreen
                             title="Localização no Google Maps"
-                        ></iframe>
+                        />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -1,7 +1,7 @@
 /* About Us Section */
 .about {
   padding: 4rem 12rem;
-  background-color: #000;
+  background-color: #121212;
 }
 
 .heading {
@@ -85,5 +85,18 @@
   .about .row .content,
   .about .row .image {
     height: auto; /* Adjust for smaller screens */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .about .row {
+    flex-direction: column;
+  }
+  .about .row .image,
+  .about .row .content {
+    width: 100%; /* Ensures full width on smaller screens */
+    height: auto; /* Prevents fixed height */
   }
 }
