@@ -1,16 +1,15 @@
 // src/components/PaginaDividida.jsx
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react"; // Importa componentes do Swiper
-import { Pagination, Navigation, Autoplay } from "swiper/modules"; // Inclui o módulo Autoplay
-import "swiper/css"; // Estilos básicos do Swiper
-import "swiper/css/effect-fade"; // Estilos do efeito fade
-import "swiper/css/pagination"; // Estilos opcionais de paginação
-import "swiper/css/navigation"; // Estilos opcionais de navegação
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import imagem1 from "../assets/Infra1OL.jpg";
 import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
-import "../css/Equipa.css"; // Estilo adicional (opcional)
+import "../css/Equipa.css";
 
 const EquipaOL = () => {
   const team = {
@@ -34,71 +33,84 @@ const EquipaOL = () => {
   };
 
   const fleet = [
-    "Toyota Yaris (Gasolina e Gasóleo)",
-    "Toyota Auris (Gasóleo)",
-    "Peugeot Allure (Gasóleo)",
-    "Renault Clio (Gasolina e GPL)",
-    "Dacia Duster (Gasóleo)",
+    { name: "Toyota Yaris (Gasolina e Gasóleo)", image: imagem1 },
+    { name: "Toyota Auris (Gasóleo)", image: imagem2 },
+    { name: "Peugeot Allure (Gasóleo)", image: imagem3 },
   ];
 
   const infrastructureImages = [imagem1, imagem2, imagem3];
 
   return (
-    <div className="team1">
-
-      <section>
-        <div className="Div1">
-          <ul>
-            <h2>A Nossa Equipa</h2>
-            <h4 className="font-bold Spc">Diretora Técnica</h4>
-            <li>{team.diretorTecnico}</li>
-            <h4 className="font-bold Spc">Instrutores</h4>
-            <ul className="list-disc pl-5">
+    <div className="team-container">
+      <section className="team-section">
+        <div className="info-box">
+          <h2 className="section-title">A Nossa Equipa</h2>
+          <div className="team-details">
+            <h4 className="subtitle">Diretora Técnica</h4>
+            <p className="list">{team.diretorTecnico}</p>
+            <h4 className="subtitle">Instrutores</h4>
+            <ul className="list">
               {team.instrutores.map((instrutor, index) => (
                 <li key={index}>{instrutor}</li>
               ))}
             </ul>
-            <h4 className="font-bold Spc">Administrativas</h4>
-            <ul className="list-disc pl-5">
+            <h4 className="subtitle">Administrativas</h4>
+            <ul className="list">
               {team.administrativas.map((administrativa, index) => (
                 <li key={index}>{administrativa}</li>
               ))}
             </ul>
-            <h4 className="font-bold Spc">A nossa Frota</h4>
-            <ul className="list-disc pl-5">
-              {fleet.map((car, index) => (
-                <li key={index}>{car}</li>
-              ))}
-            </ul>
-          </ul>
+          </div>
         </div>
 
-        <div className="Div2">
-          <h2 className="section-header">Infraestrutura</h2>
+        <div className="carousel-box">
+          <h2 className="section-title">Infraestrutura</h2>
           <Swiper
-            modules={[Pagination, Navigation, Autoplay]} // Inclui Autoplay
+            modules={[Pagination, Navigation, Autoplay]}
             pagination={{ clickable: true }}
             navigation
-            autoplay={{
-              delay: 3000, // Tempo entre transições (em milissegundos)
-              disableOnInteraction: false, // Continua o autoplay mesmo com interação do usuário
-            }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
-            className="my-swiper"
+            className="swiper-container"
           >
             {infrastructureImages.map((image, index) => (
               <SwiperSlide key={index}>
                 <LazyLoadImage
                   src={image}
                   alt={`Infraestrutura ${index + 1}`}
-                  className="img1"
+                  className="carousel-image"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
+      </section>
+
+      <section className="fleet-section">
+        <h2 className="section-title">A Nossa Frota</h2>
+        <Swiper
+          modules={[Pagination, Navigation, Autoplay]}
+          pagination={{ clickable: true }}
+          navigation
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          spaceBetween={20}
+          slidesPerView={1}
+          loop={true}
+          className="swiper-container"
+        >
+          {fleet.map((car, index) => (
+            <SwiperSlide key={index}>
+              <LazyLoadImage
+                src={car.image}
+                alt={car.name}
+                className="carousel-image"
+              />
+              <p className="car-name">{car.name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
     </div>
   );

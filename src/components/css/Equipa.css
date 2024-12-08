@@ -1,50 +1,109 @@
 /* src/css/Equipa.css */
-.Spc{
-  padding-top: 4%;
+
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff; /* Texto claro para contraste */
+  background: linear-gradient(to bottom, #000, #333);
+  margin: 0;
+  padding: 0;
 }
 
-.img1{
+.team-container {
+  padding: 5% 10%;
+}
+
+.team-section, .fleet-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00b3b3; /* Azul vibrante */
+}
+
+.info-box, .carousel-box {
+  background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
+  border-radius: 15px;
   padding: 20px;
-  width: 62.1%;
-  border-radius: 10%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
-/* Create two columns/boxes that floats next to each other */
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #00b3b3;
+}
+
+.list {
+  list-style: none;
+  color: #999999;
+  padding-left: 15px;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+.carousel-image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05); /* Efeito de zoom */
+}
+
+.car-name {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #00b3b3;
+}
+
+.swiper-container {
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+  background: #00b3b3; /* Paginação personalizada */
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00b3b3; /* Cor dos botões de navegação */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #00e6e6; /* Alteração de cor ao passar o cursor */
+}
+
 @media (min-width: 992px) {
-  .Div1 {
+  .info-box {
     float: left;
-    width: 30%;
-    height: auto; /* Pode ser ajustado conforme necessário */
-    background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
-    color: #fff; /* Cor do texto para contraste */
-    padding: 20px;
+    width: 45%;
+    margin-right: 5%;
   }
-  
-  /* Style the list inside the menu */
-  .Div1 ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .Div2 {
+
+  .carousel-box {
     float: left;
-    width: 30%;
-    height: auto; /* Pode ser ajustado conforme necessário */
-    background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
-    color: #fff; /* Cor do texto para contraste */
-    padding: 20px;
+    width: 50%;
   }
-  
-  /* Clear floats after the columns */
-  section::after {
-    content: "";
-    display: table;
+
+  .fleet-section {
     clear: both;
   }
 }
-.team1{
-  padding-top: 5%;
-  height: auto;
-  text-align: center;
-  background-color: black;
+.fleet-section {
+  background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
