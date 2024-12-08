@@ -1,42 +1,72 @@
 // src/components/EscolaDeConducaoA.js
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import videobg from '../assets/videobg.mp4';
-import '../css/Hero.css';
+import videobg1 from '../assets/EquipaOL.mp4';
+import videobg2 from '../assets/video_bg_pdn.mp4';
+import logoA from '../assets/logoOL.jpeg'; // Add the logo for School A
+import logoB from '../assets/logoPDN.jpeg'; // Add the logo for School B
+import '../css/Hero.css'; // Import the CSS file
 
 const EscolaDeConducaoA = () => {
     return (
-        <>
-            {/* Hero Section with Two Schools */}
-            <div className="heroA">
-                <video src={videobg} autoPlay loop muted></video>
-                
-                {/* School 1 */}
-                <div className="school-half left">
-                    <div className="school-content">
-                        <h1>Escola de condução Olivais</h1>
-                        <p>Aprende connosco Escola de condução Olivais, que oferece qualidade nas aulas de condução.</p>
-                        {/* Link to Escola 1 page */}
-                        <Link to="/Inicio-OL">
-                            <button>Ver Escola</button>
-                        </Link>
-                    </div>
-                </div>
-                
-                {/* School 2 */}
-                <div className="school-half right">
-                    <div className="school-content">
-                        <h1>Escola de condução Parque das Nações</h1>
-                        <p>Junte-se à Escola de condução Parque das Nações para ganhar confiança e habilidade na estrada com instrutores experientes.</p>
-                        {/* Link to Escola 2 page */}
-                        <Link to="/Inicio-PDN">
-                            <button>Ver Escola</button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </>
+      <div className="hero-container">
+        {/* Left side for School 1 */}
+        <div className="hero-side">
+          <video
+            src={videobg1}
+            autoPlay
+            loop
+            muted
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+          <div className="hero-overlay">
+            <img src={logoA} alt="Escola de Condução A Logo" className="hero-logo" />
+            <h1 className="hero-title">Escola de Condução A</h1>
+            <p className="hero-description">Learn to drive with the best instructors in town!</p>
+            <Link to="/Inicio-OL">
+              <button className="hero-button">
+                Learn More
+              </button>
+            </Link>
+          </div>
+        </div>
+  
+        {/* Right side for School 2 */}
+        <div className="hero-side">
+          <video
+            src={videobg2}
+            autoPlay
+            loop
+            muted
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+          <div className="hero-overlay">
+            <img src={logoB} alt="Escola de Condução B Logo" className="hero-logo" />
+            <h1 className="hero-title">Escola de Condução B</h1>
+            <p className="hero-description">Drive safely with our professional and certified instructors.</p>
+            <Link to="/Inicio-PDN">
+              <button className="hero-button">
+                Learn More
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     );
-};
-
-export default EscolaDeConducaoA;
+  };
+  
+  export default EscolaDeConducaoA;
