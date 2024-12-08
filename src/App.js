@@ -29,7 +29,9 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
+      <div>
       <Navbar />
+      </div>
       <div className="main-content">
         <Routes>
           <Route path="/" element={<Hero />} />

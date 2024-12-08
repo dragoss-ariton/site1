@@ -1,11 +1,16 @@
 // src/components/PaginaDividida.jsx
 import React from "react";
-import imagem1 from "../assets/Infra1OL.jpg"; // Substituir pelos caminhos reais das imagens
+import { Swiper, SwiperSlide } from "swiper/react"; // Importa componentes do Swiper
+import { Pagination, Navigation, Autoplay } from "swiper/modules"; // Inclui o módulo Autoplay
+import "swiper/css"; // Estilos básicos do Swiper
+import "swiper/css/effect-fade"; // Estilos do efeito fade
+import "swiper/css/pagination"; // Estilos opcionais de paginação
+import "swiper/css/navigation"; // Estilos opcionais de navegação
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import imagem1 from "../assets/Infra1OL.jpg";
 import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
 import "../css/Equipa.css"; // Estilo adicional (opcional)
-import videoTeamOL from '../assets/EquipaOL.mp4';
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const EquipaOL = () => {
   const team = {
@@ -36,57 +41,63 @@ const EquipaOL = () => {
     "Dacia Duster (Gasóleo)",
   ];
 
-  const infrastructureImages = [
-    imagem1,
-    imagem3,
-    imagem2,
-  ];
+  const infrastructureImages = [imagem1, imagem2, imagem3];
 
   return (
     <div className="team1">
-      <video src={videoTeamOL} autoPlay loop muted></video>
+
       <section>
         <div className="Div1">
           <ul>
-              <h2>A Nossa Equipa</h2>
+            <h2>A Nossa Equipa</h2>
             <h4 className="font-bold Spc">Diretora Técnica</h4>
-              <li>
-                {team.diretorTecnico}
-              </li>
+            <li>{team.diretorTecnico}</li>
             <h4 className="font-bold Spc">Instrutores</h4>
-              <li className="list-disc pl-5">
-                {team.instrutores.map((instrutor, index) => (
-                  <li key={index}>{instrutor}</li>
-                ))}
-              </li>
+            <ul className="list-disc pl-5">
+              {team.instrutores.map((instrutor, index) => (
+                <li key={index}>{instrutor}</li>
+              ))}
+            </ul>
             <h4 className="font-bold Spc">Administrativas</h4>
-              <li className="list-disc pl-5">
-                {team.administrativas.map((administrativa, index) => (
-                  <li key={index}>{administrativa}</li>
-                ))}
-              </li>
+            <ul className="list-disc pl-5">
+              {team.administrativas.map((administrativa, index) => (
+                <li key={index}>{administrativa}</li>
+              ))}
+            </ul>
             <h4 className="font-bold Spc">A nossa Frota</h4>
-              <li className="list-disc pl-5">
-                {fleet.map((car, index) => (
-                  <li key={index}>{car}</li>
-                ))}
-              </li>
+            <ul className="list-disc pl-5">
+              {fleet.map((car, index) => (
+                <li key={index}>{car}</li>
+              ))}
+            </ul>
           </ul>
         </div>
-        
+
         <div className="Div2">
           <h2 className="section-header">Infraestrutura</h2>
-          <div className="space-y-6">
-            {infrastructureImages.slice(0, 3).map((image, index) => (
-              <div key={index} className="flex justify-end">
+          <Swiper
+            modules={[Pagination, Navigation, Autoplay]} // Inclui Autoplay
+            pagination={{ clickable: true }}
+            navigation
+            autoplay={{
+              delay: 3000, // Tempo entre transições (em milissegundos)
+              disableOnInteraction: false, // Continua o autoplay mesmo com interação do usuário
+            }}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            className="my-swiper"
+          >
+            {infrastructureImages.map((image, index) => (
+              <SwiperSlide key={index}>
                 <LazyLoadImage
                   src={image}
                   alt={`Infraestrutura ${index + 1}`}
-                  className="img1" // Classe aplicada para o estilo da imagem
+                  className="img1"
                 />
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
     </div>

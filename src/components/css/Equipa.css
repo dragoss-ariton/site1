@@ -18,7 +18,6 @@
     background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
     color: #fff; /* Cor do texto para contraste */
     padding: 20px;
-    margin-left: 20%;
   }
   
   /* Style the list inside the menu */
@@ -34,7 +33,6 @@
     background: rgba(0, 0, 0, 0.5); /* Fundo preto com 50% de transparência */
     color: #fff; /* Cor do texto para contraste */
     padding: 20px;
-    margin-right: 20%;
   }
   
   /* Clear floats after the columns */
@@ -43,4 +41,10 @@
     display: table;
     clear: both;
   }
+}
+.team1{
+  padding-top: 5%;
+  height: auto;
+  text-align: center;
+  background-color: black;
 }
