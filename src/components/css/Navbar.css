@@ -11,7 +11,6 @@
     align-items: center;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.6s ease-in-out forwards; /* Animação de fade-in */
-    height: 60px; /* Define a altura fixa da navbar */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destacar */
 }
 
@@ -116,8 +115,6 @@
     }
 
     .navbar-toggle {
-        display: block; /* Exibe o botão de menu em telas pequenas */
-        background-color: transparent;
         border: none;
         color: #00acac;
         font-size: 1.5rem;
@@ -125,31 +122,22 @@
     }
 
     .navbar-nav {
-        display: none; /* Esconde os links por padrão no mobile */
         flex-direction: column;
         width: 100%;
-        margin-top: 10px;
         background-color: #000;
     }
 
-    .navbar-nav.show {
-        display: flex; /* Mostra os links quando o menu é ativado */
-    }
-
     .navbar-nav .nav-link {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin: 10px 0;
-        animation: none; /* Desativa animação no mobile */
         opacity: 1; /* Garante que os links são visíveis */
         transform: translateX(0);
+        animation: none;
+        padding-left: 4vh;
+        padding-right: 4vh;
     }
 
     .navbar-nav .nav-link:hover {
         color: white;
     }
-}
-
-/* Adiciona espaço para o conteúdo principal */
-.main-content {
-    padding-top: 60px; /* Ajusta conforme a altura da navbar */
 }
