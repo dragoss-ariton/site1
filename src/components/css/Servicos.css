@@ -1,198 +1,148 @@
-
-/* Container for the entire services section */
-.services_container {
-    max-width: 100vh;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 50px 20px;
-    background-color: #121212;
-    color: #f5f5f5;
-}
-
-/* Title of the services section */
-.servicos-title {
+/* Page title styling */
+.title-services1 {
     text-align: center;
-    color: #00acac;
+    color: #fff;
     text-transform: uppercase;
-    padding-top: 5.5rem;
+    padding-top: 3rem; /* Adjusted padding to bring title closer to the boxes */
     font-size: 4rem;
-    letter-spacing: 0.1rem;
 }
 
-/* Cards Container */
-.cards-container {
+.title-services1 span {
+    color: #00acac;
+}
+
+/* General container styling */
+.container1 {
     display: flex;
-    gap: 2rem;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem 1rem;
+    gap: 25px;
+    margin: 50px auto;
+    max-width: 100%;
+    height: calc(100vh - 6rem); /* Adjust height to leave space for the title */
+    padding: 0 20px;
+    flex-direction: row; /* Ensures the items are in rows */
 }
 
-/* Card Styles */
-.card {
-    width: 300px;
-    background: #000; /* Pure black background for cards */
-    padding: 3rem;
-    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1); /* Subtle light shadow */
-    border-radius: 25px; /* Moderately rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Box styling */
+.container1 .box1 {
+    width: 450px; /* Increased box size */
     text-align: center;
-    position: relative;
-    overflow: hidden;
-    color: #eee; /* Light text for contrast */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for definition */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card::before {
-    content: '';
+/* Box hover effect */
+.container1 .box1:hover {
+    transform: scale(1.05);
+}
+
+/* Box image container for title positioning */
+.box-image-container1 {
+    position: relative;
+}
+
+.box-image1 {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+}
+
+/* Overlay for title on image */
+.box-title-overlay1 {
     position: absolute;
+    top: 0; /* Set top to 0 to start at the top of the box */
+    left: 0; /* Set left to 0 to start at the left of the box */
+    width: 100%; /* Make the overlay take up the full width of the box */
+    height: 100%; /* Make the overlay take up the full height of the box */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.box-title1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Popup styling */
+/* Popup styling */
+.popup1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px; /* Increased padding for better spacing */
+    width: 700px; /* Increased width */
+    height: 600px; /* Increased height */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1001; /* Ensure popup is on top */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+}
+
+/* Popup image styling */
+.popup-image1 {
+    width: 120px; /* Increased image size */
+    height: auto;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    border-radius: 8px;
+}
+
+/* Popup title styling */
+.popup1 h2 {
+    font-size: 24px; /* Slightly larger font size */
+    margin: 15px 0; /* Increased margin for spacing */
+}
+
+/* List styling inside the popup */
+.popup1 ul {
+    list-style-type: disc;
+    padding-left: 40px; /* Increased padding for better readability */
+    text-align: left;
+    font-size: 18px; /* Larger font size for easier reading */
+    margin-bottom: 20px; /* More space below the list */
+}
+
+/* List item styling */
+.popup1 li {
+    margin: 10px 0; /* Increased margin between list items */
+}
+
+/* Popup button styling */
+.popup1 button {
+    margin-top: 20px; /* Increased space from content */
+    padding: 15px 30px; /* Increased padding for a larger button */
+    background-color: lightblue;
+    border: none;
+    border-radius: 8px; /* Rounded corners for the button */
+    cursor: pointer;
+    font-size: 18px; /* Larger font size for the button */
+}
+
+.popup1 button:hover {
+    background-color: deepskyblue;
+}
+/* Overlay styling */
+.overlay1 {
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
-    background: rgba(0, 172, 172, 0.2); /* Subtle overlay effect */
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.2); /* Brighter shadow on hover */
-}
-
-/* Icon Styles */
-.icon {
-    font-size: 3rem;
-    color: #00acac; /* Vibrant color for icons */
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.card:hover .icon {
-    transform: scale(1.2);
-}
-
-/* Card Text */
-.card h2 {
-    font-size: 1.8rem;
-    color: #00acac; /* Consistent with icon color */
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-.card:hover h2 {
-    color: #00ffff; /* Brighter hover effect */
-}
-
-.card p {
-    font-size: 1rem;
-    color: #ccc; /* Softer text for readability */
-    line-height: 1.6;
-}
-
-/* Responsive Design for Various Screen Sizes */
-
-/* For Tablets and Smaller Screens (768px to 1024px) */
-@media (max-width: 1024px) {
-    .cards-container {
-        gap: 1.5rem;
-    }
-
-    .card {
-        width: 45%; /* Adjust width to fit 2 cards per row */
-        padding: 2.5rem;
-    }
-
-    .services_container {
-        height: auto; /* Let height adjust according to content */
-    }
-
-    .servicos-title {
-        font-size: 3rem; /* Smaller title */
-        padding-top: 4.5rem; /* Adjust padding */
-    }
-}
-
-/* For Mobile Devices (up to 768px) */
-@media (max-width: 768px) {
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%; /* Make cards nearly full width */
-        max-width: 350px; /* Limit the maximum width */
-        margin-top: 2rem; /* Space between cards */
-    }
-
-    .services_container {
-        height: auto; /* Adjust height to fit content */
-    }
-
-    .servicos-title {
-        font-size: 2.5rem; /* Smaller title for mobile */
-        padding-top: 4rem; /* Adjust padding */
-    }
-}
-
-/* For Very Small Devices (e.g., small phones under 400px) */
-@media (max-width: 400px) {
-    .services_container {
-        height: auto; /* Adjust height on very small screens */
-    }
-
-    .servicos-title {
-        font-size: 2rem; /* Further reduce font size for small screens */
-        padding-top: 3.5rem;
-    }
-
-    .card {
-        width: 100%; /* Cards should take the full width */
-        padding: 2rem; /* Adjust padding to fit content */
-    }
-
-    .icon {
-        font-size: 2.5rem; /* Adjust icon size */
-    }
-
-    .card h2 {
-        font-size: 1.6rem; /* Smaller heading text */
-    }
-
-    .card p {
-        font-size: 0.9rem; /* Slightly smaller text for mobile */
-    }
-}
-
-/* For Larger Screens (above 1024px) */
-@media (min-width: 1025px) {
-    .cards-container {
-        gap: 3rem; /* Increase space between cards */
-    }
-
-    .card {
-        width: 300px; /* Keep original card width for large screens */
-    }
-
-    .services_container {
-        height: 100vh; /* Full height */
-    }
-
-    .servicos-title {
-        font-size: 4rem; /* Larger title on bigger screens */
-        padding-top: 5.5rem;
-    }
-}
-
-/* Smooth Interactions */
-.card:hover p {
-    color: #fff; /* Brighter text on hover */
-    transition: color 0.3s ease;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Ensure overlay is below popup */
 }

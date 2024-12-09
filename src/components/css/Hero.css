@@ -4,17 +4,20 @@
 .hero-container {
     display: flex;
     height: 100vh;
-  }
-  
-  /* Style for each side container */
-  .hero-side {
+    flex-direction: row; /* Default for desktop layout */
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Style for each side container */
+.hero-side {
     flex: 1;
     position: relative;
-    overflow: hidden; /* Ensures that the overlay doesn't spill over */
-  }
-  
-  /* Overlay for the video content */
-  .hero-overlay {
+    overflow: hidden;
+    width: 100%; /* By default, each side takes full width for small screens */
+}
+
+/* Overlay for the video content */
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -22,42 +25,42 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px;
-    transition: background 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  /* Darker effect on hover */
-  .hero-side:hover .hero-overlay {
-    background: rgba(0, 0, 0, 0.7); /* Darker background on hover */
-  }
-  
-  /* Logo Style */
-  .hero-logo {
+    transition: background 0.3s ease;
+}
+
+/* Darker effect on hover */
+.hero-side:hover .hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Logo Style */
+.hero-logo {
     border-radius: 50%;
-    width: 150px; /* Set a fixed width for the logo */
+    width: 150px;
     height: 150px;
-    margin-bottom: 20px; /* Adds space below the logo */
-  }
-  
-  /* Title Style */
-  .hero-title {
+    margin-bottom: 20px;
+}
+
+/* Title Style */
+.hero-title {
     font-size: 2.5rem;
     margin-bottom: 10px;
-  }
-  
-  /* Description Style */
-  .hero-description {
+}
+
+/* Description Style */
+.hero-description {
     font-size: 1.2rem;
     margin-bottom: 20px;
-  }
-  
-  /* Button Style */
-  .hero-button {
+}
+
+/* Button Style */
+.hero-button {
     padding: 10px 20px;
     background-color: #4caf50;
     color: white;
@@ -66,9 +69,172 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
-  }
-  
-  .hero-button:hover {
-    background-color: #45a049; /* Slightly darker shade of green */
-  }
-  
+}
+
+.hero-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+
+/* Mobile (small screens) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stack side containers vertically on mobile */
+        height: auto; /* Remove full height on mobile */
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Tablet (medium screens) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-button {
+        font-size: 1rem;
+        padding: 9px 18px;
+    }
+}
+/* Hero.css */
+
+/* Container for the whole component */
+.hero-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row; /* Default for desktop layout */
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Style for each side container */
+.hero-side {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* By default, each side takes full width for small screens */
+}
+
+/* Overlay for the video content */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+/* Darker effect on hover */
+.hero-side:hover .hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Logo Style */
+.hero-logo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+/* Title Style */
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Description Style */
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Button Style */
+.hero-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+
+/* Mobile (small screens) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stack side containers vertically on mobile */
+        height: auto; /* Remove full height on mobile */
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Tablet (medium screens) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-button {
+        font-size: 1rem;
+        padding: 9px 18px;
+    }
+}

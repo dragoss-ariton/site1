@@ -4,7 +4,7 @@
     background-color: #121212;
 }
 
-.title_services h1{
+.title_services h1 {
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -21,11 +21,11 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
     padding: 20px;
 }
 
 .services_card {
-    height: auto;
     width: 300px;
     padding: 20px 35px;
     border-radius: 10px;
@@ -35,7 +35,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .services_card .icon {
@@ -47,49 +47,49 @@
 .services_card h1 {
     font-size: 22px;
     margin-bottom: 15px;
+    color: #000;
 }
 
 .services_card .button_services {
-    background: #000;
-    color: #00acac;
-    border: none;
-    border-radius: 5px;
-    width: 120px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
+    background: #000 !important;
+    color: #00acac !important; 
+    border: 2px solid transparent !important;
+    border-radius: 5px !important;
+    width: 120px !important;
+    padding: 10px 15px !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    transition: background 0.3s, color 0.3s, border 0.3!important ;
+}
+
+.services_card .button_services:hover {
+    background: transparent !important;
+    color: #000 !important; 
+    border: 2px solid #000 !important;
 }
 
 .services_card:hover {
-    color: #777;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    animation: rotate 0.7s ease-in-out both;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: subtle-rotate 0.7s ease-in-out both;
 }
 
-@keyframes rotate {
-    0% {
+@keyframes subtle-rotate {
+    0%, 100% {
         transform: rotate(0deg);
     }
-
     25% {
-        transform: rotate(3deg);
+        transform: rotate(2deg);
     }
-
     50% {
-        transform: rotate(-3deg);
+        transform: rotate(-2deg);
     }
-
     75% {
         transform: rotate(1deg);
     }
-
-    100% {
-        transform: rotate(0deg);
-    }
 }
 
-
-/* Responsive adjustments */
+/* Responsive Adjustments */
 
 /* For Tablets and below */
 @media (max-width: 768px) {
@@ -97,7 +97,7 @@
         padding: 3rem 5rem;
     }
 
-    .title_services {
+    .title_services h1 {
         font-size: 3rem;
     }
 
@@ -112,7 +112,6 @@
 
     .services {
         flex-direction: column;
-        justify-content: flex-start;
     }
 
     .services_card .button_services {
@@ -121,13 +120,13 @@
     }
 }
 
-/* For Mobile devices */
+/* For Mobile Devices */
 @media (max-width: 480px) {
     .services_section {
         padding: 2rem 2rem;
     }
 
-    .title_services {
+    .title_services h1 {
         font-size: 2.5rem;
     }
 
