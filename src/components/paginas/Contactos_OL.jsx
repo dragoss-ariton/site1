@@ -132,12 +132,12 @@ const Contactos_OL = () => {
 
                     <div className="info-container">
                         <h2>Contactos</h2>
-                        <p><strong>Telemóvel 1:</strong> +351 912 345 678</p>
-                        <p><strong>Telemóvel 2:</strong> +351 987 654 321</p>
-                        <p><strong>Email:</strong> contacto@exemplo.com</p>
+                        <p><strong>Fixo:</strong> 211 588 274</p>
+                        <p><strong>Telemóvel 2:</strong> 936 533 485</p>
+                        <p><strong>Email:</strong> ec.olivais@gmail.com</p>
 
                         <h2>Onde nos encontrar</h2>
-                        <p><strong>Morada:</strong> Rua Exemplo, 123, Lisboa, Portugal</p>
+                        <p><strong>Morada:</strong> Av.Cidade Luanda N5 B, 1B. 1800-096 Lisboa</p>
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1555.419673838899!2d-9.111102943504827!3d38.7673885929086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19322f81a7b9cb%3A0x55005c8f8f815a3e!2sEscola%20de%20Condu%C3%A7%C3%A3o%20dos%20Olivais!5e0!3m2!1spt-PT!2spt!4v1731600899533!5m2!1spt-PT!2spt"
                             width="100%"

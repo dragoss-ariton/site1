@@ -19,8 +19,7 @@ const FaqPDN = () => {
     },
     {
       question: 'Quanto tempo é necessário para tirar a carta de condução?',
-      answer: `A carta demora o tempo necessário para concluir 28 horas de Código e 32 horas de Condução. 
-               O período mínimo de conclusão, se tudo correr bem, é de 12 semanas.`,
+      answer: `A carta demora o tempo necessário para concluir 28 horas de Código e 32 horas de Condução.`,
     },
     {
       question: 'O que é necessário para fazer a inscrição?',
@@ -30,13 +29,12 @@ const FaqPDN = () => {
                3. Quantia referente à inscrição.`,
     },
     {
-      question: 'Quantas aulas é possível ter por dia?',
-      answer: 'Não há limite para aulas de Código por dia, mas apenas 4 horas diárias de aulas práticas de condução.',
+      question: 'Posso tirar a carta em Inglês?',
+      answer: 'Sim, a nossa escola oferece a possibilidade de fazer a carta em Inglês.',
     },
     {
       question: 'Quando deve ser efetuado o exame de código?',
-      answer: `O exame de código pode ser feito após concluir 28 horas de aulas teóricas 
-               e metade das aulas práticas obrigatórias.`,
+      answer: `O exame de código pode ser feito após concluir 28 horas de aulas teóricas.`,
     },
     {
       question: 'É possível ter aulas de condução antes de passar no Código?',
