@@ -15,11 +15,6 @@
     z-index: 1000; /* Garante que a navbar fique no topo */
 }
 
-/* Define o espaçamento necessário para o conteúdo não aparecer por trás da navbar */
-body {
-    padding-top: 55px; /* Usa a variável para o espaçamento superior */
-}
-
 /* Fade-in animation */
 @keyframes fadeIn {
     from {
@@ -65,9 +60,14 @@ body {
     margin: 0 10px;
     opacity: 0;
     transform: translateX(-20px); /* Começa deslocado para a esquerda */
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, color 0.3s ease;
     animation: slideLinks 0.8s ease forwards;
     animation-delay: 0.3s; /* Delay para aparecer após o logo */
+}
+
+.navbar.green-navbar .nav-link {
+    color: rgb(0, 204, 0); /* Cor para rotas OL */
+    transition: color 0.3s ease;
 }
 
 @keyframes slideLinks {

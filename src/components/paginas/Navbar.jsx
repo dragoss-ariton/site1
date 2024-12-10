@@ -42,8 +42,11 @@ const Navbar = () => {
     const preRegistrationLink = selectedSchool === 'A' ? "/Contactos-OL" : "/Contactos-PDN";
     const isHomePage = location.pathname === '/';
 
+    // Verifica se a rota atual pertence à escola "OL" para aplicar cor verde
+    const isGreenRoute = location.pathname.includes('-OL');
+
     return (
-        <BootstrapNavbar expand="lg" fixed="top" className={`navbar-custom ${isHomePage ? 'home-page' : ''}`} expanded={expanded}>
+        <BootstrapNavbar expand="lg" fixed="top" className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${isGreenRoute ? 'green-navbar' : ''}`}>
             <Container>
                 {isHomePage ? (
                     <div className="d-flex justify-content-center w-100">
