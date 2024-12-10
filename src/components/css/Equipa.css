@@ -54,10 +54,6 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.carousel-image:hover {
-  transform: scale(1.05); /* Efeito de zoom */
-}
-
 .car-name {
   text-align: center;
   margin-top: 10px;
@@ -87,13 +83,13 @@ body {
 @media (min-width: 992px) {
   .info-box {
     float: left;
-    width: 45%;
+    width: 30%;
     margin-right: 5%;
   }
 
   .carousel-box {
     float: left;
-    width: 50%;
+    width: 65%;
   }
 
   .fleet-section {
@@ -101,9 +97,79 @@ body {
   }
 }
 .fleet-section {
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  gap: 20px;
   background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
+
+.section-title {
+  color: #00bcd4; /* Azul claro */
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.div2{
+  text-align: center;
+}
+
+.fleet-content {
+  display: flex;
+  justify-content: space-between; /* Mantém a distribuição entre os itens */
+  align-items: center; /* Alinha ao centro verticalmente */
+  gap: 30px; /* Aumenta o espaçamento entre as colunas */
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.fleet-image {
+  flex: 1 1 30%; /* Limita o espaço da imagem */
+  max-width: 100%; /* Certifica que a imagem não ultrapassa 100% da largura */
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fleet-list {
+  flex: 1 1 35%; /* A lista ocupa mais espaço */
+  list-style: none;
+  color: #999999;
+  padding-left: 15px;
+  margin-bottom: 0; /* Remover espaçamento extra */
+  display: flex; /* Torna a lista flexível */
+  flex-direction: column; /* Organiza os itens da lista em coluna */
+  justify-content: center; /* Alinha os itens verticalmente no centro */
+  align-items: center; /* Alinha os itens horizontalmente no centro */
+}
+
+.fleet-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-top: 10%;
+}
+
+.fleet-contact {
+  flex: 1 1 30%; /* A seção de contato ocupa um espaço menor */
+  margin-left: auto; /* Empurra a seção de contato para a direita */
+  display: flex; /* Torna o conteúdo flexível */
+  justify-content: center; /* Alinha o conteúdo horizontalmente */
+  align-items: center; /* Alinha o conteúdo verticalmente */
+}
+
+@media (max-width: 768px) {
+  .fleet-content {
+    flex-direction: column; /* Empilha imagem e lista em ecrãs pequenos */
+    align-items: center;
+    text-align: center;
+  }
+
+  .fleet-image {
+    max-width: 100%; /* A imagem ocupa toda a largura em ecrãs pequenos */
+    margin-bottom: 20px;
+  }
 }

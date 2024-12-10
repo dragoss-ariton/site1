@@ -9,7 +9,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import imagem1 from "../assets/Infra1OL.jpg";
 import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
+import frotaImagem from "../assets/FrotaOL.jpg"; // Substituir pelo caminho correto da imagem
 import "../css/Equipa.css";
+import { Link } from 'react-router-dom';
 
 const EquipaOL = () => {
   const team = {
@@ -33,9 +35,11 @@ const EquipaOL = () => {
   };
 
   const fleet = [
-    { name: "Toyota Yaris (Gasolina e Gasóleo)", image: imagem1 },
-    { name: "Toyota Auris (Gasóleo)", image: imagem2 },
-    { name: "Peugeot Allure (Gasóleo)", image: imagem3 },
+    "Toyota Yaris (Gasolina e Gasóleo)",
+    "Toyota Auris (Gasóleo)",
+    "Peugeot Allure (Gasóleo)",
+    "Renault Clio (Gasolina e GPL)",
+    "Dacia Duster (Gasóleo)",
   ];
 
   const infrastructureImages = [imagem1, imagem2, imagem3];
@@ -88,30 +92,39 @@ const EquipaOL = () => {
         </div>
       </section>
 
-      <section className="fleet-section">
-        <h2 className="section-title">A Nossa Frota</h2>
-        <Swiper
-          modules={[Pagination, Navigation, Autoplay]}
-          pagination={{ clickable: true }}
-          navigation
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          spaceBetween={20}
-          slidesPerView={1}
-          loop={true}
-          className="swiper-container"
-        >
-          {fleet.map((car, index) => (
-            <SwiperSlide key={index}>
-              <LazyLoadImage
-                src={car.image}
-                alt={car.name}
-                className="carousel-image"
-              />
-              <p className="car-name">{car.name}</p>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <section className="fleet-section flex items-center justify-between">
+      <div className="fleet-content flex w-full gap-8">
+        {/* Primeira parte: Imagem da frota */}
+        <div className="fleet-image w-1/3">
+          <LazyLoadImage
+            src={frotaImagem}
+            alt="Imagem da frota"
+            className="fleet-image w-full"
+          />
+        </div>
+
+        {/* Segunda parte: Detalhes da frota */}
+        <div className="fleet-details w-1/3">
+          <h2 className="section-title div2 text-3xl text-blue-500">A Nossa Frota</h2>
+          <ul className="fleet-list list-disc pl-5">
+            {fleet.map((car, index) => (
+              <li key={index}>{car}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Terceira parte: Seção de contato */}
+        <div className="fleet-contact w-1/3">
+          <p className="text-white">Tire as suas dúvidas aqui</p>
+          <Link to="/Contactos-OL">
+            <button className="bg-blue text-black px-6 py-2 rounded">
+              Ir para Contactos
+            </button>
+          </Link>
+        </div>
+      </div>
+    </section>
+
     </div>
   );
 };
