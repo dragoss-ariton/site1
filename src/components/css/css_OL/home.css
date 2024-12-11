@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+/* Video Background */
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensures video stays behind all content */
+}
+
+/* Home Section */
+.hero-section-OL {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  z-index: 1; /* Ensures this section appears above the video */
+  background: rgba(0, 0, 0, 0.8); /* Optional overlay for better text visibility */
+}
+
+.hero-text-OL h1 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.hero-text-OL p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Hire Me Button */
+.hire-me-button-OL {
+  background-color: transparent !important; /* Set the background color */
+  color: #156d15 !important; /* Set the text color */
+  border-color: rgb(0, 204, 0) !important; /* Set the border color */
+  padding: 15px 30px !important; /* Increase padding to make the button bigger */
+  font-size: 1.2rem !important; /* Increase font size */
+  border-radius: 5px !important; /* Optional: adjust border radius */
+  width: auto !important; /* Make width adjust to content */
+  transition: all 0.3s ease-in-out !important; /* Smooth transition on hover */
+}
+
+.hire-me-button-OL:hover {
+  background-color: #156d15 !important; /* Darker shade of rgb(0, 204, 0) for hover effect */
+  border-color: #156d15 !important; /* Darker border color on hover */
+  color: #fff !important; /* Maintain white text color on hover */
+}
+
+/* Highlighted Text */
+.highlight-OL {
+  color: rgb(0, 204, 0);
+}
+
+/* Hero Text Animation */
+.hero-text-OL {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-section-OL {
+    height: 80vh; /* Adjust height for smaller screens */
+  }
+
+  .hero-text-OL h1 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .hero-text-OL p {
+    font-size: 1.1rem; /* Adjust paragraph size for smaller screens */
+  }
+
+  .hire-me-button-OL {
+    padding: 12px 24px; /* Adjust button padding for smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}

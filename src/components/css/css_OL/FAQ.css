@@ -1,0 +1,110 @@
+.faq-page-OL {
+    background-color: #161616;
+    color: #ffffff;
+    padding: 20px 20px 100px 20px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .faq-title-container-OL {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  .faq-title-OL {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .faq-title-OL .highlight-OL {
+    color: rgb(0, 204, 0);
+  }
+  
+  .faq-columns-OL {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .faq-list-OL {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .faq-item-OL {
+    margin-bottom: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .faq-toggler-OL {
+    background: #3a3a3a;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: background-color 0.2s;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  .faq-toggler-OL:hover {
+    background-color: #333;
+  }
+  
+  .faq-content-OL {
+    display: none;
+    background: #4a4a4a;
+    padding: 15px;
+    font-size: 1rem;
+    color: #cfcfcf;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .faq-content-OL.visible {
+    display: block;
+  }
+  
+  .icon-OL {
+    transition: transform 0.2s;
+  }
+  
+  .icon-OL.rotated {
+    transform: rotate(180deg);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .faq-columns-OL {
+      grid-template-columns: 1fr; /* Uma coluna em telas menores */
+      gap: 10px;
+    }
+  
+    .faq-title-OL {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .faq-toggler-OL {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .faq-title-OL {
+      font-size: 1.8rem;
+    }
+  }
+  

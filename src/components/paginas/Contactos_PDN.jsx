@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import '../css/contact.css';
+import '../css/css_PDN/contact.css';
 
 const Contactos_PDN = () => {
     const [formData, setFormData] = useState({

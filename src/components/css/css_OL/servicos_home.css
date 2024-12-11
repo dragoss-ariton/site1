@@ -1,0 +1,147 @@
+/* Services Section */
+.services_section-OL {
+    padding: 4rem 12rem;
+    background-color: #121212;
+}
+
+.title_services-OL h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.title_services-OL span {
+    color: rgb(0, 204, 0);
+}
+
+.services-OL {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.services_card-OL {
+    width: 300px;
+    padding: 20px 35px;
+    border-radius: 10px;
+    background: rgb(0, 204, 0);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services_card-OL .icon-OL {
+    font-size: 64px;
+    color: #000;
+    margin-bottom: 18px;
+}
+
+.services_card-OL h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.services_card-OL .button_services-OL {
+    background: #000 !important;
+    color: rgb(0, 204, 0) !important; 
+    border: 2px solid transparent !important;
+    border-radius: 5px !important;
+    width: 120px !important;
+    padding: 10px 15px !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    transition: background 0.3s, color 0.3s, border 0.3!important ;
+}
+
+.services_card-OL.button_services-OL:hover {
+    background: transparent !important;
+    color: #000 !important; 
+    border: 2px solid #000 !important;
+}
+
+.services_card-OL:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: subtle-rotate 0.7s ease-in-out both;
+}
+
+@keyframes subtle-rotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(1deg);
+    }
+}
+
+/* Responsive Adjustments */
+
+/* For Tablets and below */
+@media (max-width: 768px) {
+    .services_section-OL {
+        padding: 3rem 5rem;
+    }
+
+    .title_services-OL h1 {
+        font-size: 3rem;
+    }
+
+    .services_card-OL {
+        width: 250px;
+        padding: 15px 25px;
+    }
+
+    .services_card-OL h1 {
+        font-size: 18px;
+    }
+
+    .services-OL {
+        flex-direction: column;
+    }
+
+    .services_card-OL .button_services-OL {
+        width: 100px;
+        padding: 8px 12px;
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+    .services_section-OL {
+        padding: 2rem 2rem;
+    }
+
+    .title_services-OL h1 {
+        font-size: 2.5rem;
+    }
+
+    .services_card-OL {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .services_card-OL h1 {
+        font-size: 16px;
+    }
+
+    .services_card-OL .button_services-OL {
+        width: 90px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

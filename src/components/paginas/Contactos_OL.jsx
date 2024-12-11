@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import '../css/contact.css';
+import '../css/css_OL/contact.css';
 
 const Contactos_OL = () => {
     const [formData, setFormData] = useState({
@@ -54,14 +54,14 @@ const Contactos_OL = () => {
     };
 
     return (
-        <section id="contact-section">
-            <div className="container">
-                <div className="content-wrapper">
-                    <div className="form-container">
-                        <h1 className="title">Queres saber mais informações?</h1>
-                        <p className="subtitle">Envia-nos uma mensagem, que entraremos em contacto consigo o mais depressa possível!</p>
+        <section id="contact-section-OL">
+            <div className="container-OL">
+                <div className="content-wrapper-OL">
+                    <div className="form-container-OL">
+                        <h1 className="title-OL">Queres saber mais informações?</h1>
+                        <p className="subtitle-OL">Envia-nos uma mensagem, que entraremos em contacto consigo o mais depressa possível!</p>
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group controlId="formName" className="form-group">
+                            <Form.Group controlId="formName" className="form-group-OL">
                                 <Form.Label>Nome</Form.Label>
                                 <Form.Control
                                     type="text"
@@ -73,7 +73,7 @@ const Contactos_OL = () => {
                                 />
                             </Form.Group>
 
-                            <Form.Group controlId="formEmail" className="form-group">
+                            <Form.Group controlId="formEmail" className="form-group-OL">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control
                                     type="email"
@@ -89,7 +89,7 @@ const Contactos_OL = () => {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            <Form.Group controlId="formPhone" className="form-group">
+                            <Form.Group controlId="formPhone" className="form-group-OL">
                                 <Form.Label>Telefone</Form.Label>
                                 <Form.Control
                                     type="tel"
@@ -105,7 +105,7 @@ const Contactos_OL = () => {
                                 </Form.Control.Feedback>
                             </Form.Group>
 
-                            <Form.Group controlId="formMessage" className="form-group">
+                            <Form.Group controlId="formMessage" className="form-group-OL">
                                 <Form.Label>Mensagem</Form.Label>
                                 <Form.Control
                                     as="textarea"
@@ -118,7 +118,7 @@ const Contactos_OL = () => {
                                 />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" className="submit-btn" disabled={isSubmitting}>
+                            <Button variant="primary" type="submit" className="submit-btn-OL" disabled={isSubmitting}>
                                 {isSubmitting ? 'A Enviar...' : 'Enviar'}
                             </Button>
 
@@ -130,7 +130,7 @@ const Contactos_OL = () => {
                         </Form>
                     </div>
 
-                    <div className="info-container">
+                    <div className="info-container-OL">
                         <h2>Contactos</h2>
                         <p><strong>Fixo:</strong> 211 588 274</p>
                         <p><strong>Telemóvel 2:</strong> 936 533 485</p>

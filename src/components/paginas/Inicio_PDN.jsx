@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import 'boxicons/css/boxicons.min.css';
-import '../css/home.css';
-import '../css/servicos_home.css';
-import '../css/aboutUs.css';
+import '../css/css_PDN/home.css';
+import '../css/css_PDN/servicos_home.css';
+import '../css/css_PDN/aboutUs.css';
 import { Link } from 'react-router-dom';
 import img from '../assets/logoPDN.jpeg';
 import videobg from '../assets/video_bg_pdn.mp4';

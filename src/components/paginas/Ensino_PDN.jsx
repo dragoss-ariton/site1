@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/Servicos.css';
+import '../css/css_PDN/Servicos.css';
 import Infra3PDN from '../assets/Infra3PDN.jpg';
 
 const PopupBoxes = () => {

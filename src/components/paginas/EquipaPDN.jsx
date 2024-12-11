@@ -9,7 +9,7 @@ import imagem1 from "../assets/Infra1PDN.jpg"; // Substituir pelos caminhos reai
 import imagem2 from "../assets/Infra2PDN.jpg";
 import imagem3 from "../assets/Infra3PDN.jpg";
 import frotaImagem from "../assets/FrotaPDN.jpg";
-import "../css/Equipa.css"; // Estilo adicional (opcional)
+import "../css/css_PDN/Equipa.css"; // Estilo adicional (opcional)
 import { Link } from 'react-router-dom';
 
 const EquipaPDN = () => {

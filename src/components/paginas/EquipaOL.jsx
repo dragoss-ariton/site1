@@ -9,7 +9,7 @@ import imagem1 from "../assets/Infra1OL.jpg";
 import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
 import frotaImagem from "../assets/FrotaOL.jpg"; // Substituir pelo caminho correto da imagem
-import "../css/Equipa.css";
+import "../css/css_OL/Equipa.css";
 import { Link } from "react-router-dom";
 
 const EquipaOL = () => {
@@ -44,22 +44,22 @@ const EquipaOL = () => {
   const infrastructureImages = [imagem1, imagem2, imagem3];
 
   return (
-    <div className="team-container">
+    <div className="team-container-OL">
       {/* Equipa Section */}
-      <section className="team-section">
-        <div className="info-box">
-          <h2 className="section-title">A Nossa Equipa</h2>
-          <div className="team-details">
-            <h4 className="subtitle">Diretora Técnica</h4>
-            <p className="list">{team.diretorTecnico}</p>
-            <h4 className="subtitle">Instrutores</h4>
-            <ul className="list">
+      <section className="team-section-OL">
+        <div className="info-box-OL">
+          <h2 className="section-title-OL">A Nossa Equipa</h2>
+          <div className="team-details-OL">
+            <h4 className="subtitle-OL">Diretora Técnica</h4>
+            <p className="list-OL">{team.diretorTecnico}</p>
+            <h4 className="subtitle-OL">Instrutores</h4>
+            <ul className="list-OL">
               {team.instrutores.map((instrutor, index) => (
                 <li key={index}>{instrutor}</li>
               ))}
             </ul>
-            <h4 className="subtitle">Administrativas</h4>
-            <ul className="list">
+            <h4 className="subtitle-OL">Administrativas</h4>
+            <ul className="list-OL">
               {team.administrativas.map((administrativa, index) => (
                 <li key={index}>{administrativa}</li>
               ))}
@@ -68,8 +68,8 @@ const EquipaOL = () => {
         </div>
 
         {/* Carousel Section */}
-        <div className="carousel-box">
-          <h2 className="section-title">Infraestrutura</h2>
+        <div className="carousel-box-OL">
+          <h2 className="section-title-OL">Infraestrutura</h2>
           <Swiper
             modules={[Pagination, Navigation, Autoplay]}
             pagination={{ clickable: true }}
@@ -78,14 +78,14 @@ const EquipaOL = () => {
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
-            className="swiper-container"
+            className="swiper-container-OL"
           >
             {infrastructureImages.map((image, index) => (
               <SwiperSlide key={index}>
                 <LazyLoadImage
                   src={image}
                   alt={`Infraestrutura ${index + 1}`}
-                  className="carousel-image"
+                  className="carousel-image-OL"
                 />
               </SwiperSlide>
             ))}
@@ -94,21 +94,21 @@ const EquipaOL = () => {
       </section>
 
       {/* Fleet Section */}
-      <section className="fleet-section">
-        <h2 className="section-title">A Nossa Frota</h2>
-        <div className="fleet-content">
+      <section className="fleet-section-OL">
+        <h2 className="section-title-OL">A Nossa Frota</h2>
+        <div className="fleet-content-OL">
           {/* Fleet Image */}
-          <div className="fleet-image">
+          <div className="fleet-image-OL">
             <LazyLoadImage
               src={frotaImagem}
-              alt="Imagem da frota"
-              className="fleet-image"
+              alt="Imagem da frota-OL"
+              className="fleet-image-OL"
             />
           </div>
 
           {/* Fleet Details */}
-          <div className="fleet-details">
-            <ul className="fleet-list">
+          <div className="fleet-details-OL">
+            <ul className="fleet-list-OL">
               {fleet.map((car, index) => (
                 <li key={index}>{car}</li>
               ))}
@@ -116,10 +116,10 @@ const EquipaOL = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="fleet-contact">
-            <p className="text-white">Tire as suas dúvidas aqui</p>
+          <div className="fleet-contact-OL">
+            <p className="text-white-OL">Tire as suas dúvidas aqui</p>
             <Link to="/Contactos-OL">
-              <button className="fleet-button">Ir para Contactos</button>
+              <button className="fleet-button-OL">Ir para Contactos</button>
             </Link>
           </div>
         </div>

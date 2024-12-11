@@ -1,0 +1,212 @@
+/* General Container Styling */
+.team-container {
+  padding: 5% 10%;
+  background: #121212;
+}
+
+/* Team Section */
+.team-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.info-box {
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.team-details {
+  color: #cccccc;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00acac;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #00acac;
+}
+
+.list {
+  list-style-type: none;
+  color: #999999;
+  padding-left: 0;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+/* Carousel Section */
+.carousel-box {
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.carousel-image {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.swiper-container {
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+  background: #00acac;
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00acac;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #00acac;
+}
+
+/* Fleet Section */
+.fleet-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.fleet-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.fleet-image {
+  flex: 1 1 40%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+  transition: transform 0.4s ease;
+}
+
+.fleet-image:hover {
+  transform: scale(1.05);
+}
+
+.fleet-list {
+  flex: 1 1 40%;
+  list-style: none;
+  color: #cccccc;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.fleet-list li {
+  margin-bottom: 15px;
+}
+
+.fleet-contact {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+.text-white {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.fleet-button {
+  background: #00acac;
+  color: #121212;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.fleet-button:hover {
+  background: #00acac;
+  transform: scale(1.1);
+}
+
+.fleet-button:focus {
+  outline: 2px solid #00acac;
+  outline-offset: 2px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .team-section {
+    flex-direction: column;
+  }
+
+  .info-box {
+    max-width: 100%;
+  }
+
+  .carousel-box {
+    max-width: 100%;
+  }
+
+  .fleet-content {
+    flex-direction: column;
+  }
+
+  .fleet-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .fleet-list {
+    font-size: 0.9rem;
+  }
+
+  .fleet-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .fleet-list {
+    font-size: 0.8rem;
+  }
+
+  .text-white {
+    font-size: 0.9rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/FAQ.css';
+import '../css/css_OL/FAQ.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -55,40 +55,40 @@ const FaqOL = () => {
   const secondColumn = faqData.slice(Math.ceil(faqData.length / 2));
 
   return (
-    <div className="faq-page">
-      <section className="faq-section">
-        <div className="container">
+    <div className="faq-page-OL">
+      <section className="faq-section-OL">
+        <div className="container-OL">
           {/* Título */}
-          <div className="faq-title-container">
-            <h1 className="faq-title">
-              Perguntas <span className="highlight">Frequentes</span>
+          <div className="faq-title-container-OL">
+            <h1 className="faq-title-OL">
+              Perguntas <span className="highlight-OL">Frequentes</span>
             </h1>
           </div>
 
           {/* FAQs em duas colunas */}
-          <div className="faq-columns">
+          <div className="faq-columns-OL">
             {[firstColumn, secondColumn].map((column, colIndex) => (
-              <div key={colIndex} className="faq-column">
-                <ul className="faq-list">
+              <div key={colIndex} className="faq-column-OL">
+                <ul className="faq-list-OL">
                   {column.map((faq, index) => (
                     <li
                       key={index}
-                      className={`faq-item ${
+                      className={`faq-item-OL ${
                         activeIndex === index + colIndex * firstColumn.length ? 'active' : ''
                       }`}
                       onClick={() => handleToggle(index + colIndex * firstColumn.length)}
                     >
-                      <div className="faq-toggler">
+                      <div className="faq-toggler-OL">
                         <span>{faq.question}</span>
                         <FontAwesomeIcon
                           icon={faChevronDown}
-                          className={`icon ${
+                          className={`icon-OL ${
                             activeIndex === index + colIndex * firstColumn.length ? 'rotated' : ''
                           }`}
                         />
                       </div>
                       <div
-                        className={`faq-content ${
+                        className={`faq-content-OL ${
                           activeIndex === index + colIndex * firstColumn.length ? 'visible' : ''
                         }`}
                       >

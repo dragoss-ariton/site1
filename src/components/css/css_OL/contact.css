@@ -1,0 +1,173 @@
+#contact-section-OL {
+    padding: 40px;
+    background: #121212;
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: calc(100vh - 4rem); /* Adjust height to account for margin */
+    color: #ffffff; /* Make all text white */
+}
+
+.subtitle-OL,
+.info-container-OL h2,
+form.form-OL label {
+    color: #ffffff; /* Common white text */
+}
+
+form.form-OL input,
+form.form-OL textarea {
+    background-color: #1f1f1f; /* Darker input background */
+    color: #ffffff; /* White text inside inputs */
+    border: 1px solid #555555; /* Subtle border for contrast */
+}
+
+form.form-OL input::placeholder,
+form.form-OL textarea::placeholder {
+    color: #aaaaaa; /* Light gray placeholders */
+}
+
+.container-OL {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content-wrapper-OL {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-container-OL,
+.info-container-OL {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: #232323;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    border-radius: 8px;
+}
+
+.info-container-OL h2 ,.title-OL {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: rgb(0, 204, 0);
+}
+
+.form-group-OL {
+    margin-bottom: 15px;
+}
+
+.submit-btn-OL {
+    width: 100%;
+    padding: 10px;
+    background: rgb(0, 204, 0) !important;
+    color: white;
+    border: none !important;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn-OL:hover {
+    background-color: #156d15 !important; /* Darker hover */
+    color: #fff !important; /* Maintain white text */
+}
+
+.submit-btn-OL:focus {
+    outline: 2px solid rgb(0, 204, 0);
+    outline-offset: 2px;
+}
+
+.submit-btn-OL:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.google-map iframe {
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .content-wrapper-OL {
+        flex-direction: column;
+    }
+
+    .form-container-OL,
+    .info-container-OL {
+        width: 100%;
+    }
+
+    .title-OL {
+        font-size: 22px;
+    }
+
+    .subtitle-OL {
+        font-size: 14px;
+    }
+
+    .submit-btn-OL {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* For mobile screens (smartphones) */
+@media (max-width: 768px) {
+    #contact-section-OL {
+        padding: 15px;
+        height: auto;
+    }
+
+    .title-OL {
+        font-size: 20px;
+    }
+
+    .subtitle-OL {
+        font-size: 12px;
+    }
+
+    .form-container-OL,
+    .info-container-OL {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .submit-btn-OL {
+        font-size: 14px;
+    }
+
+    .google-map iframe {
+        height: 250px;
+    }
+}
+
+/* For very small screens (phones with less than 480px width) */
+@media (max-width: 480px) {
+    .title-OL {
+        font-size: 18px;
+    }
+
+    .subtitle-OL {
+        font-size: 12px;
+    }
+
+    .form-group-OL {
+        margin-bottom: 10px;
+    }
+
+    .submit-btn-OL {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .google-map iframe {
+        height: 200px;
+    }
+}
