@@ -48,43 +48,43 @@ const PopupBoxes = () => {
   };
 
   return (
-    <div>
-      <h1 className='title-services1'>Os <span>Nossos</span> Serviços</h1>
-      <div className="container1">
-        {/* Boxes */}
-        {boxes.map((box) => (
-          <div key={box.id} className="box1" onClick={() => handleBoxClick(box.id)}>
-            <div className="box-image-container1">
-              <img src={box.imgSrc} alt={box.title} className="box-image1" />
-              <div className="box-title-overlay1">
-                <p className="box-title1">{box.title}</p>
+      <div className="services-container1">
+        <h1 className='title-services1'>Os <span>Nossos</span> Serviços</h1>
+        <div className="container1">
+          {/* Boxes */}
+          {boxes.map((box) => (
+            <div key={box.id} className="box1" onClick={() => handleBoxClick(box.id)}>
+              <div className="box-image-container1">
+                <img src={box.imgSrc} alt={box.title} className="box-image1" />
+                <div className="box-title-overlay1">
+                  <p className="box-title1">{box.title}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Popup */}
-      {activePopup !== null && (
-        <div>
-          <div className="popup1">
-            <img
-              src={boxes[activePopup].imgSrc}
-              alt={boxes[activePopup].title}
-              className="popup-image1"
-            />
-            <h2>{boxes[activePopup].title}</h2>
-            <ul>
-              {boxes[activePopup].description.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-            <button onClick={handleClosePopup}>Close</button>
-          </div>
-          <div className="overlay1" onClick={handleClosePopup}></div>
+          ))}
         </div>
-      )}
-    </div>
+
+        {/* Popup */}
+        {activePopup !== null && (
+          <div>
+            <div className="popup1">
+              <img
+                src={boxes[activePopup].imgSrc}
+                alt={boxes[activePopup].title}
+                className="popup-image1"
+              />
+              <h2>{boxes[activePopup].title}</h2>
+              <ul>
+                {boxes[activePopup].description.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <button onClick={handleClosePopup}>Close</button>
+            </div>
+            <div className="overlay1" onClick={handleClosePopup}></div>
+          </div>
+        )}
+      </div>
   );
 };
 

@@ -1,4 +1,3 @@
-// src/components/PaginaDividida.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
@@ -11,7 +10,7 @@ import imagem2 from "../assets/Infra2OL.jpg";
 import imagem3 from "../assets/Infra3OL.jpg";
 import frotaImagem from "../assets/FrotaOL.jpg"; // Substituir pelo caminho correto da imagem
 import "../css/Equipa.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const EquipaOL = () => {
   const team = {
@@ -46,6 +45,7 @@ const EquipaOL = () => {
 
   return (
     <div className="team-container">
+      {/* Equipa Section */}
       <section className="team-section">
         <div className="info-box">
           <h2 className="section-title">A Nossa Equipa</h2>
@@ -67,6 +67,7 @@ const EquipaOL = () => {
           </div>
         </div>
 
+        {/* Carousel Section */}
         <div className="carousel-box">
           <h2 className="section-title">Infraestrutura</h2>
           <Swiper
@@ -92,39 +93,37 @@ const EquipaOL = () => {
         </div>
       </section>
 
-      <section className="fleet-section flex items-center justify-between">
-      <div className="fleet-content flex w-full gap-8">
-        {/* Primeira parte: Imagem da frota */}
-        <div className="fleet-image w-1/3">
-          <LazyLoadImage
-            src={frotaImagem}
-            alt="Imagem da frota"
-            className="fleet-image w-full"
-          />
-        </div>
+      {/* Fleet Section */}
+      <section className="fleet-section">
+        <h2 className="section-title">A Nossa Frota</h2>
+        <div className="fleet-content">
+          {/* Fleet Image */}
+          <div className="fleet-image">
+            <LazyLoadImage
+              src={frotaImagem}
+              alt="Imagem da frota"
+              className="fleet-image"
+            />
+          </div>
 
-        {/* Segunda parte: Detalhes da frota */}
-        <div className="fleet-details w-1/3">
-          <h2 className="section-title div2 text-3xl text-blue-500">A Nossa Frota</h2>
-          <ul className="fleet-list list-disc pl-5">
-            {fleet.map((car, index) => (
-              <li key={index}>{car}</li>
-            ))}
-          </ul>
-        </div>
+          {/* Fleet Details */}
+          <div className="fleet-details">
+            <ul className="fleet-list">
+              {fleet.map((car, index) => (
+                <li key={index}>{car}</li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Terceira parte: Seção de contato */}
-        <div className="fleet-contact w-1/3">
-          <p className="text-white">Tire as suas dúvidas aqui</p>
-          <Link to="/Contactos-OL">
-            <button className="bg-blue text-black px-6 py-2 rounded">
-              Ir para Contactos
-            </button>
-          </Link>
+          {/* Contact Section */}
+          <div className="fleet-contact">
+            <p className="text-white">Tire as suas dúvidas aqui</p>
+            <Link to="/Contactos-OL">
+              <button className="fleet-button">Ir para Contactos</button>
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
     </div>
   );
 };

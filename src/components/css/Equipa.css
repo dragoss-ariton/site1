@@ -1,15 +1,7 @@
 /* src/css/Equipa.css */
-
-body {
-  font-family: Arial, sans-serif;
-  color: #ffffff; /* Texto claro para contraste */
-  background: linear-gradient(to bottom, #000, #333);
-  margin: 0;
-  padding: 0;
-}
-
 .team-container {
   padding: 5% 10%;
+  background:#121212;
 }
 
 .team-section, .fleet-section {
@@ -23,12 +15,22 @@ body {
   color: #00b3b3; /* Azul vibrante */
 }
 
-.info-box, .carousel-box {
-  background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
+.info-box{
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  border-radius: 15px;
+  height: 800px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-box {
+  height: 800px;
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
 .subtitle {
@@ -38,7 +40,7 @@ body {
 }
 
 .list {
-  list-style: none;
+  list-style-type:none;
   color: #999999;
   padding-left: 15px;
 }
@@ -101,11 +103,11 @@ body {
   flex-direction: column; /* Alinha os elementos em coluna */
   align-items: center; /* Centraliza o conteúdo horizontalmente */
   gap: 20px;
-  background: rgba(0, 0, 0, 0.85); /* Fundo mais escuro */
+  background: #232323;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
 .section-title {
@@ -119,48 +121,65 @@ body {
   text-align: center;
 }
 
+/* Fleet Section */
 .fleet-content {
   display: flex;
-  justify-content: space-between; /* Mantém a distribuição entre os itens */
-  align-items: center; /* Alinha ao centro verticalmente */
-  gap: 30px; /* Aumenta o espaçamento entre as colunas */
-  width: 100%; /* Ocupa toda a largura disponível */
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 .fleet-image {
-  flex: 1 1 30%; /* Limita o espaço da imagem */
-  max-width: 100%; /* Certifica que a imagem não ultrapassa 100% da largura */
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  flex: 1 1 40%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+  transition: transform 0.4s ease;
+}
+
+.fleet-image:hover {
+  transform: scale(1.05);
 }
 
 .fleet-list {
-  flex: 1 1 35%; /* A lista ocupa mais espaço */
+  flex: 1 1 40%;
   list-style: none;
-  color: #999999;
-  padding-left: 15px;
-  margin-bottom: 0; /* Remover espaçamento extra */
-  display: flex; /* Torna a lista flexível */
-  flex-direction: column; /* Organiza os itens da lista em coluna */
-  justify-content: center; /* Alinha os itens verticalmente no centro */
-  align-items: center; /* Alinha os itens horizontalmente no centro */
+  color: #cccccc;
+  font-size: 1.2rem;
+  padding: 0;
 }
 
 .fleet-list li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  margin-top: 10%;
+  margin-bottom: 15px;
 }
 
 .fleet-contact {
-  flex: 1 1 30%; /* A seção de contato ocupa um espaço menor */
-  margin-left: auto; /* Empurra a seção de contato para a direita */
-  display: flex; /* Torna o conteúdo flexível */
-  justify-content: center; /* Alinha o conteúdo horizontalmente */
-  align-items: center; /* Alinha o conteúdo verticalmente */
+  flex: 1 1 100%;
+  text-align: center;
 }
 
+.fleet-contact p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.fleet-button {
+  background: #00e6e6;
+  color: #121212;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.fleet-button:hover {
+  background: #00ffff;
+  transform: scale(1.1);
+}
 @media (max-width: 768px) {
   .fleet-content {
     flex-direction: column; /* Empilha imagem e lista em ecrãs pequenos */
@@ -171,5 +190,89 @@ body {
   .fleet-image {
     max-width: 100%; /* A imagem ocupa toda a largura em ecrãs pequenos */
     margin-bottom: 20px;
+  }
+}
+/* Media Queries for Responsiveness */
+@media (min-width: 992px) {
+  .info-box {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+  }
+
+  .carousel-box {
+    float: left;
+    width: 65%;
+  }
+
+  .fleet-section {
+    clear: both;
+  }
+}
+
+@media (max-width: 992px) {
+  .info-box,
+  .carousel-box {
+    float: none;
+    width: 100%;
+  }
+
+  .fleet-content {
+    flex-direction: column;
+  }
+
+  .fleet-image,
+  .fleet-list {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .fleet-list {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .list {
+    font-size: 0.9rem;
+  }
+
+  .fleet-content {
+    gap: 20px;
+  }
+
+  .fleet-contact p {
+    font-size: 1rem;
+  }
+
+  .fleet-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    padding: 5%;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .fleet-list {
+    font-size: 0.8rem;
+  }
+
+  .fleet-contact p {
+    font-size: 0.9rem;
   }
 }

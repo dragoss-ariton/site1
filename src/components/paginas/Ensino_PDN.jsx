@@ -48,7 +48,8 @@ const PopupBoxes = () => {
   };
 
   return (
-    <div>
+
+    <div className="services-container1">
       <h1 className='title-services1'>Os <span>Nossos</span> Serviços</h1>
       <div className="container1">
         {/* Boxes */}
@@ -68,11 +69,6 @@ const PopupBoxes = () => {
       {activePopup !== null && (
         <div>
           <div className="popup1">
-            <img
-              src={boxes[activePopup].imgSrc}
-              alt={boxes[activePopup].title}
-              className="popup-image1"
-            />
             <h2>{boxes[activePopup].title}</h2>
             <ul>
               {boxes[activePopup].description.map((item, index) => (

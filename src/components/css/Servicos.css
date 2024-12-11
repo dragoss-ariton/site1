@@ -1,3 +1,7 @@
+.services-container1{
+    background: #121212;
+    height: 100vh;
+}
 /* Page title styling */
 .title-services1 {
     text-align: center;
@@ -20,7 +24,6 @@
     gap: 25px;
     margin: 50px auto;
     max-width: 100%;
-    height: calc(100vh - 6rem); /* Adjust height to leave space for the title */
     padding: 0 20px;
     flex-direction: row; /* Ensures the items are in rows */
 }
@@ -79,10 +82,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 30px; /* Increased padding for better spacing */
-    width: 700px; /* Increased width */
-    height: 600px; /* Increased height */
+    background-color: #232323;
+    padding: 10px; /* Increased padding for better spacing */
+    width: 400px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1001; /* Ensure popup is on top */
@@ -94,23 +96,17 @@
     overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
 }
 
-/* Popup image styling */
-.popup-image1 {
-    width: 120px; /* Increased image size */
-    height: auto;
-    margin-bottom: 20px; /* Increased margin for better spacing */
-    border-radius: 8px;
-}
-
 /* Popup title styling */
 .popup1 h2 {
-    font-size: 24px; /* Slightly larger font size */
+    font-size: 3.5rem; /* Slightly larger font size */
+    color: #00acac;
     margin: 15px 0; /* Increased margin for spacing */
 }
 
 /* List styling inside the popup */
 .popup1 ul {
-    list-style-type: disc;
+    list-style-type:circle;
+    color: #fff;
     padding-left: 40px; /* Increased padding for better readability */
     text-align: left;
     font-size: 18px; /* Larger font size for easier reading */
