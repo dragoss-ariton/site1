@@ -73,7 +73,7 @@
 }
 
 .swiper-pagination-bullet {
-  background: rgb(0, 204, 0);
+  background: rgb(0, 204, 0)!important; 
   opacity: 1;
 }
 
