@@ -72,9 +72,8 @@
   margin-top: 20px;
 }
 
-.swiper-pagination-bullet {
-  background: rgb(0, 204, 0)!important; 
-  opacity: 1;
+.swiper-pagination-bullet{
+  background: rgb(0, 204, 0); 
 }
 
 .swiper-button-next,
