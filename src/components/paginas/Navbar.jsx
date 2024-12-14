@@ -9,21 +9,33 @@ import logo from '../assets/logo.jpg';
 const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A');
     const [expanded, setExpanded] = useState(false);
-    const [isLightMode, setIsLightMode] = useState(false);  // Estado para controlar o modo escuro
+    const [isLightMode, setIsLightMode] = useState(() => {
+        const storedMode = localStorage.getItem('theme');
+        return storedMode ? storedMode === 'light' : false;
+    });
     const location = useLocation();
 
+    // Verifica o tema armazenado no localStorage
     useEffect(() => {
-        if (location.pathname.includes('-OL')) {
-            setSelectedSchool('A');
-        } else if (location.pathname.includes('-PDN')) {
-            setSelectedSchool('B');
-        }
+        document.body.classList.toggle('light-mode', isLightMode);
+    }, [isLightMode]);
+
+    // Atualiza a seleção da escola com base no pathname
+    useEffect(() => {
+        const determineSchool = (pathname) => {
+            if (pathname.includes('-OL')) return 'A';
+            if (pathname.includes('-PDN')) return 'B';
+            return 'A'; // Valor padrão
+        };
+        
+        setSelectedSchool(determineSchool(location.pathname));
     }, [location.pathname]);
 
-    const handleSchoolSelect = (school) => {
-        setSelectedSchool(school);
-        setExpanded(false);
-        window.scrollTo(0, 0);
+    // Função para alternar o tema
+    const toggleTheme = () => {
+        const newMode = isLightMode ? 'light' : 'dark';
+        setIsLightMode(!isLightMode);
+        localStorage.setItem('theme', newMode);
     };
 
     const schoolLinks = {
@@ -42,18 +54,19 @@ const Navbar = () => {
     const preRegistrationLink = selectedSchool === 'A' ? "/Contactos-OL" : "/Contactos-PDN";
     const isHomePage = location.pathname === '/';
 
-    const toggleTheme = () => {
-        setIsLightMode(!isLightMode);
-        document.body.classList.toggle('light-mode', !isLightMode);
+    // Função para gerenciar a classe de estilo dos links
+    const schoolLinkClass = (school) => {
+        return `nav-link ${selectedSchool === school ? 
+            (isLightMode ? 'text-black' : 'text-white') 
+            : 
+            (isLightMode ? 'text-gray-700' : 'text-gray-500')} hover:text-white`;
     };
-
-    const isGreenRoute = location.pathname.includes('-OL');
 
     return (
         <BootstrapNavbar 
             expand="lg" 
             fixed="top" 
-            className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${isGreenRoute ? 'green-navbar' : ''} ${isLightMode ? 'navbar-light-mode' : ''}`}
+            className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${location.pathname.includes('-OL') ? 'green-navbar' : ''} ${isLightMode ? 'navbar-light-mode' : ''}`}
         >
             <Container>
                 {isHomePage ? (
@@ -71,9 +84,9 @@ const Navbar = () => {
                         <ul className="navbar-nav">
                             <li>
                                 <Link
-                                    className={`nav-link ${selectedSchool === 'A' ? (!isLightMode ? 'text-white' : 'text-black') : (!isLightMode ? 'text-gray-500' : 'text-gray-700')} hover:text-white`}
+                                    className={schoolLinkClass('A')}
                                     to="/Inicio-OL"
-                                    onClick={() => handleSchoolSelect('A')}
+                                    onClick={() => setSelectedSchool('A')}
                                 >
                                     Olivais
                                 </Link>
@@ -87,9 +100,9 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <Link
-                                    className={`nav-link ${selectedSchool === 'B' ? (!isLightMode ? 'text-white' : 'text-black') : (!isLightMode ? 'text-gray-500' : 'text-gray-700')} hover:text-white`}
+                                    className={schoolLinkClass('B')}
                                     to="/Inicio-PDN"
-                                    onClick={() => handleSchoolSelect('B')}
+                                    onClick={() => setSelectedSchool('B')}
                                 >
                                     Parque das Nações
                                 </Link>
@@ -124,6 +137,7 @@ const Navbar = () => {
                         <button
                             className={`theme-toggle-btn mx-2 ${isLightMode ? '' : 'text-white'}`}
                             onClick={toggleTheme}
+                            aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
                         >
                             {isLightMode ? <FaSun /> : <FaMoon />}
                         </button>

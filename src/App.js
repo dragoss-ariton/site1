@@ -1,5 +1,6 @@
 // src/App.js
-import React, { useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 // Importações das páginas
@@ -9,16 +10,12 @@ import Footer from "./components/paginas/Footer";
 
 import InicioPdn from "./components/paginas/Inicio_PDN";
 import InicioOl from "./components/paginas/Inicio_OL";
-
 import EnsinoOL from "./components/paginas/Ensino_OL";
 import EnsinoPdn from "./components/paginas/Ensino_PDN";
-
 import EquipaOL from "./components/paginas/EquipaOL";
 import EquipaPDN from "./components/paginas/EquipaPDN";
-
 import FaqPDN from "./components/paginas/FaqPDN";
 import FaqOL from "./components/paginas/FaqOL";
-
 import ContactosOL from "./components/paginas/Contactos_OL";
 import ContactosPdn from "./components/paginas/Contactos_PDN";
 
@@ -27,25 +24,25 @@ import ScrollToTop from "./components/paginas/ScrollToTop";
 import "./App.css";
 import "./components/css/Navbar.css";
 
-const AppContent = () => {
+const AppContent = ({ isLightMode }) => {
   const location = useLocation(); // Pega a localização da rota atual
 
   useEffect(() => {
     if (location.pathname === '/') {
-        // Remover o padding-top na página inicial
-        document.body.style.paddingTop = '0';
+      // Remover o padding-top na página inicial
+      document.body.style.paddingTop = '0';
     } else {
-        // Definir o padding-top quando não for a página inicial
-        document.body.style.paddingTop = '55px'; // Ou qualquer outro valor
+      // Definir o padding-top quando não for a página inicial
+      document.body.style.paddingTop = '55px'; // Ou qualquer outro valor
     }
   }, [location]);
 
   return (
-    <div className="main-content">
+    <div className={`main-content ${isLightMode ? 'light-mode' : 'dark-mode'}`}>
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path="/Inicio-PDN" element={<InicioPdn />} />
-        <Route path="/Inicio-OL" element={<InicioOl />} />
+        <Route path="/Inicio-PDN" element={<InicioPdn isLightMode={isLightMode}/>} />
+        <Route path="/Inicio-OL" element={<InicioOl isLightMode={isLightMode} />} />
         <Route path="/Ensino-PDN" element={<EnsinoPdn />} />
         <Route path="/Ensino-OL" element={<EnsinoOL />} />
         <Route path="/Faq-PDN" element={<FaqPDN />} />
@@ -60,11 +57,24 @@ const AppContent = () => {
 };
 
 const App = () => {
+  const [isLightMode, setIsLightMode] = useState(false); // Definido como false para começar escuro
+
+  // Atualiza o tema globalmente
+  useEffect(() => {
+    if (isLightMode) {
+      document.body.classList.add('light-mode');
+      document.body.classList.remove('dark-mode');
+    } else {
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-mode');
+    }
+  }, [isLightMode]);
+
   return (
     <Router>
       <ScrollToTop />
-      <Navbar />
-      <AppContent /> {/* Separado para garantir o uso correto do Router */}
+      <Navbar isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      <AppContent isLightMode={isLightMode} />
       <Footer />
     </Router>
   );

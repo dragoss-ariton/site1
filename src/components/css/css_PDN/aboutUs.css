@@ -99,3 +99,33 @@
     height: auto; /* Prevents fixed height */
   }
 }
+
+/*---------------------------Light Mode---------------------------- */
+body.light-mode .about {
+  background-color: #eaeaea; /* Alterado para branco */
+}
+
+body.light-mode .heading {
+  color: #000; /* Alterado para preto */
+}
+
+body.light-mode .heading span {
+  color: #007777; /* Ajustado para um verde azulado mais escuro */
+}
+
+body.light-mode .about .row .content {
+  background-color: #dbdbdb; /* Fundo claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombreamento mais leve */
+}
+
+body.light-mode .about .row .content h3 {
+  color: #007777; /* Alterado para um verde azulado mais escuro */
+}
+
+body.light-mode .about .row .content p {
+  color: #333; /* Texto mais escuro para contraste */
+}
+
+body.light-mode .about .row .image img {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Reduzido para sombra leve */
+}

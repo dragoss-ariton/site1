@@ -145,3 +145,48 @@
         font-size: 14px;
     }
 }
+
+/* Light Mode - Services Section */
+body.light-mode .services_section {
+    background-color: #ecebeb; /* Fundo branco */
+}
+
+body.light-mode .title_services h1 {
+    color: #000; /* Texto preto */
+}
+
+body.light-mode .title_services span {
+    color: #007777; /* Verde azulado mais escuro */
+}
+
+body.light-mode .services_card {
+    background: #dfdfdf; /* Fundo claro para cartões */
+    color: #000; /* Texto preto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .services_card .icon {
+    color: #007777; /* Ícones com verde azulado mais escuro */
+}
+
+body.light-mode .services_card h1 {
+    color: #000; /* Títulos pretos */
+}
+
+body.light-mode .services_card .button_services {
+    background: #000000 !important; /* Botão com fundo verde azulado */
+    color: #fff !important; /* Texto branco */
+    border: 2px solid transparent !important;
+    transition: background 0.3s, color 0.3s, border 0.3s !important;
+}
+
+body.light-mode .services_card .button_services:hover {
+    background: transparent !important; /* Fundo transparente no hover */
+    color: #007777 !important; /* Texto verde azulado */
+    border: 2px solid #007777 !important; /* Borda no hover */
+}
+
+body.light-mode .services_card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}

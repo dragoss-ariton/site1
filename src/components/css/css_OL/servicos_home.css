@@ -145,3 +145,45 @@
         font-size: 14px;
     }
 }
+
+/* -----------------------------------Light Mode------------------------------ */
+body.light-mode .services_section-OL {
+    background-color: #ecebeb; /* Alterado para branco */
+}
+
+body.light-mode .title_services-OL h1 {
+    color: #000; /* Alterado para preto */
+}
+
+body.light-mode .title_services-OL span {
+    color: rgb(0, 204, 0); /* Mantido */
+}
+
+body.light-mode .services_card-OL {
+    background: #dfdfdf; /* Alterado para branco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode .services_card-OL .icon-OL {
+    color: rgb(0, 153, 0); /* Alterado para verde escuro */
+}
+
+body.light-mode .services_card-OL:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombreamento mais leve */
+}
+
+body.light-mode .about-OL .row-OL .content-OL h3 {
+    color: rgb(0, 204, 0) !important; /* Alterado para um verde escuro */
+}
+
+body.light-mode .services_card-OL h1 {
+    color: #000; /* Alterado para preto */
+}
+
+body.light-mode .services_card-OL .button_services-OL {
+    color: #fff !important; /* Alterado para branco */
+}
+
+body.light-mode .services_card-OL .button_services-OL:hover {
+    background: transparent !important; /* Fundo transparente no hover */
+}
