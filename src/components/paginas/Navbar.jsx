@@ -1,18 +1,18 @@
 // src/components/Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Container, Nav, Navbar as BootstrapNavbar, Button } from 'react-bootstrap';
-import { FaArrowLeft } from 'react-icons/fa';
+import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
+import { FaArrowLeft, FaSun, FaMoon } from 'react-icons/fa';
 import '../css/Navbar.css';
 import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A');
     const [expanded, setExpanded] = useState(false);
+    const [isLightMode, setIsLightMode] = useState(false);  // Estado para controlar o modo escuro
     const location = useLocation();
 
     useEffect(() => {
-        // Atualizar a escola com base no pathname atual
         if (location.pathname.includes('-OL')) {
             setSelectedSchool('A');
         } else if (location.pathname.includes('-PDN')) {
@@ -42,11 +42,19 @@ const Navbar = () => {
     const preRegistrationLink = selectedSchool === 'A' ? "/Contactos-OL" : "/Contactos-PDN";
     const isHomePage = location.pathname === '/';
 
-    // Verifica se a rota atual pertence à escola "OL" para aplicar cor verde
+    const toggleTheme = () => {
+        setIsLightMode(!isLightMode);
+        document.body.classList.toggle('light-mode', !isLightMode);
+    };
+
     const isGreenRoute = location.pathname.includes('-OL');
 
     return (
-        <BootstrapNavbar expand="lg" fixed="top" className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${isGreenRoute ? 'green-navbar' : ''}`}>
+        <BootstrapNavbar 
+            expand="lg" 
+            fixed="top" 
+            className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${isGreenRoute ? 'green-navbar' : ''} ${isLightMode ? 'navbar-light-mode' : ''}`}
+        >
             <Container>
                 {isHomePage ? (
                     <div className="d-flex justify-content-center w-100">
@@ -56,7 +64,6 @@ const Navbar = () => {
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 )}
                 
-                {/* Botão de menu com classe específica */}
                 <BootstrapNavbar.Toggle aria-controls="navbarNav" onClick={() => setExpanded(!expanded)} className="navbar-toggle" />
                 
                 <BootstrapNavbar.Collapse id="navbarNav">
@@ -64,7 +71,7 @@ const Navbar = () => {
                         <ul className="navbar-nav">
                             <li>
                                 <Link
-                                    className={`nav-link ${selectedSchool === 'A' ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                    className={`nav-link ${selectedSchool === 'A' ? (!isLightMode ? 'text-white' : 'text-black') : (!isLightMode ? 'text-gray-500' : 'text-gray-700')} hover:text-white`}
                                     to="/Inicio-OL"
                                     onClick={() => handleSchoolSelect('A')}
                                 >
@@ -73,13 +80,14 @@ const Navbar = () => {
                             </li>
                             <li className="d-flex align-items-center mx-2 nav-link">
                                 <FaArrowLeft
-                                    color="white"
-                                    className={selectedSchool === 'B' ? 'rotate' : 'rotate-back'}
+                                    className={`${
+                                        selectedSchool === 'B' ? 'rotate' : 'rotate-back'
+                                    } ${isLightMode ? 'text-dark' : 'text-white'}`}
                                 />
                             </li>
                             <li>
                                 <Link
-                                    className={`nav-link ${selectedSchool === 'B' ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                    className={`nav-link ${selectedSchool === 'B' ? (!isLightMode ? 'text-white' : 'text-black') : (!isLightMode ? 'text-gray-500' : 'text-gray-700')} hover:text-white`}
                                     to="/Inicio-PDN"
                                     onClick={() => handleSchoolSelect('B')}
                                 >
@@ -94,7 +102,10 @@ const Navbar = () => {
                             <li key={index}>
                                 <Link
                                     to={link.to}
-                                    className={`nav-link ${location.pathname === link.to ? 'text-white' : 'text-gray-500'} hover:text-white`}
+                                    className={`nav-link ${location.pathname === link.to ? 
+                                        (isLightMode ? 'text-black' : 'text-white') 
+                                        : 
+                                        (isLightMode ? 'text-gray-700' : 'text-gray-500')} hover:text-white`}
                                     onClick={() => setExpanded(false)}
                                 >
                                     {link.label}
@@ -102,16 +113,20 @@ const Navbar = () => {
                             </li>
                         ))}
                         {!isHomePage && (
-                            <Button
-                                variant="outline-light"
-                                className="custom-btn-form"
-                                onClick={() => setExpanded(false)}
-                                as={Link}
+                            <Link
                                 to={preRegistrationLink}
+                                className={`custom-btn-form mx-2 ${isLightMode ? 'outline-dark' : 'outline-light'}`}
+                                onClick={() => setExpanded(false)}
                             >
                                 Entre em contacto
-                            </Button>
+                            </Link>
                         )}
+                        <button
+                            className={`theme-toggle-btn mx-2 ${isLightMode ? '' : 'text-white'}`}
+                            onClick={toggleTheme}
+                        >
+                            {isLightMode ? <FaSun /> : <FaMoon />}
+                        </button>
                     </Nav>
                 </BootstrapNavbar.Collapse>
             </Container>
