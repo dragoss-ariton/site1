@@ -31,7 +31,7 @@
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(0, 204, 0);
+  color: rgb(0, 204, 0) !important;
 }
 
 .subtitle-OL {
@@ -86,12 +86,9 @@
 .swiper-button-prev:hover {
   color: rgb(0, 204, 0);
 }
-
-/* Fleet Section */
 .fleet-section-OL {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   background: #232323;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
@@ -108,20 +105,27 @@
   align-items: center;
 }
 
-.fleet-image-OL {
+.fleet-image-container-OL {
   flex: 1 1 40%;
+  max-width: 500px;
+  display: flex;
+  justify-content: flex-start; /* Encosta a imagem à esquerda */
+}
+
+.fleet-image-OL {
+  width: 100%;
   max-width: 400px;
+  height: auto;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
   transition: transform 0.4s ease;
 }
 
-.fleet-image-OL:hover {
-  transform: scale(1.05);
+.fleet-details-OL {
+  flex: 1 1 30%;
+  text-align: center;
 }
 
 .fleet-list-OL {
-  flex: 1 1 40%;
   list-style: none;
   color: #cccccc;
   font-size: 1.2rem;
@@ -133,7 +137,7 @@
 }
 
 .fleet-contact-OL {
-  flex: 1 1 100%;
+  flex: 1 1 20%;
   text-align: center;
 }
 
@@ -159,36 +163,17 @@
   transform: scale(1.1);
 }
 
-.fleet-button-OL:focus {
-  outline: 2px solid rgb(0, 204, 0);
-  outline-offset: 2px;
-}
-
-/* Media Queries */
 @media (max-width: 768px) {
-  .team-section-OL {
-    flex-direction: column;
-  }
-
-  .info-box-OL {
-    max-width: 100%;
-  }
-
-  .carousel-box-OL {
-    max-width: 100%;
-  }
-
   .fleet-content-OL {
     flex-direction: column;
   }
 
-  .fleet-image-OL {
-    max-width: 100%;
-    margin-bottom: 20px;
+  .fleet-image-container-OL {
+    justify-content: center;
   }
 
   .fleet-list-OL {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .fleet-button-OL {
@@ -198,15 +183,16 @@
 }
 
 @media (max-width: 480px) {
-  .section-title-OL {
-    font-size: 1.8rem;
-  }
-
   .fleet-list-OL {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .text-white-OL {
     font-size: 0.9rem;
+  }
+
+  .fleet-button-OL {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }

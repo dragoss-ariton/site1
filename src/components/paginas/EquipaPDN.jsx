@@ -44,21 +44,22 @@ const EquipaPDN = () => {
   const infrastructureImages = [imagem1, imagem2, imagem3];
 
   return (
-    <div className="team-container">
-      <section className="team-section">
-        <div className="info-box">
-          <h2 className="section-title">A Nossa Equipa</h2>
-          <div className="team-details">
-            <h4 className="subtitle">Diretora Técnica</h4>
-            <p className="list">{team.diretorTecnico}</p>
-            <h4 className="subtitle">Instrutores</h4>
-            <ul className="list">
+    <div className="team-container-PDN">
+      {/* Equipa Section */}
+      <section className="team-section-PDN">
+        <div className="info-box-PDN">
+          <h2 className="section-title-PDN">A Nossa Equipa</h2>
+          <div className="team-details-PDN">
+            <h4 className="subtitle-PDN">Diretora Técnica</h4>
+            <p className="list-PDN">{team.diretorTecnico}</p>
+            <h4 className="subtitle-PDN">Instrutores</h4>
+            <ul className="list-PDN">
               {team.instrutores.map((instrutor, index) => (
                 <li key={index}>{instrutor}</li>
               ))}
             </ul>
-            <h4 className="subtitle">Administrativas</h4>
-            <ul className="list">
+            <h4 className="subtitle-PDN">Administrativas</h4>
+            <ul className="list-PDN">
               {team.administrativas.map((administrativa, index) => (
                 <li key={index}>{administrativa}</li>
               ))}
@@ -66,8 +67,9 @@ const EquipaPDN = () => {
           </div>
         </div>
 
-        <div className="carousel-box">
-          <h2 className="section-title">Infraestrutura</h2>
+        {/* Carousel Section */}
+        <div className="carousel-box-PDN">
+          <h2 className="section-title-PDN">Infraestrutura</h2>
           <Swiper
             modules={[Pagination, Navigation, Autoplay]}
             pagination={{ clickable: true }}
@@ -76,14 +78,14 @@ const EquipaPDN = () => {
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
-            className="swiper-container"
+            className="swiper-container-PDN"
           >
             {infrastructureImages.map((image, index) => (
               <SwiperSlide key={index}>
                 <LazyLoadImage
                   src={image}
                   alt={`Infraestrutura ${index + 1}`}
-                  className="carousel-image"
+                  className="carousel-image-PDN"
                 />
               </SwiperSlide>
             ))}
@@ -91,38 +93,36 @@ const EquipaPDN = () => {
         </div>
       </section>
 
-      <section className="fleet-section flex items-center justify-between">
-      <div className="fleet-content flex w-full gap-8">
-        {/* Primeira parte: Imagem da frota */}
-        <div className="fleet-image w-1/3">
-          <LazyLoadImage
-            src={frotaImagem}
-            alt="Imagem da frota"
-            className="fleet-image w-full"
-          />
-        </div>
+      <section className="fleet-section-PDN">
+        <h2 className="section-title-PDN">A Nossa Frota</h2>
+        <div className="fleet-content-PDN">
+          {/* Fleet Image */}
+          <div className="fleet-image-container-PDN">
+            <LazyLoadImage
+              src={frotaImagem}
+              alt="Imagem da frota-PDN"
+              className="fleet-image-PDN"
+            />
+          </div>
 
-        {/* Segunda parte: Detalhes da frota */}
-        <div className="fleet-details w-1/3">
-          <h2 className="section-title div2 text-3xl text-blue-500">A Nossa Frota</h2>
-          <ul className="fleet-list list-disc pl-5">
-            {fleet.map((car, index) => (
-              <li key={index}>{car}</li>
-            ))}
-          </ul>
-        </div>
+          {/* Fleet Details */}
+          <div className="fleet-details-PDN">
+            <ul className="fleet-list-PDN">
+              {fleet.map((car, index) => (
+                <li key={index}>{car}</li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Terceira parte: Seção de contato */}
-        <div className="fleet-contact w-1/3">
-          <p className="text-white">Tire as suas dúvidas aqui</p>
-          <Link to="/Contactos-PDN">
-            <button className="bg-blue text-black px-6 py-2 rounded">
-              Ir para Contactos
-            </button>
-          </Link>
+          {/* Contact Section */}
+          <div className="fleet-contact-PDN">
+            <p className="text-white-PDN">Tire as suas dúvidas aqui</p>
+            <Link to="/Contactos-PDN">
+              <button className="fleet-button-PDN">Ir para Contactos</button>
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

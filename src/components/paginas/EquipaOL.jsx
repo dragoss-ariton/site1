@@ -93,12 +93,11 @@ const EquipaOL = () => {
         </div>
       </section>
 
-      {/* Fleet Section */}
       <section className="fleet-section-OL">
         <h2 className="section-title-OL">A Nossa Frota</h2>
         <div className="fleet-content-OL">
           {/* Fleet Image */}
-          <div className="fleet-image-OL">
+          <div className="fleet-image-container-OL">
             <LazyLoadImage
               src={frotaImagem}
               alt="Imagem da frota-OL"
