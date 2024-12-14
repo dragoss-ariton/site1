@@ -106,8 +106,8 @@
 }
 
 .fleet-image-container-OL {
-  flex: 1 1 40%;
-  max-width: 500px;
+  flex: 1 1 30%;
+  max-width: 400px;
   display: flex;
   justify-content: flex-start; /* Encosta a imagem à esquerda */
 }
