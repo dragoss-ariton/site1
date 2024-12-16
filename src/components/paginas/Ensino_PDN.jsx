@@ -8,35 +8,35 @@ const PopupBoxes = () => {
   // Box data with titles, images, and descriptions
   const boxes = [
     {
-      id: 0,
-      title: "servico 1",
-      imgSrc: Infra3PDN,
-      description: ["Beautiful colors", "Calm atmosphere", "Perfect for photography"],
-    },
-    {
-      id: 1,
-      title: "servico 2",
-      imgSrc: Infra3PDN,
-      description: ["Fresh air", "Hiking trails", "Breathtaking views"],
-    },
-    {
-      id: 2,
-      title: "servico 3",
-      imgSrc: Infra3PDN,
-      description: ["Tall trees", "Bird songs", "Peaceful environment"],
-    },
-    {
-      id: 3,
-      title: "servico 4",
-      imgSrc: Infra3PDN,
-      description: ["Waves crashing", "Soft sand", "Relaxing soundscapes"],
-    },
-    {
-      id: 4,
-      title: "servico 5",
-      imgSrc: Infra3PDN,
-      description: ["Golden dunes", "Clear night skies", "Adventurous vibes"],
-    },
+        id: 0,
+        title: "Categorias lecionadas",
+        imgSrc: Infra3PDN,
+        description: ["Temos carta para Ligeiros Motociclos Cat B, A, A2 e A1"],
+      },
+      {
+        id: 1,
+        title: "Pacote (O que inclui?)",
+        imgSrc: Infra3PDN,
+        description: ["Inscrição","Aulas de código ilimitadas","32 aulas de código em situação real de trânsito(sem simulador)","Exame Teórico e Exame Prático pelo privado(vantagem de poder escolher o dia e hora que quer fazer exame)","Oferta do livro de código"],
+      },
+      {
+        id: 2,
+        title: "Treino a encartados",
+        imgSrc: Infra3PDN,
+        description: ["Volte a conduzir com confiança com as nossas aulas de treino."],
+      },
+      {
+        id: 3,
+        title: "Segundas vias e alterações",
+        imgSrc: Infra3PDN,
+        description: ["Tratamos da Renovação da Carta, 2ª via da Carta e Alteração de Dados (Morada, Nome);"],
+      },
+      {
+        id: 4,
+        title: "English driving course",
+        imgSrc: Infra3PDN,
+        description: ["On Category B cards in English, the codebook is included, this translated from Portuguese to English.", "For category A, A1 and A2 (motorcycle) in English, we only have the book in Portuguese.","For both categories in english, the medical certificate is included."],
+      },
   ];
 
   const handleBoxClick = (boxIndex) => {
