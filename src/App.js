@@ -41,8 +41,8 @@ const AppContent = ({ isLightMode }) => {
     <div className={`main-content ${isLightMode ? 'light-mode' : 'dark-mode'}`}>
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path="/Inicio-PDN" element={<InicioPdn isLightMode={isLightMode}/>} />
-        <Route path="/Inicio-OL" element={<InicioOl isLightMode={isLightMode} />} />
+        <Route path="/Inicio-PDN" element={<InicioPdn />} />
+        <Route path="/Inicio-OL" element={<InicioOl />} />
         <Route path="/Ensino-PDN" element={<EnsinoPdn />} />
         <Route path="/Ensino-OL" element={<EnsinoOL />} />
         <Route path="/Faq-PDN" element={<FaqPDN />} />

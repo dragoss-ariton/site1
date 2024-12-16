@@ -131,12 +131,12 @@ const Contactos_PDN = () => {
 
                     <div className="info-container">
                         <h2>Contactos</h2>
-                        <p><strong>Fixo:</strong> 218 949 011</p>
-                        <p><strong>Telemóvel:</strong> 915 195 646</p>
-                        <p><strong>Email:</strong> ec.parquedasnacoes@gmail.com</p>
+                        <p className="blk-text"><strong>Fixo:</strong> 218 949 011</p>
+                        <p className="blk-text"><strong>Telemóvel:</strong> 915 195 646</p>
+                        <p className="blk-text"><strong>Email:</strong> ec.parquedasnacoes@gmail.com</p>
 
                         <h2>Onde nos encontrar</h2>
-                        <p><strong>Morada:</strong> Passeio das Fragatas N°3A loja 4, 1990-615 Lisboa</p>
+                        <p className="blk-text"><strong>Morada:</strong> Passeio das Fragatas N°3A loja 4, 1990-615 Lisboa</p>
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d777.6216634465918!2d-9.096490930343142!3d38.77547664376794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19318c711cdb87%3A0xe7088e0294289300!2zRXNjb2xhIGRlIENvbmR1w6fDo28gUGFycXVlIGRhcyBOYcOnw7Vlcw!5e0!3m2!1spt-PT!2spt!4v1733760815125!5m2!1spt-PT!2spt"
                             width="100%"

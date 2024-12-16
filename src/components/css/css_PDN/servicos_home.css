@@ -148,7 +148,7 @@
 
 /* Light Mode - Services Section */
 body.light-mode .services_section {
-    background-color: #ecebeb; /* Fundo branco */
+    background-color: #dedede; /* Fundo branco */
 }
 
 body.light-mode .title_services h1 {
@@ -160,7 +160,7 @@ body.light-mode .title_services span {
 }
 
 body.light-mode .services_card {
-    background: #dfdfdf; /* Fundo claro para cartões */
+    background: #e7e7e7; /* Fundo claro para cartões */
     color: #000; /* Texto preto */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais leve */
     transition: transform 0.3s ease, box-shadow 0.3s ease;

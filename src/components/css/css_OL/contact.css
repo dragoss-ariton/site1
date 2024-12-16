@@ -171,3 +171,43 @@ form.form-OL textarea::placeholder {
         height: 200px;
     }
 }
+/*--------------------------------------- Light Mode -----------------------------------------*/
+
+/* General Container Styling */
+body.light-mode #contact-section-OL {
+    background: #dedede; /* Fundo branco claro */
+  }
+  
+  /* Info Box */
+  body.light-mode .info-container-OL {
+    background: #f1f1f1; /* Fundo branco */
+    color: #000000; /* Texto preto */
+  }
+  
+  body.light-mode .subtitle-OL {
+    color: #000000; /* Verde */
+  }
+  body.light-mode .form-container-OL{
+    background: #f1f1f1; /* Fundo branco */
+    color: #000000; /* Texto preto */
+  }
+
+  body.light-mode .form-label{
+    color:#000000
+  }
+
+  body.light-mode .form-control{
+    background: #eeeeee
+  }
+  
+  /* Form */
+  body.light-mode form.form-OL input,
+  body.light-mode form.form-OL textarea {
+    background-color: #f1f1f1; /* Fundo branco */
+    color: #333333; /* Texto escuro */
+  }
+  
+  body.light-mode form.form-OL input::placeholder,
+  body.light-mode form.form-OL textarea::placeholder {
+    color: #aaa; /* Placeholder claro */
+  }

@@ -195,3 +195,45 @@
     font-size: 0.8rem;
   }
 }
+/*--------------------------------------- Light Mode -----------------------------------------*/
+
+/* Team Section */
+body.light-mode .team-container-OL {
+  background: #dedede; /* Fundo branco */
+}
+
+body.light-mode .info-box-OL {
+  background: #e7e7e7; /* Cinza claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #000; /* Texto em preto */
+}
+
+body.light-mode .subtitle-OL {
+  color: rgb(0, 204, 0); /* Verde */
+}
+
+body.light-mode .list-OL {
+  color: #333333; /* Texto mais escuro */
+}
+
+/* Carousel Section */
+body.light-mode .carousel-box-OL {
+  background: #e7e7e7; /* Fundo mais claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Fleet Section */
+body.light-mode .fleet-section-OL {
+  background: #e7e7e7; /* Fundo branco */
+}
+
+body.light-mode .fleet-list-OL {
+  color: #333333; /* Texto mais escuro */
+}
+
+body.light-mode .fleet-button-OL {
+  color: #e7e7e7; /* Texto branco */
+}
+body.light-mode .text-white-OL{
+  color: #333333;
+}

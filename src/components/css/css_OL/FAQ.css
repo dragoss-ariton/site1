@@ -107,4 +107,29 @@
       font-size: 1.8rem;
     }
   }
+  body.light-mode .faq-page-OL {
+    background-color: #dedede; /* Fundo branco */
+    color: #000000; /* Texto escuro */
+  }
   
+  body.light-mode .faq-title-OL {
+    color: #000000; /* Título preto */
+  }
+  
+  body.light-mode .faq-item-OL {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+  }
+  
+  body.light-mode .faq-toggler-OL {
+    background: #f1f1f1; /* Fundo mais claro */
+    color: #000000; 
+  }
+  
+  body.light-mode .faq-toggler-OL:hover {
+    background-color: #e0e0e0; /* Efeito de hover */
+  }
+  
+  body.light-mode .faq-content-OL {
+    background: #fafafa; /* Fundo bem claro */
+    color: #333333; /* Texto mais escuro */
+  }

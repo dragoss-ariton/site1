@@ -193,3 +193,47 @@ form input::placeholder, form textarea::placeholder {
         height: 200px; /* Adjust map height for very small screens */
     }
 }
+
+/* General Container Styling */
+body.light-mode #contact-section {
+    background: #dedede; /* Fundo branco claro */
+  }
+  
+  /* Info Box */
+  body.light-mode .info-container {
+    background: #f1f1f1; /* Fundo branco */
+    color: #000000; /* Texto preto */
+  }
+  
+  body.light-mode .blk-text{
+    color: #000000;
+  }
+  body.light-mode .subtitle {
+    color: #000000; /* Verde */
+  }
+  
+  body.light-mode .form-container {
+    background: #f1f1f1; /* Fundo branco */
+    color: #000000; /* Texto preto */
+  }
+  
+  body.light-mode .form-label {
+    color: #000000;
+  }
+  
+  body.light-mode .form-control {
+    background: #eeeeee;
+  }
+  
+  /* Form */
+  body.light-mode form input.form-control,
+  body.light-mode form textarea.form-control {
+    background-color: #f1f1f1;
+    color: #333333; /* Texto escuro */
+  }
+  
+  body.light-mode form input.form-control::placeholder,
+  body.light-mode form textarea.form-control::placeholder {
+    color: #aaa; /* Placeholder claro */
+  }
+  

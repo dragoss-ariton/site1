@@ -100,7 +100,7 @@
 
 /*--------------------------------------- Light Mode -----------------------------------------*/
 body.light-mode .about-OL {
-  background-color: #eaeaea; /* Alterado para branco */
+  background-color: #dedede; /* Alterado para branco */
 }
 
 body.light-mode .heading-OL {
@@ -112,7 +112,7 @@ body.light-mode .heading-OL span {
 }
 
 body.light-mode .about-OL .row-OL .content-OL {
-  background-color: #dbdbdb; /* Alterado para um cinza claro */
+  background-color: #e7e7e7; /* Alterado para um cinza claro */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 

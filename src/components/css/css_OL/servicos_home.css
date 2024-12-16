@@ -148,7 +148,7 @@
 
 /* -----------------------------------Light Mode------------------------------ */
 body.light-mode .services_section-OL {
-    background-color: #ecebeb; /* Alterado para branco */
+    background-color: #dedede; /* Alterado para branco */
 }
 
 body.light-mode .title_services-OL h1 {
@@ -160,7 +160,7 @@ body.light-mode .title_services-OL span {
 }
 
 body.light-mode .services_card-OL {
-    background: #dfdfdf; /* Alterado para branco */
+    background: #e7e7e7; /* Alterado para branco */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 

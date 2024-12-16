@@ -102,7 +102,7 @@
 
 /*---------------------------Light Mode---------------------------- */
 body.light-mode .about {
-  background-color: #eaeaea; /* Alterado para branco */
+  background-color: #dedede; /* Alterado para branco */
 }
 
 body.light-mode .heading {
@@ -114,7 +114,7 @@ body.light-mode .heading span {
 }
 
 body.light-mode .about .row .content {
-  background-color: #dbdbdb; /* Fundo claro */
+  background-color: #e7e7e7; /* Fundo claro */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombreamento mais leve */
 }
 
