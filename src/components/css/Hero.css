@@ -6,6 +6,7 @@
     height: 100vh;
     flex-direction: row; /* Default for desktop layout */
     flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+    min-height: 100vh; /* Ensure it takes up full screen height */
 }
 
 /* Style for each side container */
@@ -14,6 +15,7 @@
     position: relative;
     overflow: hidden;
     width: 100%; /* By default, each side takes full width for small screens */
+    min-height: 50vh; /* Minimum height for each side to prevent collapse */
 }
 
 /* Overlay for the video content */
@@ -71,6 +73,16 @@
     transition: background-color 0.3s;
 }
 
+/* Right side button style (blue) */
+.hero-side:last-child .hero-button {
+    background-color: #007bff; /* Blue color for the right button */
+}
+
+.hero-side:last-child .hero-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* General button hover effect */
 .hero-button:hover {
     background-color: #45a049;
 }
@@ -82,6 +94,17 @@
     .hero-container {
         flex-direction: column; /* Stack side containers vertically on mobile */
         height: auto; /* Remove full height on mobile */
+    }
+
+    .hero-side {
+        display: flex !important; /* Ensure visibility */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 50vh; /* Prevent collapse */
+        width: 100%; /* Ensure full width */
     }
 
     .hero-logo {
@@ -105,126 +128,10 @@
 
 /* Tablet (medium screens) */
 @media (max-width: 1024px) {
-    .hero-title {
-        font-size: 2.2rem;
+    .hero-side {
+        height: auto; /* Adjust for responsive design */
     }
 
-    .hero-description {
-        font-size: 1.1rem;
-    }
-
-    .hero-button {
-        font-size: 1rem;
-        padding: 9px 18px;
-    }
-}
-/* Hero.css */
-
-/* Container for the whole component */
-.hero-container {
-    display: flex;
-    height: 100vh;
-    flex-direction: row; /* Default for desktop layout */
-    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
-}
-
-/* Style for each side container */
-.hero-side {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* By default, each side takes full width for small screens */
-}
-
-/* Overlay for the video content */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    transition: background 0.3s ease;
-}
-
-/* Darker effect on hover */
-.hero-side:hover .hero-overlay {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* Logo Style */
-.hero-logo {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
-}
-
-/* Title Style */
-.hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* Description Style */
-.hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* Button Style */
-.hero-button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
-}
-
-.hero-button:hover {
-    background-color: #45a049;
-}
-
-/* Responsive design */
-
-/* Mobile (small screens) */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column; /* Stack side containers vertically on mobile */
-        height: auto; /* Remove full height on mobile */
-    }
-
-    .hero-logo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-description {
-        font-size: 1rem;
-    }
-
-    .hero-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-}
-
-/* Tablet (medium screens) */
-@media (max-width: 1024px) {
     .hero-title {
         font-size: 2.2rem;
     }
