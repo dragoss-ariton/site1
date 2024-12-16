@@ -15,27 +15,28 @@ const PopupBoxes = () => {
     },
     {
       id: 1,
-      title: "Renovações de carta",
+      title: "Pacote",
       imgSrc: Infra3PDN,
-      description: ["Precisa renovar a sua carta? Entre em contacto conosco para saber quais os prazos e o que necessita para a renovação."],
+      description: [{ title: "O que inclui?", content: ["Inscrição","Aulas de código ilimitadas","32 aulas de código em situação real de trânsito(sem simulador)","Exame Teórico e Exame Prático pelo privado(vantagem de poder escolher o dia e hora que quer fazer exame)","Oferta do livro de código"] }],
     },
     {
       id: 2,
-      title: "Treino a encartados",
+      title: "Horários",
       imgSrc: Infra3PDN,
-      description: [""],
+      description: [
+        { title: "Código:", content: ["2ª a 6ª às 12h, 17h, 18h, 19h", "Sábados às 10h, 11h, 12h"] },
+        { title: "Condução:", content: ["2ª a 6ª das 7h às 20h", "Sábados das 7h às 13h"] },
+        { title: "Secretária:", content: ["2ª a 6ª das 10h às 13h / 14.30h às 20h", "Sábados das 10h às 13h"] },
+      ],
     },
     {
       id: 3,
-      title: "Segundas vias e alterações",
+      title: "English driving course",
       imgSrc: Infra3PDN,
-      description: ["Tratamos da Renovação da Carta, 2ª via da Carta e Alteração de Dados (Morada, Nome);"],
-    },
-    {
-      id: 4,
-      title: "Carta em inglês",
-      imgSrc: Infra3PDN,
-      description: ["Nas cartas de categoria B em inglês, o livro de código está incluído, este traduzido para inglês.", "Nas cartas de categoria A, A1 e A2 (mota) em Inglês apenas possuímos o livro em português."],
+      description: [
+        "On Category B cards in English, the codebook is included, this translated from Portuguese to English.",
+        "The medical certificate is included."
+      ],
     },
   ];
 
@@ -48,11 +49,9 @@ const PopupBoxes = () => {
   };
 
   return (
-
     <div className="services-container1-OL">
-      <h1 className='title-services1-OL'>Os <span>Nossos</span> Serviços</h1>
+      <h1 className="title-services1-OL">Os <span>Nossos</span> Serviços</h1>
       <div className="container1-OL">
-        {/* Boxes */}
         {boxes.map((box) => (
           <div key={box.id} className="box1-OL" onClick={() => handleBoxClick(box.id)}>
             <div className="box-image-container1-OL">
@@ -65,15 +64,27 @@ const PopupBoxes = () => {
         ))}
       </div>
 
-      {/* Popup */}
       {activePopup !== null && (
         <div>
           <div className="popup1-OL">
             <h2>{boxes[activePopup].title}</h2>
             <ul>
-              {boxes[activePopup].description.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+              {boxes[activePopup].description.map((item, index) => {
+                if (typeof item === "object" && item.title) {
+                  return (
+                    <div key={index}>
+                      <h3>{item.title}</h3>
+                      <ul>
+                        {item.content.map((contentItem, contentIndex) => (
+                          <li key={contentIndex}>{contentItem}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                } else {
+                  return <li key={index}>{item}</li>;
+                }
+              })}
             </ul>
             <button onClick={handleClosePopup}>Close</button>
           </div>

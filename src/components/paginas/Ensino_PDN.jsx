@@ -15,9 +15,9 @@ const PopupBoxes = () => {
       },
       {
         id: 1,
-        title: "Pacote (O que inclui?)",
+        title: "Pacote",
         imgSrc: Infra3PDN,
-        description: ["Inscrição","Aulas de código ilimitadas","32 aulas de código em situação real de trânsito(sem simulador)","Exame Teórico e Exame Prático pelo privado(vantagem de poder escolher o dia e hora que quer fazer exame)","Oferta do livro de código"],
+        description: [{ title: "O que inclui?", content: ["Inscrição","Aulas de código ilimitadas","32 aulas de código em situação real de trânsito(sem simulador)","Exame Teórico e Exame Prático pelo privado(vantagem de poder escolher o dia e hora que quer fazer exame)","Oferta do livro de código"] }],
       },
       {
         id: 2,
@@ -27,12 +27,6 @@ const PopupBoxes = () => {
       },
       {
         id: 3,
-        title: "Segundas vias e alterações",
-        imgSrc: Infra3PDN,
-        description: ["Tratamos da Renovação da Carta, 2ª via da Carta e Alteração de Dados (Morada, Nome);"],
-      },
-      {
-        id: 4,
         title: "English driving course",
         imgSrc: Infra3PDN,
         description: ["On Category B cards in English, the codebook is included, this translated from Portuguese to English.", "For category A, A1 and A2 (motorcycle) in English, we only have the book in Portuguese.","For both categories in english, the medical certificate is included."],
