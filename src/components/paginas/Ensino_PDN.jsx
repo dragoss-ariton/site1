@@ -95,5 +95,4 @@ const PopupBoxes = () => {
     </div>
   );
 };
-
 export default PopupBoxes;
