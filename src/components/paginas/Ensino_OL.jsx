@@ -9,33 +9,33 @@ const PopupBoxes = () => {
   const boxes = [
     {
       id: 0,
-      title: "servico 1",
+      title: "Categorias lecionadas",
       imgSrc: Infra3PDN,
-      description: ["Beautiful colors", "Calm atmosphere", "Perfect for photography"],
+      description: ["Aqui apenas é lecionada a carta de ligeiros, categoria B"],
     },
     {
       id: 1,
-      title: "servico 2",
+      title: "Renovações de carta",
       imgSrc: Infra3PDN,
-      description: ["Fresh air", "Hiking trails", "Breathtaking views"],
+      description: ["Precisa renovar a sua carta? Entre em contacto conosco para saber quais os prazos e o que necessita para a renovação."],
     },
     {
       id: 2,
-      title: "servico 3",
+      title: "Treino a encartados",
       imgSrc: Infra3PDN,
-      description: ["Tall trees", "Bird songs", "Peaceful environment"],
+      description: ["Volte a conduzir com confiança com as nossas aulas de treino."],
     },
     {
       id: 3,
-      title: "servico 4",
+      title: "Segundas vias e alterações",
       imgSrc: Infra3PDN,
-      description: ["Waves crashing", "Soft sand", "Relaxing soundscapes"],
+      description: ["Tratamos da Renovação da Carta, 2ª via da Carta e Alteração de Dados (Morada, Nome);"],
     },
     {
       id: 4,
-      title: "servico 5",
+      title: "Carta em inglês",
       imgSrc: Infra3PDN,
-      description: ["Golden dunes", "Clear night skies", "Adventurous vibes"],
+      description: ["Nas cartas de categoria B em inglês, o livro de código está incluído, este traduzido para inglês.", "Nas cartas de categoria A, A1 e A2 (mota) em Inglês apenas possuímos o livro em português."],
     },
   ];
 
