@@ -29,7 +29,7 @@ const EscolaDeConducaoA = () => {
                     <h1 className="hero-title">Escola de Condução Olivais</h1>
                     <p className="hero-description">Mais que uma escola!</p>
                     <Link to="/Inicio-OL">
-                        <button className="hero-button">Learn More</button>
+                        <button className="hero-button">Saiba Mais!</button>
                     </Link>
                 </div>
             </div>
@@ -53,7 +53,7 @@ const EscolaDeConducaoA = () => {
                     <h1 className="hero-title">Escola de Condução Parque Das Nações</h1>
                     <p className="hero-description">Venha aprender connosco!</p>
                     <Link to="/Inicio-PDN">
-                        <button className="hero-button">Learn More</button>
+                        <button className="hero-button">Saiba Mais!</button>
                     </Link>
                 </div>
             </div>
