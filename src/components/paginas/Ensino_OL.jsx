@@ -23,7 +23,7 @@ const PopupBoxes = () => {
       id: 2,
       title: "Treino a encartados",
       imgSrc: Infra3PDN,
-      description: ["Volte a conduzir com confiança com as nossas aulas de treino."],
+      description: [""],
     },
     {
       id: 3,
