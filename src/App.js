@@ -57,7 +57,7 @@ const AppContent = ({ isLightMode }) => {
 };
 
 const App = () => {
-  const [isLightMode, setIsLightMode] = useState(false); // Definido como false para começar escuro
+  const [isLightMode] = useState(false); // Definido como false para começar escuro
 
   // Atualiza o tema globalmente
   useEffect(() => {
@@ -73,7 +73,7 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
-      <Navbar isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
+      <Navbar isLightMode={isLightMode} />
       <AppContent isLightMode={isLightMode} />
       <Footer />
     </Router>

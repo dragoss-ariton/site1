@@ -135,7 +135,7 @@ const Navbar = () => {
                             </Link>
                         )}
                         <button
-                            className={`theme-toggle-btn mx-2 ${isLightMode ? '' : 'text-white'}`}
+                            className={`theme-toggle-btn mx-2 ${isLightMode ? '' : ''}`}
                             onClick={toggleTheme}
                             aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
                         >

@@ -241,7 +241,7 @@ body.light-mode .navbar-nav .nav-link.selected {
 
 body.light-mode .theme-toggle-btn {
     color: #000000;
-    background-color: rgb(232, 232, 232);
+    background-color: rgb(232, 232, 232) !important;
 }
 
 body.light-mode .theme-toggle-btn:hover {
