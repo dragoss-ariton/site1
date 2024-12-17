@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -25,16 +23,10 @@ import "./App.css";
 import "./components/css/Navbar.css";
 
 const AppContent = ({ isLightMode }) => {
-  const location = useLocation(); // Pega a localização da rota atual
+  const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname === '/') {
-      // Remover o padding-top na página inicial
-      document.body.style.paddingTop = '0';
-    } else {
-      // Definir o padding-top quando não for a página inicial
-      document.body.style.paddingTop = '55px'; // Ou qualquer outro valor
-    }
+    document.body.style.paddingTop = location.pathname === '/' ? '0' : '55px';
   }, [location]);
 
   return (
@@ -57,17 +49,11 @@ const AppContent = ({ isLightMode }) => {
 };
 
 const App = () => {
-  const [isLightMode] = useState(false); // Definido como false para começar escuro
+  const [isLightMode] = useState(false); // Estado inicial: modo escuro
 
-  // Atualiza o tema globalmente
   useEffect(() => {
-    if (isLightMode) {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    } else {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    }
+    document.body.classList.toggle('light-mode', isLightMode);
+    document.body.classList.toggle('dark-mode', !isLightMode);
   }, [isLightMode]);
 
   return (

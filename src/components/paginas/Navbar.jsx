@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
@@ -15,23 +14,19 @@ const Navbar = () => {
     });
     const location = useLocation();
 
-    // Verifica o tema armazenado no localStorage
     useEffect(() => {
         document.body.classList.toggle('light-mode', isLightMode);
     }, [isLightMode]);
 
-    // Atualiza a seleção da escola com base no pathname
     useEffect(() => {
         const determineSchool = (pathname) => {
             if (pathname.includes('-OL')) return 'A';
             if (pathname.includes('-PDN')) return 'B';
-            return 'A'; // Valor padrão
+            return 'A';
         };
-        
         setSelectedSchool(determineSchool(location.pathname));
     }, [location.pathname]);
 
-    // Função para alternar o tema
     const toggleTheme = () => {
         const newMode = isLightMode ? 'light' : 'dark';
         setIsLightMode(!isLightMode);
@@ -48,13 +43,12 @@ const Navbar = () => {
             { to: "/Ensino-PDN", label: "Ensino" },
             { to: "/Equipa-PDN", label: "Equipa" },
             { to: "/FAQ-PDN", label: "FAQ" },
-        ]
+        ],
     };
 
     const preRegistrationLink = selectedSchool === 'A' ? "/Contactos-OL" : "/Contactos-PDN";
     const isHomePage = location.pathname === '/';
 
-    // Função para gerenciar a classe de estilo dos links
     const schoolLinkClass = (school) => {
         return `nav-link ${selectedSchool === school ? 
             (isLightMode ? 'text-black' : 'text-white') 
@@ -63,10 +57,11 @@ const Navbar = () => {
     };
 
     return (
-        <BootstrapNavbar 
-            expand="lg" 
-            fixed="top" 
-            className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${location.pathname.includes('-OL') ? 'green-navbar' : ''} ${isLightMode ? 'navbar-light-mode' : ''}`}
+        <BootstrapNavbar
+            expand="lg"
+            fixed="top"
+            className={`navbar-custom ${isHomePage ? 'home-page' : ''} ${location.pathname.includes('-OL') ? 'green-navbar' : ''} ${isLightMode ? 'navbar-light-mode' : 'nav-blk'}`}
+            expanded={expanded}
         >
             <Container>
                 {isHomePage ? (
@@ -76,9 +71,13 @@ const Navbar = () => {
                 ) : (
                     <img src={logo} alt="Logo" className="navbar-logo" />
                 )}
-                
-                <BootstrapNavbar.Toggle aria-controls="navbarNav" onClick={() => setExpanded(!expanded)} className="navbar-toggle" />
-                
+
+                <BootstrapNavbar.Toggle
+                    aria-controls="navbarNav"
+                    onClick={() => setExpanded(!expanded)}
+                    className="navbar-toggle"
+                />
+
                 <BootstrapNavbar.Collapse id="navbarNav">
                     {!isHomePage && (
                         <ul className="navbar-nav">
@@ -86,7 +85,10 @@ const Navbar = () => {
                                 <Link
                                     className={schoolLinkClass('A')}
                                     to="/Inicio-OL"
-                                    onClick={() => setSelectedSchool('A')}
+                                    onClick={() => {
+                                        setSelectedSchool('A');
+                                        setExpanded(false);
+                                    }}
                                 >
                                     Olivais
                                 </Link>
@@ -102,7 +104,10 @@ const Navbar = () => {
                                 <Link
                                     className={schoolLinkClass('B')}
                                     to="/Inicio-PDN"
-                                    onClick={() => setSelectedSchool('B')}
+                                    onClick={() => {
+                                        setSelectedSchool('B');
+                                        setExpanded(false);
+                                    }}
                                 >
                                     Parque das Nações
                                 </Link>
@@ -128,14 +133,14 @@ const Navbar = () => {
                         {!isHomePage && (
                             <Link
                                 to={preRegistrationLink}
-                                className={`custom-btn-form mx-2 ${isLightMode ? 'outline-dark' : 'outline-light'}`}
+                                className={`custom-btn-form mx-2 ${isLightMode ? 'custom-btn-formw outline-white' : 'btn-custom-form outline-black'}`}
                                 onClick={() => setExpanded(false)}
                             >
                                 Entre em contacto
                             </Link>
                         )}
                         <button
-                            className={`theme-toggle-btn mx-2 ${isLightMode ? '' : ''}`}
+                            className={`theme-toggle-btn mx-2 ${isLightMode ? 'toggle-theme-btnw' : 'toggle-theme-btn'}`}
                             onClick={toggleTheme}
                             aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
                         >

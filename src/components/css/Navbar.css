@@ -1,6 +1,5 @@
 /* Estilo padrão da navbar */
 .navbar {
-    background-color: #000000;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +12,9 @@
     animation: fadeIn 0.6s ease-in-out forwards; /* Animação de fade-in */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona sombra para destacar */
     z-index: 1000; /* Garante que a navbar fique no topo */
+}
+.nav-blk{
+    background-color: #000000;
 }
 
 /* Fade-in animation */
@@ -160,12 +162,13 @@
         width: 14%;
     }
 }
-
+.btn-custom-form{
+    color: white;
+    border: 1px solid white;
+}
 .custom-btn-form {
     padding: 10px 20px;
     font-size: 16px;
-    color: white;
-    border: 1px solid white;
     border-radius: 7px;
     background: transparent;
     transition: background-color 0.3s, color 0.3s;
@@ -179,6 +182,15 @@
     color: black;
   }
 
+.toggle-theme-btn{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.toggle-theme-btnw{
+    background-color: rgb(232, 232, 232); 
+}
+
 .theme-toggle-btn {
     display: inline-flex;
     align-items: center;
@@ -186,8 +198,6 @@
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 0.5rem;
-    color: #fff;
-    background-color: #000;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -196,12 +206,8 @@
 }
 
 .theme-toggle-btn:hover {
-    background-color: #333;
+    background-color: #6a6a6a;
     transform: scale(1.05);
-}
-
-.theme-toggle-btn:active {
-    transform: scale(0.95);
 }
 
 /*---------------------------------Light mode--------------------------------*/
@@ -221,14 +227,15 @@ body.light-mode .navbar {
     color: rgb(0, 0, 0); 
 }
 
-body.light-mode .custom-btn-form {
-    color: rgb(0, 0, 0);
-    border: 1px solid rgb(0, 0, 0);
+/* Modo claro */
+.custom-btn-formw{
+    color: black;
+    border: 1px solid black;
 }
 
-body.light-mode .custom-btn-form:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+.custom-btn-formw:hover {
+    background-color: black;
+    color: white;
 }
 
 body.light-mode .navbar-nav .nav-link:hover {
@@ -239,9 +246,9 @@ body.light-mode .navbar-nav .nav-link.selected {
     color: rgb(0, 0, 0);
 }
 
-body.light-mode .theme-toggle-btn {
-    color: #000000;
-    background-color: rgb(232, 232, 232) !important;
+body.light-mode .theme-toggle-btn{
+    background-color: rgb(232, 232, 232);
+    color: rgb(0, 0, 0);
 }
 
 body.light-mode .theme-toggle-btn:hover {
@@ -255,4 +262,15 @@ body.light-mode .navbar-nav .nav-link.selected {
 
 body.light-mode .navbar-logo {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 991px) {
+    body.light-mode .navbar {
+        background-color: white; /* Define o fundo branco para a navbar */
+    }
+    body.light-mode .navbar-nav {
+        background-color: white; /* Define o fundo branco para os itens da navbar */
+    }
+    body.light-mode .navbar-collapse {
+        background-color: white; /* Garante o fundo branco na área colapsada */
+    }
 }
