@@ -16,6 +16,9 @@
 .nav-blk{
     background-color: #000000;
 }
+.nav-col-cel{
+    background-color: #ffffff;
+}
 
 /* Fade-in animation */
 @keyframes fadeIn {
@@ -132,7 +135,6 @@
     .navbar-nav {
         flex-direction: column;
         width: 100%;
-        background-color: #000;
     }
 
     .navbar-nav .nav-link {
