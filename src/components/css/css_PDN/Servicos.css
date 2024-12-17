@@ -1,6 +1,26 @@
 .services-container1{
     background: #121212;
-    height: 100vh;
+    height: 1000px ;
+}
+@media (max-width: 964px) {
+    .services-container1{    
+        height: 1700px ;
+    }
+}
+@media (max-width: 460px) {
+    .services-container1{    
+        height: 1600px ;
+    }
+}
+@media (max-width: 420px) {
+    .services-container1{    
+        height: 1500px ;
+    }
+}
+@media (max-width: 390px) {
+    .services-container1{    
+        height: 1400px ;
+    }
 }
 /* Page title styling */
 .title-services1 {
