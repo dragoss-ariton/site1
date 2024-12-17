@@ -33,7 +33,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 400px; /* Ensures the content matches the image height */
 }
 
 .about-OL .row-OL .content-OL h3 {
@@ -51,8 +50,7 @@
 
 .about-OL .row-OL .image-OL {
   flex: 1 1 45%;
-  height: 500px; /* Matches the content height */
-  width: 50%;
+  width: 100%;
 
 }
 
