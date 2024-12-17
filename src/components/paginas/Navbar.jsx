@@ -8,10 +8,7 @@ import logo from '../assets/logo.jpg';
 const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A');
     const [expanded, setExpanded] = useState(false);
-    const [isLightMode, setIsLightMode] = useState(() => {
-        const storedMode = localStorage.getItem('theme');
-        return storedMode ? storedMode === 'light' : false;
-    });
+    const [isLightMode, setIsLightMode] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
