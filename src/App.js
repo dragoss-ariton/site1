@@ -26,7 +26,7 @@ const AppContent = ({ isLightMode }) => {
   const location = useLocation();
 
   useEffect(() => {
-    document.body.style.paddingTop = location.pathname === '/' ? '0' : '55px';
+    document.body.style.paddingTop = location.pathname === '/' ? '60px' : '55px';
   }, [location]);
 
   return (
