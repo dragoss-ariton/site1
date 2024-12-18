@@ -16,7 +16,7 @@ const PopupBoxes = () => {
       id: 1,
       title: "Pacote",
       imgSrc: Infra3PDN,
-      description: [{ title: "O que inclui?", content: ["Inscrição","Aulas de código ilimitadas","32 aulas de código em situação real de trânsito(sem simulador)","Exame Teórico e Exame Prático pelo privado(vantagem de poder escolher o dia e hora que quer fazer exame)","Oferta do livro de código"] }],
+      description: [{ title: "O que inclui?", content: ["Inscrição e Aulas de código ilimitadas","32 aulas de condução, situação real, trânsito(sem simulador)","Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","Oferta do livro, código (mota)"] }],
     },
     {
       id: 2,

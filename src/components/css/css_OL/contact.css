@@ -96,7 +96,8 @@ form.form-OL textarea::placeholder {
 /* For tablets and smaller laptops */
 @media (max-width: 1024px) {
     .content-wrapper-OL {
-        flex-direction: column;
+        padding: 15px;
+        height: auto;
     }
 
     .form-container-OL,

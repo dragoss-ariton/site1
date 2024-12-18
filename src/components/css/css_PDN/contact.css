@@ -118,7 +118,8 @@ form input::placeholder, form textarea::placeholder {
 /* For tablets and smaller laptops */
 @media (max-width: 1024px) {
     .content-wrapper {
-        flex-direction: column; /* Stack elements vertically */
+        padding: 15px;
+        height: auto;
     }
 
     .form-container,
