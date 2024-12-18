@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/css_OL/Servicos.css';
-import Infra3PDN from '../assets/Infra3PDN.jpg';
+import Infra3PDN from '../assets/Infra2OL.jpg';
 
 const PopupBoxes = () => {
   const [activePopup, setActivePopup] = useState(null);

@@ -112,7 +112,8 @@
     flex-direction: column;
     justify-content: flex-start; /* Align content to the top */
     align-items: center;
-    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+    max-height: 60vh; /* Define a altura máxima da janela popup */
+    overflow-y: auto;
 }
 
 /* Popup title styling */
