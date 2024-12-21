@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import img from '../assets/logoPDN.jpeg';
 import videobg from '../assets/video_bg_pdn.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGaugeHigh } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faUsers, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Inicio_PDN = () => {
   return (
@@ -42,7 +42,7 @@ const Inicio_PDN = () => {
         </div>
         <div className="services">
           <div className="services_card">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <FontAwesomeIcon icon={faBookOpen} className="icon" />
             <h1>Ensino</h1>
             <div className="services_content">
               <p>Descubra os serviços e categorias de carta que pode tirar na nossa escola!</p>
@@ -58,7 +58,7 @@ const Inicio_PDN = () => {
             </div>
           </div>
           <div className="services_card">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <FontAwesomeIcon icon={faUsers} className="icon" />
             <h1>Equipa</h1>
             <div className="services_content">
               <p>Venha conhecer a nossa equipa e as infraestruturas que temos ao seu dispor!</p>
@@ -74,7 +74,7 @@ const Inicio_PDN = () => {
             </div>
           </div>
           <div className="services_card">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon" />
+            <FontAwesomeIcon icon={faEnvelope} className="icon" />
             <h1>Entre Em Contacto</h1>
             <div className="services_content">
               <p>Para mais informações sinta-se à vontade de entrar em contacto connosco!</p>

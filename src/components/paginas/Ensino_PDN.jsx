@@ -74,7 +74,7 @@ const PopupBoxes = () => {
                 if (typeof item === "object" && item.title) {
                   return (
                     <div key={index}>
-                      <h3>{item.title}</h3>
+                      <p>{item.title}</p>
                       <ul>
                         {item.content.map((contentItem, contentIndex) => (
                           <li key={contentIndex}>{contentItem}</li>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import img from '../assets/logoOL.jpeg';
 import videobg from '../assets/EquipaOL.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGaugeHigh } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faUsers, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Inicio_OL = () => {
   return (
@@ -42,7 +42,8 @@ const Inicio_OL = () => {
         </div>
         <div className="services-OL">
           <div className="services_card-OL">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon-OL" />
+            {/* Ícone de Ensino - Livro ou Lousa */}
+            <FontAwesomeIcon icon={faBookOpen} className="icon-OL" />
             <h1>Ensino</h1>
             <div className="services_content-OL">
               <p>Descubra os serviços e categorias de carta que pode tirar na nossa escola!</p>
@@ -58,7 +59,8 @@ const Inicio_OL = () => {
             </div>
           </div>
           <div className="services_card-OL">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon-OL" />
+            {/* Ícone de Equipa - Usuários */}
+            <FontAwesomeIcon icon={faUsers} className="icon-OL" />
             <h1>Equipa</h1>
             <div className="services_content-OL">
               <p>Venha conhecer a nossa equipa e as infraestruturas que temos ao seu dispor!</p>
@@ -74,7 +76,8 @@ const Inicio_OL = () => {
             </div>
           </div>
           <div className="services_card-OL">
-            <FontAwesomeIcon icon={faGaugeHigh} className="icon-OL" />
+            {/* Ícone de Contacto - Envelope */}
+            <FontAwesomeIcon icon={faEnvelope} className="icon-OL" />
             <h1>Entre Em Contacto</h1>
             <div className="services_content-OL">
               <p>Para mais informações sinta-se à vontade de entrar em contacto connosco!</p>

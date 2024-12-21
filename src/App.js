@@ -49,7 +49,7 @@ const AppContent = ({ isLightMode }) => {
 };
 
 const App = () => {
-  const [isLightMode] = useState(false); // Estado inicial: modo escuro
+  const [isLightMode] = useState(true); // Estado inicial: modo claro
 
   useEffect(() => {
     document.body.classList.toggle('light-mode', isLightMode);

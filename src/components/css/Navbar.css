@@ -276,3 +276,9 @@ body.light-mode .navbar-logo {
         background-color: white; /* Garante o fundo branco na área colapsada */
     }
 }
+
+@media (max-width: 991px) {
+    .parque-link {
+        border-bottom: 2px solid rgba(0, 0, 0, 1); /* Traço discreto */
+    }
+}

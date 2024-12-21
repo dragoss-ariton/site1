@@ -186,4 +186,6 @@ body.light-mode .services_card-OL .button_services-OL {
 
 body.light-mode .services_card-OL .button_services-OL:hover {
     background: transparent !important; /* Fundo transparente no hover */
+    color: rgb(0, 204, 0) !important;
+    border: 2px solid rgb(0, 204, 0) !important;
 }

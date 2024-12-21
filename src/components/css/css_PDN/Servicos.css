@@ -7,21 +7,7 @@
         height: 1700px ;
     }
 }
-@media (max-width: 460px) {
-    .services-container1{    
-        height: 1600px ;
-    }
-}
-@media (max-width: 420px) {
-    .services-container1{    
-        height: 1500px ;
-    }
-}
-@media (max-width: 390px) {
-    .services-container1{    
-        height: 1400px ;
-    }
-}
+
 /* Page title styling */
 .title-services1 {
     text-align: center;
@@ -54,6 +40,26 @@
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@media (max-width: 460px) {
+    .container1 .box1{    
+        width: 280px;
+    }
+    .title-services1 {
+        font-size: 3.5rem;
+    }
+    .services-container1{    
+        height: 1300px ;
+    }
+    .popup1 ul {
+        list-style: none;
+        color: #fff;
+        padding-left: 40px; /* Increased padding for better readability */
+        text-align: left;
+        font-size: 18px; /* Larger font size for easier reading */
+        margin-bottom: 20px; /* More space below the list */
+    }
 }
 
 /* Box hover effect */

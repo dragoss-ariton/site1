@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Container, Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
 import { FaArrowLeft, FaSun, FaMoon } from 'react-icons/fa';
 import '../css/Navbar.css';
@@ -8,8 +8,9 @@ import logo from '../assets/logo.jpg';
 const Navbar = () => {
     const [selectedSchool, setSelectedSchool] = useState('A');
     const [expanded, setExpanded] = useState(false);
-    const [isLightMode, setIsLightMode] = useState(false);
+    const [isLightMode, setIsLightMode] = useState(true);
     const location = useLocation();
+    const navigate = useNavigate(); // Hook para navegação programática
 
     useEffect(() => {
         document.body.classList.toggle('light-mode', isLightMode);
@@ -53,6 +54,15 @@ const Navbar = () => {
             (isLightMode ? 'text-gray-700' : 'text-gray-500')} hover:text-white`;
     };
 
+    // Função para redirecionar ao logo ser clicado
+    const handleLogoClick = () => {
+        if (selectedSchool === 'A') {
+            navigate('/Inicio-OL');
+        } else {
+            navigate('/Inicio-PDN');
+        }
+    };
+
     return (
         <BootstrapNavbar
             expand="lg"
@@ -63,10 +73,26 @@ const Navbar = () => {
             <Container>
                 {isHomePage ? (
                     <div className="d-flex justify-content-center w-100">
-                        <img src={logo} alt="Logo" className="navbar-logo home-logo no-animation" />
+                        <img 
+                            src={logo} 
+                            alt="Logo" 
+                            className="navbar-logo home-logo" 
+                            onClick={() => {
+                                handleLogoClick();
+                                setExpanded(false);
+                            }}
+                        />
                     </div>
                 ) : (
-                    <img src={logo} alt="Logo" className="navbar-logo" />
+                    <img 
+                        src={logo} 
+                        alt="Logo" 
+                        className="navbar-logo" 
+                        onClick={() => {
+                            handleLogoClick();
+                            setExpanded(false);
+                        }}
+                    />
                 )}
 
                 <BootstrapNavbar.Toggle
@@ -97,7 +123,7 @@ const Navbar = () => {
                                     } ${isLightMode ? 'text-dark' : 'text-white'}`}
                                 />
                             </li>
-                            <li>
+                            <li className="parque-link">
                                 <Link
                                     className={schoolLinkClass('B')}
                                     to="/Inicio-PDN"
@@ -130,7 +156,7 @@ const Navbar = () => {
                         {!isHomePage && (
                             <Link
                                 to={preRegistrationLink}
-                                className={`custom-btn-form mx-2 ${isLightMode ? 'custom-btn-formw outline-white' : 'btn-custom-form outline-black'}`}
+                                className={`custom-btn-form mx-2 ${isLightMode ? 'custom-btn-formw outline-black' : 'btn-custom-form outline-white'}`}
                                 onClick={() => setExpanded(false)}
                             >
                                 Entre em contacto
