@@ -4,7 +4,7 @@ const path = require('path');
 const emailRoutes = require('./emailRoutes'); // Rotas do NodeMailer
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(cors());
