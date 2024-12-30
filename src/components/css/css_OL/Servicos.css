@@ -52,13 +52,6 @@
     .title-services1-OL {
         font-size: 3.5rem;
     }
-    ul {
-        padding-left: 0px; /* Increased padding for better readability */
-        text-align: left;
-        font-size: 18px; /* Larger font size for easier reading */
-        margin-bottom: 20px; /* More space below the list */
-        margin-left: 0px !important;
-    }
     .popup1-OL {
         width: 280px !important;
     }
@@ -142,20 +135,6 @@
     margin: 15px 0; /* Increased margin for spacing */
 }
 
-/* List styling inside the popup */
-.popup1 ul {
-    color: #fff;
-    padding-left: 40px; /* Increased padding for better readability */
-    text-align: left;
-    font-size: 14px; /* Larger font size for easier reading */
-    margin-bottom: 20px; /* More space below the list */
-}
-
-/* List item styling */
-.popup1-OL li {
-    margin: 10px 0; /* Increased margin between list items */
-}
-
 /* Popup button styling */
 .popup1-OL button {
     margin-top: 20px; /* Increased space from content */
@@ -210,11 +189,6 @@ body.light-mode .box-title-overlay1-OL {
 body.light-mode .popup1-OL {
     background-color: #ffffff; /* Fundo branco */
     color: #000000; /* Texto escuro */
-}
-
-/* Lista dentro do popup */
-body.light-mode .popup1 ul {
-    color: #333333; /* Texto escuro */
 }
 
 /* Estilo do botão no popup */

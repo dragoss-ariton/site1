@@ -43,17 +43,17 @@
 }
 
 @media (max-width: 460px) {
+    .services-container1{    
+        height: 1300px ;
+    }
     .container1 .box1{    
         width: 300px;
     }
     .title-services1 {
         font-size: 3.5rem;
     }
-    .services-container1{    
-        height: 1300px ;
-    }
     .popup1 {
-        width: 300px !important;
+        width: 280px !important;
     }
 }
 @media ((min-width: 461px) and (max-width: 485px)) {
@@ -110,11 +110,13 @@
 /* Popup styling */
 .popup1 {
     position: fixed;
+    color: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #232323;
-    padding: 20px; /* Increased padding for better spacing */
+    padding: 30px; /* Increased padding for better spacing */
+    width: auto;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1001; /* Ensure popup is on top */
@@ -133,26 +135,11 @@
     margin: 15px 0; /* Increased margin for spacing */
 }
 
-/* List styling inside the popup */
-.popup1 ul {
-    list-style-type:circle;
-    color: #fff;
-    padding-left: 40px; /* Increased padding for better readability */
-    text-align: left;
-    font-size: 18px; /* Larger font size for easier reading */
-    margin-bottom: 20px; /* More space below the list */
-}
-
-/* List item styling */
-.popup1 li {
-    margin: 10px 0; /* Increased margin between list items */
-}
-
 /* Popup button styling */
 .popup1 button {
     margin-top: 20px; /* Increased space from content */
     padding: 15px 30px; /* Increased padding for a larger button */
-    background-color: lightblue;
+    background-color: #00acac;
     border: none;
     border-radius: 8px; /* Rounded corners for the button */
     cursor: pointer;
@@ -160,7 +147,7 @@
 }
 
 .popup1 button:hover {
-    background-color: deepskyblue;
+    background-color: #00acac;
 }
 /* Overlay styling */
 .overlay1 {
@@ -202,11 +189,6 @@ body.light-mode .box-title-overlay1 {
 body.light-mode .popup1 {
     background-color: #ffffff; /* Fundo branco */
     color: #000000; /* Texto escuro */
-}
-
-/* Lista dentro do popup */
-body.light-mode .popup1 ul {
-    color: #333333; /* Texto escuro */
 }
 
 /* Estilo do botão no popup */
