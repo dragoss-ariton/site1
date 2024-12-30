@@ -44,7 +44,7 @@
 
 @media (max-width: 460px) {
     .container1 .box1{    
-        width: 280px;
+        width: 300px;
     }
     .title-services1 {
         font-size: 3.5rem;
@@ -52,16 +52,21 @@
     .services-container1{    
         height: 1300px ;
     }
-    .popup1 ul {
-        list-style: none;
-        color: #fff;
-        padding-left: 40px; /* Increased padding for better readability */
-        text-align: left;
-        font-size: 18px; /* Larger font size for easier reading */
-        margin-bottom: 20px; /* More space below the list */
+    .popup1 {
+        width: 300px !important;
     }
 }
-
+@media ((min-width: 461px) and (max-width: 485px)) {
+    .container1 .box1{    
+        width: 350px;
+    }
+    .popup1 {
+        width: 320px !important;
+    }    
+    .services-container1{    
+        height: 1450px ;
+    }
+}
 /* Box hover effect */
 .container1 .box1:hover {
     transform: scale(1.05);
@@ -113,18 +118,17 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     z-index: 1001; /* Ensure popup is on top */
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Align content to the top */
-    align-items: center;
+    align-items: left;
     max-height: 60vh; /* Define a altura máxima da janela popup */
     overflow-y: auto;
 }
 
 /* Popup title styling */
 .popup1 h2 {
-    font-size: 3.5rem; /* Slightly larger font size */
+    font-size: 2rem; /* Slightly larger font size */
     color: #00acac;
     margin: 15px 0; /* Increased margin for spacing */
 }

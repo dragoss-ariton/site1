@@ -41,23 +41,37 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 @media (max-width: 460px) {
     .services-container1-OL{    
         height: 1300px ;
     }
     .container1-OL .box1-OL{    
-        width: 280px;
+        width: 300px;
     }
     .title-services1-OL {
         font-size: 3.5rem;
     }
     ul {
-        list-style:none;
         padding-left: 0px; /* Increased padding for better readability */
         text-align: left;
         font-size: 18px; /* Larger font size for easier reading */
         margin-bottom: 20px; /* More space below the list */
         margin-left: 0px !important;
+    }
+    .popup1-OL {
+        width: 280px !important;
+    }
+}
+@media ((min-width: 461px) and (max-width: 485px)) {
+    .container1-OL .box1-OL{    
+        width: 350px;
+    }
+    .popup1-OL {
+        width: 320px !important;
+    }    
+    .services-container1-OL{    
+        height: 1450px ;
     }
 }
 /* Box hover effect */
@@ -130,7 +144,6 @@
 
 /* List styling inside the popup */
 .popup1 ul {
-    list-style-type:circle;
     color: #fff;
     padding-left: 40px; /* Increased padding for better readability */
     text-align: left;

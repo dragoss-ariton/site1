@@ -17,16 +17,16 @@ const PopupBoxes = () => {
       id: 1,
       title: "Pacote",
       imgSrc: Infra3PDN,
-      description: [{ title: "O que inclui?", content: ["Inscrição e Aulas de código ilimitadas","32 aulas de condução, situação real, trânsito(sem simulador)","Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","Oferta do livro, código"] }],
+      description: [{ title: "O que inclui?", content: ["-Inscrição e Aulas de código ilimitadas","-32 aulas de condução, situação real, trânsito(sem simulador)","-Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","-Oferta do livro, código"] }],
     },
     {
       id: 2,
       title: "Horários",
       imgSrc: Infra3PDN,
       description: [
-        { title: "Código:", content: ["2ª a 6ª às 12h, 17h, 18h, 19h", "Sábados às 10h, 11h, 12h"] },
-        { title: "Condução:", content: ["2ª a 6ª das 7h às 20h", "Sábados das 7h às 13h"] },
-        { title: "Secretária:", content: ["2ª a 6ª das 10h às 13h / 14.30h às 20h", "Sábados das 10h às 13h"] },
+        { title: "Código:", content: ["-2ª a 6ª às 12h, 17h, 18h, 19h", "-Sábados às 10h, 11h, 12h"] },
+        { title: "Condução:", content: ["-2ª a 6ª das 7h às 20h", "-Sábados das 7h às 13h"] },
+        { title: "Secretária:", content: ["-2ª a 6ª das 10h às 13h / 14.30h às 20h", "-Sábados das 10h às 13h"] },
       ],
     },
     {
@@ -34,8 +34,8 @@ const PopupBoxes = () => {
       title: "English driving course",
       imgSrc: Infra3PDN,
       description: [
-        "On Category B cards in English, the codebook is included, this translated from Portuguese to English.",
-        "The medical certificate is included."
+        "-On Category B cards in English, the codebook is included, this translated from Portuguese to English.",
+        "-The medical certificate is included."
       ],
     },
   ];
@@ -68,24 +68,21 @@ const PopupBoxes = () => {
         <div>
           <div className="popup1-OL">
             <h2>{boxes[activePopup].title}</h2>
-            <ul>
+            
               {boxes[activePopup].description.map((item, index) => {
                 if (typeof item === "object" && item.title) {
                   return (
                     <div key={index}>
-                      <p>{item.title}</p>
-                      <ul>
+                      <b><p>{item.title}</p></b>
                         {item.content.map((contentItem, contentIndex) => (
-                          <li key={contentIndex}>{contentItem}</li>
+                          <p key={contentIndex}>{contentItem}</p>
                         ))}
-                      </ul>
                     </div>
                   );
                 } else {
-                  return <li key={index}>{item}</li>;
+                  return <p key={index}>{item}</p>;
                 }
               })}
-            </ul>
             <button onClick={handleClosePopup}>Close</button>
           </div>
           <div className="overlay1-OL" onClick={handleClosePopup}></div>
