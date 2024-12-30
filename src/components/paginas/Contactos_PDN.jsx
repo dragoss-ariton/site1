@@ -50,7 +50,7 @@ const Contactos_PDN = () => {
                     phone: formData.phone,
                     message: formData.message,
                     schoolName: formData.schoolName,
-                    schoolEmail: 'dragosariton2004@gmail.com'
+                    schoolEmail: 'ec.parquedasnacoes@gmail.com'
                 },
                 '7rX5-PFXYt6FsgQNs' // Sua Public Key
             );

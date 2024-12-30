@@ -50,7 +50,7 @@ const Contactos_OL = () => {
                     phone: formData.phone,
                     message: formData.message,
                     schoolName: formData.schoolName,
-                    schoolEmail: 'miguelbferreira5@gmail.com'
+                    schoolEmail: 'ec.olivais@gmail.com'
                 },
                 '7rX5-PFXYt6FsgQNs' // Sua Public Key
             );
