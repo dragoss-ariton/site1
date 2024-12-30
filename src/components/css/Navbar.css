@@ -278,7 +278,10 @@ body.light-mode .navbar-logo {
 }
 
 @media (max-width: 991px) {
-    .parque-link {
+    body.light-mode .parque-link {
         border-bottom: 2px solid rgba(0, 0, 0, 1); /* Traço discreto */
+    }
+    .parque-link {
+        border-bottom: 2px solid rgb(255, 255, 255); /* Traço discreto */
     }
 }
