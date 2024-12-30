@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 import '../css/css_OL/contact.css';
 
 const Contactos_OL = () => {
@@ -20,11 +20,11 @@ const Contactos_OL = () => {
     };
 
     const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
     const validatePhone = (phone) => /^\d{9}$/.test(phone);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (!validateEmail(formData.email)) {
             setStatusMessage('Por favor, insira um email válido.');
             setStatusType('error');
@@ -41,13 +41,25 @@ const Contactos_OL = () => {
         setStatusType('');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/send-email', formData);
-            setStatusMessage(response.data.message);
+            await emailjs.send(
+                'service_javegmm', // Seu Service ID
+                'template_ulw69m4', // Seu Template ID
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    schoolName: formData.schoolName,
+                    schoolEmail: 'miguelbferreira5@gmail.com'
+                },
+                '7rX5-PFXYt6FsgQNs' // Sua Public Key
+            );
+            setStatusMessage('Mensagem enviada com sucesso!');
             setStatusType('success');
         } catch (error) {
+            console.error('Erro ao enviar mensagem:', error.text || error);
             setStatusMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
             setStatusType('error');
-            console.error('Erro ao enviar:', error);
         } finally {
             setIsSubmitting(false);
         }

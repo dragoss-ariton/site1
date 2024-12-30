@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 import '../css/css_PDN/contact.css';
 
 const Contactos_PDN = () => {
@@ -9,9 +9,10 @@ const Contactos_PDN = () => {
         email: '',
         phone: '',
         message: '',
+        schoolName: 'Parque das Nações',
     });
     const [statusMessage, setStatusMessage] = useState('');
-    const [statusType, setStatusType] = useState(''); // Added statusType for success/error
+    const [statusType, setStatusType] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
@@ -19,34 +20,46 @@ const Contactos_PDN = () => {
     };
 
     const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
     const validatePhone = (phone) => /^\d{9}$/.test(phone);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (!validateEmail(formData.email)) {
             setStatusMessage('Por favor, insira um email válido.');
-            setStatusType('error'); // Set to error if email is invalid
+            setStatusType('error');
             return;
         }
         if (!validatePhone(formData.phone)) {
             setStatusMessage('Por favor, insira um número de telefone válido com 9 dígitos.');
-            setStatusType('error'); // Set to error if phone is invalid
+            setStatusType('error');
             return;
         }
 
         setIsSubmitting(true);
         setStatusMessage('');
-        setStatusType(''); // Reset statusType before making request
+        setStatusType('');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/send-email', formData);
-            setStatusMessage(response.data.message);
-            setStatusType('success'); // Set to success if the email was sent successfully
+            await emailjs.send(
+                'service_javegmm', // Seu Service ID
+                'template_ulw69m4', // Seu Template ID
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    schoolName: formData.schoolName,
+                    schoolEmail: 'dragosariton2004@gmail.com'
+                },
+                '7rX5-PFXYt6FsgQNs' // Sua Public Key
+            );
+            setStatusMessage('Mensagem enviada com sucesso!');
+            setStatusType('success');
         } catch (error) {
+            console.error('Erro ao enviar mensagem:', error.text || error);
             setStatusMessage('Erro ao enviar o formulário. Por favor, tente novamente.');
-            setStatusType('error'); // Set to error if there was a problem sending the email
-            console.error('Erro ao enviar:', error);
+            setStatusType('error');
         } finally {
             setIsSubmitting(false);
         }
