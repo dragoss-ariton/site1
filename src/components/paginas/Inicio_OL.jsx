@@ -14,7 +14,7 @@ const Inicio_OL = () => {
   return (
     <div className="main-page-OL">
       {/* Background Video */}
-      <video src={videobg} autoPlay loop muted></video>
+      <video src={videobg} autoPlay loop muted playsInline controls={false}></video>
 
       {/* Hero Section */}
       <section className="hero-section-OL">
