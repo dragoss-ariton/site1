@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../css/css_OL/Servicos.css';
-import Infra3PDN from '../assets/Infra2OL.jpg';
+import Infra3OL from '../assets/Infra2OL.jpg';
+import Infra1OL from '../assets/Infra4OL.jpg';
+import Infra2OL from '../assets/Infra5OL.jpg';
+import frotaImagem from "../assets/FrotaOL.jpg";
 
 const PopupBoxes = () => {
   const [activePopup, setActivePopup] = useState(null);
@@ -10,19 +13,19 @@ const PopupBoxes = () => {
     {
       id: 0,
       title: "Categorias lecionadas",
-      imgSrc: Infra3PDN,
+      imgSrc: frotaImagem,
       description: ["Aqui apenas é lecionada a carta de ligeiros, categoria B"],
     },
     {
       id: 1,
       title: "Pacote",
-      imgSrc: Infra3PDN,
+      imgSrc: Infra1OL,
       description: [{ title: "O que inclui?", content: ["-Inscrição e Aulas de código ilimitadas","-32 aulas de condução, situação real, trânsito(sem simulador)","-Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","-Oferta do livro, código"] }],
     },
     {
       id: 2,
       title: "Horários",
-      imgSrc: Infra3PDN,
+      imgSrc: Infra3OL,
       description: [
         { title: "Código:", content: ["-2ª a 6ª às 12h, 17h, 18h, 19h", "-Sábados às 10h, 11h, 12h"] },
         { title: "Condução:", content: ["-2ª a 6ª das 7h às 20h", "-Sábados das 7h às 13h"] },
@@ -32,7 +35,7 @@ const PopupBoxes = () => {
     {
       id: 3,
       title: "English driving course",
-      imgSrc: Infra3PDN,
+      imgSrc: Infra2OL,
       description: [
         "-On Category B cards in English, the codebook is included, this translated from Portuguese to English.",
         "-The medical certificate is included."

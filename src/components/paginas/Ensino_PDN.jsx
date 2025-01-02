@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../css/css_PDN/Servicos.css';
 import Infra3PDN from '../assets/Infra3PDN.jpg';
+import Infra1PDN from '../assets/Infra4PDN.jpg';
+import Infra2PDN from '../assets/Infra5PDN.jpg';
+import frotaImagem from "../assets/FrotaPDN.jpg";
 
 const PopupBoxes = () => {
   const [activePopup, setActivePopup] = useState(null);
@@ -9,13 +12,13 @@ const PopupBoxes = () => {
     {
       id: 0,
       title: "Categorias lecionadas",
-      imgSrc: Infra3PDN,
+      imgSrc: frotaImagem,
       description: ["Temos carta para Ligeiros Motociclos Cat B, A, A2 e A1"],
     },
     {
       id: 1,
       title: "Pacote",
-      imgSrc: Infra3PDN,
+      imgSrc: Infra1PDN,
       description: [{ title: "O que inclui?", content: ["-Inscrição e Aulas de código ilimitadas","-32 aulas de condução, situação real, trânsito(sem simulador)","-Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","-Oferta do livro, código (mota)"] }],
     },
     {
@@ -31,7 +34,7 @@ const PopupBoxes = () => {
     {
       id: 3,
       title: "English driving course",
-      imgSrc: Infra3PDN,
+      imgSrc: Infra2PDN,
       description: [
         "-On Category B cards in English, the codebook is included, this translated from Portuguese to English.",
         "-For category A, A1 and A2 (motorcycle) in English, we only have the book in Portuguese.",
