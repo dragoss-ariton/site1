@@ -20,15 +20,17 @@ const EquipaOL = () => {
       "António Amaro",
       "António Moita",
       "Carlos Domingues",
+      "Paula Pinto",
       "Elsa Feliciano",
       "Fernando Fernandes",
       "Gonçalo Bispo",
       "Jaquelina Justino",
       "Libânio Gomes",
+      "Liliana Lobo",
       "Mário Pinto",
-      "Maria Pinto",
       "Rui Almeida",
       "Sandro Costa",
+      "Teresa Pelarigo",
     ],
     administrativas: ["Graça Silva", "Luísa Lima"],
   };
@@ -36,7 +38,7 @@ const EquipaOL = () => {
   const fleet = [
     "Toyota Yaris (Gasolina e Gasóleo)",
     "Toyota Auris (Gasóleo)",
-    "Peugeot Allure (Gasóleo)",
+    "Peugeot Allure (Gasolina) Caixa Automática",
     "Renault Clio (Gasolina e GPL)",
     "Dacia Duster (Gasóleo)",
   ];
@@ -50,15 +52,15 @@ const EquipaOL = () => {
         <div className="info-box-OL">
           <h2 className="section-title-OL">A Nossa Equipa</h2>
           <div className="team-details-OL">
-            <h4 className="subtitle-OL">Diretora Técnica</h4>
+            <h4 className="subtitle-OL2">Diretora Técnica</h4>
             <p className="list-OL">{team.diretorTecnico}</p>
-            <h4 className="subtitle-OL">Instrutores</h4>
+            <h4 className="subtitle-OL2">Instrutores</h4>
             <ul className="list-OL">
               {team.instrutores.map((instrutor, index) => (
                 <li key={index}>{instrutor}</li>
               ))}
             </ul>
-            <h4 className="subtitle-OL">Administrativas</h4>
+            <h4 className="subtitle-OL2">Administrativas</h4>
             <ul className="list-OL">
               {team.administrativas.map((administrativa, index) => (
                 <li key={index}>{administrativa}</li>

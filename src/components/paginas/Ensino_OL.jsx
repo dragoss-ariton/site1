@@ -12,15 +12,25 @@ const PopupBoxes = () => {
   const boxes = [
     {
       id: 0,
-      title: "Categorias lecionadas",
+      title: "Categorias",
       imgSrc: frotaImagem,
       description: ["Aqui apenas é lecionada a carta de ligeiros, categoria B"],
     },
     {
       id: 1,
-      title: "Pacote",
+      title: "Condições",
       imgSrc: Infra1OL,
-      description: [{ title: "O que inclui?", content: ["-Inscrição e Aulas de código ilimitadas","-32 aulas de condução, situação real, trânsito(sem simulador)","-Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)","-Oferta do livro, código"] }],
+      description: [
+        {
+          title: "O que inclui?",
+          content: [
+            "-Inscrição e Aulas de código ilimitadas",
+            "-32 aulas de condução, situação real, trânsito(sem simulador)",
+            "-Exame Teórico e Prático privado (escolhe o dia e hora que deseja fazer o exame)",
+            "-Oferta do livro, código"
+          ]
+        }
+      ],
     },
     {
       id: 2,
@@ -71,21 +81,31 @@ const PopupBoxes = () => {
         <div>
           <div className="popup1-OL">
             <h2>{boxes[activePopup].title}</h2>
-            
-              {boxes[activePopup].description.map((item, index) => {
-                if (typeof item === "object" && item.title) {
-                  return (
-                    <div key={index}>
-                      <b><p>{item.title}</p></b>
-                        {item.content.map((contentItem, contentIndex) => (
-                          <p key={contentIndex}>{contentItem}</p>
-                        ))}
-                    </div>
-                  );
-                } else {
-                  return <p key={index}>{item}</p>;
-                }
-              })}
+            {boxes[activePopup].description.map((item, index) => {
+              if (typeof item === "object" && item.title) {
+                return (
+                  <div key={index}>
+                    <b><p>{item.title}</p></b>
+                    {item.content.map((contentItem, contentIndex) => (
+                      <p key={contentIndex}>
+                        {contentItem.includes("sem simulador") ? (
+                          contentItem.split("sem simulador").map((part, i, arr) => (
+                            <>
+                              {part}
+                              {i < arr.length - 1 && <b>sem simulador</b>}
+                            </>
+                          ))
+                        ) : (
+                          contentItem
+                        )}
+                      </p>
+                    ))}
+                  </div>
+                );
+              } else {
+                return <p key={index}>{item}</p>;
+              }
+            })}
             <button onClick={handleClosePopup}>Close</button>
           </div>
           <div className="overlay1-OL" onClick={handleClosePopup}></div>

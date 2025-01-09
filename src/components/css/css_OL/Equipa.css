@@ -34,7 +34,7 @@
   color: rgb(0, 204, 0) !important;
 }
 
-.subtitle-OL {
+.subtitle-OL2 {
   font-size: 1.5rem;
   margin-top: 15px;
   color: rgb(0, 204, 0);
@@ -208,7 +208,7 @@ body.light-mode .info-box-OL {
   color: #000; /* Texto em preto */
 }
 
-body.light-mode .subtitle-OL {
+body.light-mode .subtitle-OL2 {
   color: rgb(0, 204, 0); /* Verde */
 }
 
